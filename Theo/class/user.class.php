@@ -4,7 +4,7 @@
 
 	{
 
-		private $id_user;
+		private $id;
 		private $id_avatar;
 		private $pseudo;
 		private $prenom;
@@ -15,14 +15,14 @@
 		private $date_naissance;
 		private $date_inscription;
 
-		public function get_id_user()
+		public function get_id()
 		{
-			return $this->id_user;
+			return $this->id;
 		}
 
-		public function set_id_user($id_user)
+		public function set_id($id)
 		{
-			$this->id_user=$id_user;
+			$this->id=$id;
 		}
 
 		public function get_id_avatar()
@@ -114,7 +114,7 @@
 		{
 			$this->date_inscription=$date_inscription;
 		}
-		
+
 
 
 
