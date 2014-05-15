@@ -9,7 +9,7 @@ class Statut
 
 	public function __construct()
 	{
-		$this->table_name = 'statut';
+		$this->table_name = 'statuts';
 		parent::__construct();
 	}
 
