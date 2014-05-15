@@ -2,7 +2,7 @@
 	/**
 	* 	
 	*/
-	class message {
+	class Message {
 		public $id;
 		public $id_user;
 		public $date;
