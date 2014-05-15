@@ -4,7 +4,7 @@
 
 	{
 
-		private $id_user;
+		private $id;
 		private $id_avatar;
 		private $pseudo;
 		private $prenom;

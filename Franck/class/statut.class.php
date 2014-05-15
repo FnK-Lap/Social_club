@@ -7,6 +7,12 @@ class Statut
 	private $date;
 	private $content;
 
+	public function __construct()
+	{
+		$this->table_name = 'statut';
+		parent::__construct();
+	}
+
 	/*
 	**	Getter
 	*/
