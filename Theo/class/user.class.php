@@ -15,6 +15,15 @@
 		private $date_naissance;
 		private $date_inscription;
 
+
+		/*
+		**	CONSTRUCTEUR
+		*/
+		function __construct() {
+			$this->table_name = 'user';
+			parent::__construct();
+		}
+
 		public function get_id()
 		{
 			return $this->id;

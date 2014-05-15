@@ -10,7 +10,13 @@
 		private $description;
 		private $date_upload;
 
-
+		/*
+		**	CONSTRUCTEUR
+		*/
+		function __construct() {
+			$this->table_name = 'photo';
+			parent::__construct();
+		}
 
 		public function get_id()
 		{
