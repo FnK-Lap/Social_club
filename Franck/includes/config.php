@@ -6,7 +6,11 @@ $dbConfig = array(
 		'host' => 'localhost',
 		'user' => 'root',
 		'password' => 'root',
-		'dbName' => 'cinema'
+		'dbName' => 'social_club'
+	);
+
+$legalActions = array(
+		'home'	=>	'home',
 	);
 
 ?>

@@ -111,15 +111,17 @@ abstract class Table
 
 		if (empty($pk_value)) {
 			die(get_called_class().': primary key manquant');
+		}
 
 			$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
-			$data = dbFetchAssoc($query);
+			$data = dbFetchAllAssoc($query);
+			
 
 			foreach ($this->fields as $field) {
-				$setter = 'set_'.$field;
-				$this->$setter($data[$field]);
+				$setter = 'set_'.$field['Field'];
+				$fieldName = $field['Field'];
+				$this->$setter($data[0][$fieldName]);
 			}
-		}
 	}
 }
 
