@@ -1,143 +1,103 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+-- phpMyAdmin SQL Dump
+-- version 4.0.6
+-- http://www.phpmyadmin.net
+--
+-- Client: localhost
+-- Généré le: Jeu 15 Mai 2014 à 14:16
+-- Version du serveur: 5.5.33
+-- Version de PHP: 5.5.3
 
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `mydb` ;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
--- -----------------------------------------------------
--- Table `mydb`.`photos`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`photos` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `description` VARCHAR(255) NULL ,
-  `date_upload` DATETIME NOT NULL ,
-  `photo` VARCHAR(255) NOT NULL ,
-  `id_user` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `fk_photos_users_idx` (`id_user` ASC) ,
-  CONSTRAINT `fk_photos_users`
-    FOREIGN KEY (`id_user` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Base de données: `social_club`
+--
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `mydb`.`users`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`users` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `pseudo` VARCHAR(255) NOT NULL ,
-  `nom` VARCHAR(255) NOT NULL ,
-  `prenom` VARCHAR(255) NOT NULL ,
-  `date_naissance` DATE NOT NULL ,
-  `description` VARCHAR(255) NULL ,
-  `email` VARCHAR(255) NOT NULL ,
-  `password` VARCHAR(255) NOT NULL ,
-  `date_inscription` DATETIME NOT NULL ,
-  `avatar` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `fk_users_photos1_idx` (`avatar` ASC) ,
-  CONSTRAINT `fk_users_photos1`
-    FOREIGN KEY (`avatar` )
-    REFERENCES `mydb`.`photos` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Structure de la table `messages`
+--
 
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `id_groupe` int(11) NOT NULL,
+  `content` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- -----------------------------------------------------
--- Table `mydb`.`users_has_users`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`users_has_users` (
-  `id_user` INT NOT NULL ,
-  `id_user2` INT NOT NULL ,
-  `id_groupe` INT NOT NULL AUTO_INCREMENT ,
-  PRIMARY KEY (`id_groupe`, `id_user`, `id_user2`) ,
-  INDEX `fk_users_has_users_users2_idx` (`id_user2` ASC) ,
-  INDEX `fk_users_has_users_users1_idx` (`id_user` ASC) ,
-  CONSTRAINT `fk_users_has_users_users1`
-    FOREIGN KEY (`id_user` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_users_has_users_users2`
-    FOREIGN KEY (`id_user2` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `photos`
+--
 
--- -----------------------------------------------------
--- Table `mydb`.`messages`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`messages` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `id_user` INT NOT NULL ,
-  `date` DATETIME NOT NULL ,
-  `content` TEXT NOT NULL ,
-  `id_groupe` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `fk_messages_users1_idx` (`id_user` ASC) ,
-  INDEX `fk_messages_users_has_users1_idx` (`id_groupe` ASC) ,
-  CONSTRAINT `fk_messages_users1`
-    FOREIGN KEY (`id_user` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_messages_users_has_users1`
-    FOREIGN KEY (`id_groupe` )
-    REFERENCES `mydb`.`users_has_users` (`id_groupe` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE `photos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) DEFAULT NULL,
+  `date_upload` datetime NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `mydb`.`statuts`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`statuts` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `date` DATETIME NOT NULL ,
-  `content` VARCHAR(255) NOT NULL ,
-  `id_user` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `fk_statuts_users1_idx` (`id_user` ASC) ,
-  CONSTRAINT `fk_statuts_users1`
-    FOREIGN KEY (`id_user` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Structure de la table `statuts`
+--
 
+CREATE TABLE `statuts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `content` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- -----------------------------------------------------
--- Table `mydb`.`users_friend_request`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `mydb`.`users_friend_request` (
-  `id_user` INT NOT NULL ,
-  `id_user2` INT NOT NULL ,
-  PRIMARY KEY (`id_user`, `id_user2`) ,
-  INDEX `fk_users_has_users1_users2_idx` (`id_user2` ASC) ,
-  INDEX `fk_users_has_users1_users1_idx` (`id_user` ASC) ,
-  CONSTRAINT `fk_users_has_users1_users1`
-    FOREIGN KEY (`id_user` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_users_has_users1_users2`
-    FOREIGN KEY (`id_user2` )
-    REFERENCES `mydb`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- --------------------------------------------------------
 
-USE `mydb` ;
+--
+-- Structure de la table `users`
+--
 
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `date_naissance` date NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `id_avatar` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `date_inscription` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users_friends`
+--
+
+CREATE TABLE `users_friends` (
+  `id_groupe` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user1` int(11) NOT NULL,
+  `id_user2` int(11) NOT NULL,
+  PRIMARY KEY (`id_groupe`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users_friends_requests`
+--
+
+CREATE TABLE `users_friends_requests` (
+  `id_user1` int(11) NOT NULL,
+  `id_user2` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
