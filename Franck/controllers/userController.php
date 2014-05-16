@@ -46,30 +46,27 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 	}
 }
 elseif ($action == 'login') {
-
+	if ($is_connected == true) {
+		$template = 'home';
+	}else{
 		if (!empty($_POST)) 
 		{
-			
 			$erros = checkUserForm('login');
-
 
 			if (!empty($errors)) 
 			{
 				$template = "login";
 			}
 			else
-				{
+			{
 					$template = "home";
-				}
-
-
+			}
 		}
-		
 		else  
 		{
 			$template = "login";
 		}
-
+	}
 		
 }
 

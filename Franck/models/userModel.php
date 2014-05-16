@@ -70,7 +70,7 @@ function checkUserForm($form)
 		$pass = $_POST['pass'];
 
 		$result=checkUserExist($email);
-		var_dump($result);
+
 		if ($result[0]['password'] == sha1($pass.$salt))
 		{
 			$_SESSION['id_user'] = $result[0]['id'];

@@ -1,10 +1,18 @@
 <?php
-
+session_start();
+//session_destroy();
 require_once ('includes/config.php');
 require_once ('libs/smarty/Smarty.class.php');
 
 // On instancie Smarty
 $Smarty = new Smarty();
+
+if (empty($_SESSION['id_user'])) { // Verif si utilisateur est connectée
+	$is_connected = false;
+}
+else{
+	$is_connected = true;
+}
 
 /*
 **	Définition des differentes actions possibles
