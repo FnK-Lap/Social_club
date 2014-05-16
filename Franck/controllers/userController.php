@@ -26,11 +26,11 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 		**	Le formulaire a ete envoye
 		*/
 		if (!empty($_POST)) {
-			
+
 			$errors = checkUserForm('register');
 			$template = 'home';
 		}else{
-			$template = 'register';
+			$template = 'signin';
 		}
 	}
 }

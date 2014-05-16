@@ -9,7 +9,7 @@
 	</head>	
 	<body>
 		<header>
-			<div id='title-logo'>
+			<div id='title-logo-center'>
 				Social<span class='title-color'>Club</span>
 			</div>
 			<div id='bloc_login'>
@@ -45,7 +45,7 @@
 	                    <div class='bloc_bodycontent'>
 	                        <div class='bloc_bodycentercontent'>
 	                            <div class='bloc_bodygroup'>
-	                                <input type='submit' class="btn_body_bouton"></input>
+	                                <button class="btn_body_bouton">Connexion</button>
 	                            </div>
 	                        </div>
 	                    </div>

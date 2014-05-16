@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="author" content="Blanqui Lucas, " />
-		<meta name="description" content="social club" />
-		<title>Social Club</title>
-		<link rel="stylesheet" type="text/css" href="styles/style.css" />
-	</head>	
-	<body>
+
 		<header>
 			<div id='title-logo'>
 				Social<span class='title-color'>Club</span>
@@ -16,11 +7,13 @@
 				Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 			</div>
 			<nav>
-				<ul class='nav-menu'>
-				    <li><p class='nav-title'>Ma page d'accueil</p></li>
-				    <li><p class='nav-title2'>Mon profil</p></li>
-				    <li><p class='nav-title2'>Mes messages</p></li>
-				</ul>
+				<div class='nav-menu'>
+					<ul>
+					    <li><p class='nav-title'>Ma page d'accueil</p></li>
+					    <li><p class='nav-title2'>Mon profil</p></li>
+					    <li><p class='nav-title2'>Mes messages</p></li>
+					</ul>
+				</div>
 			</nav>
 		</header>
 		<aside>
@@ -129,5 +122,3 @@
 				</div>
 			</div>
 		</section>
-	</body>
-</html>
