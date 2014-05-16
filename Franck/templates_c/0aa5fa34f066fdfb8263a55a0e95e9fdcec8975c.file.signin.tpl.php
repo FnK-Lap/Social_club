@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 00:40:47
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 00:53:54
          compiled from "views/templates/signin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32050067753768a200d5696-36666348%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0aa5fa34f066fdfb8263a55a0e95e9fdcec8975c' => 
     array (
       0 => 'views/templates/signin.tpl',
-      1 => 1400280044,
+      1 => 1400280808,
       2 => 'file',
     ),
   ),
@@ -17,11 +17,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_53768a201120c2_93735356',
-  'variables' => 
-  array (
-    'errors' => 0,
-    'error' => 0,
-  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53768a201120c2_93735356')) {function content_53768a201120c2_93735356($_smarty_tpl) {?><header>
@@ -34,14 +29,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	        <div class='bloc_headercontent'>
 	            <h1 class="text-login">Inscription</h1>
 	        </div>
-	        <?php  $_smarty_tpl->tpl_vars['error'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['error']->_loop = false;
- $_from = (($tmp = @$_smarty_tpl->tpl_vars['errors']->value)===null||$tmp==='' ? '' : $tmp); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['error']->key => $_smarty_tpl->tpl_vars['error']->value) {
-$_smarty_tpl->tpl_vars['error']->_loop = true;
-?>
-	        	<?php echo $_smarty_tpl->tpl_vars['error']->value;?>
-<br>
-	        <?php } ?>
 	        <form class='form_login' action="index.php?action=register&amp;token=<?php echo $_GET['token'];?>
 " method="post"><br>
 	            <table>
@@ -86,7 +73,7 @@ $_smarty_tpl->tpl_vars['error']->_loop = true;
 	                        <div class='bloc_bodycontent'>
 	                            <div class='bloc_bodycentercontent'>
 	                                <div class='bloc_bodygroup'>
-	                                    <input class="body_bouton" type="date" name='date' placeholder="18/11/1995" value='<?php echo (($tmp = @$_POST['date'])===null||$tmp==='' ? '' : $tmp);?>
+	                                    <input class="body_bouton" type="date" name='date' placeholder="1995/11/18" value='<?php echo (($tmp = @$_POST['date'])===null||$tmp==='' ? '' : $tmp);?>
 '>
 	                                </div>
 	                            </div>

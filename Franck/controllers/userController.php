@@ -28,8 +28,13 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 		if (!empty($_POST)) {
 
 			$errors = checkUserForm('register');
-			$template = 'signin';
-			$Smarty->assign('errors', $errors);
+			if (empty($errors)) {
+				register($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pass'], $_POST['date']);
+				$template = 'signin';
+			}else{
+				$template = 'signin';
+				$Smarty->assign('errors', $errors);
+			}
 		}else{
 			$template = 'signin';
 		}

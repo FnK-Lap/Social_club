@@ -8,9 +8,6 @@
 	        <div class='bloc_headercontent'>
 	            <h1 class="text-login">Inscription</h1>
 	        </div>
-	        {foreach $errors|default as $error}
-	        	{$error}<br>
-	        {/foreach}
 	        <form class='form_login' action="index.php?action=register&amp;token={$smarty.get.token}" method="post"><br>
 	            <table>
 	                <tr>
@@ -51,7 +48,7 @@
 	                        <div class='bloc_bodycontent'>
 	                            <div class='bloc_bodycentercontent'>
 	                                <div class='bloc_bodygroup'>
-	                                    <input class="body_bouton" type="date" name='date' placeholder="18/11/1995" value='{$smarty.post.date|default}'>
+	                                    <input class="body_bouton" type="date" name='date' placeholder="1995/11/18" value='{$smarty.post.date|default}'>
 	                                </div>
 	                            </div>
 	                        </div>
