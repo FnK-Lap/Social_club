@@ -33,6 +33,7 @@ $errors_no = array(
 		'PASM' => 'Le password doit faire minimum 8 caracteres',
 		'VPAE' => 'La vérification du password est vide',
 		'VPAD' => 'Les passwords sont différents',
+		'EMAD' => 'Un utilisateur utilise deja cet email',
 	);
 
 
