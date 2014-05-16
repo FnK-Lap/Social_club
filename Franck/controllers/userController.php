@@ -3,11 +3,16 @@
 require_once ('models/userModel.php');
 
 if ($action == 'home') {
-	$user = getUserInfos('1');
+	if ($is_connected == true) {
+		$user = getUserInfos('1');
 
-	$Smarty->assign('user', $user);
+		$Smarty->assign('user', $user);
+		
+		$template = 'home';
+	}else{
+		$template = 'login';
+	}
 	
-	$template = 'home';
 }
 elseif ($action == 'register' && isset($_GET['token'])) {
 	$token = $_GET['token'];
