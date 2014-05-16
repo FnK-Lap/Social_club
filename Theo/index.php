@@ -14,7 +14,7 @@ else{
 	$action = 'home';
 }
 
-dbConnect();
+dbConnect($dbConfig);
 
 if (file_exists('controllers/'.$legalActions[$action].'Controller.php')) {
 	include 'controllers/'.$legalActions[$action].'Controller.php';
