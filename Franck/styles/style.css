@@ -13,7 +13,7 @@ body {
 
 @font-face {
     font-family: 'FontStatut';
-    src: url('fonts/Pacifico.ttf');
+    src: url('../fonts/Pacifico.ttf');
 }
 
 /* ----------------------------

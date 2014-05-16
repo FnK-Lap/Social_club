@@ -19,9 +19,19 @@ $legalActions = array(
 $salt = 'bVy437#1mWdo-;';
 
 $errors_no = array(
-		'R01E' => 'Le pseudo est vide',
-		'R02E' => 'Le prénom est vide',
-		'R02C' => 'Le prénom doit contenir que des lettres',
+		'PSEE' => 'Le pseudo est vide',
+		'PREE' => 'Le prénom est vide',
+		'PREL' => 'Le prénom doit contenir que des lettres',
+		'NOME' => 'Le nom est vide',
+		'NOML' => 'Le nom ne doit contenir que des lettres',
+		'DATE' => 'La date de naissance est vide',
+		'DATF' => 'La date de naissance est invalide',
+		'EMAE' => 'L\'email est vide',
+		'EMAF' => 'L\'email est invalide',
+		'PASE' => 'Le password est vide',
+		'PASM' => 'Le password doit faire minimum 8 caracteres',
+		'VPAE' => 'La vérification du password est vide',
+		'VPAD' => 'Les passwords sont différents',
 	);
 
 

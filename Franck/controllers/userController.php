@@ -18,10 +18,20 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 	if ($result != true) {
 		// La personne n'est pas authorise a s'inscrire
 		echo "Inscription non Authorisee";
-		$errors = checkUserForm('register');
+		
 	}else{
 		// La personne est authorise a s'inscrire
 		echo "Inscription Authorisee";
+		/*
+		**	Le formulaire a ete envoye
+		*/
+		if (!empty($_POST)) {
+			
+			$errors = checkUserForm('register');
+			$template = 'home';
+		}else{
+			$template = 'register';
+		}
 	}
 }
 

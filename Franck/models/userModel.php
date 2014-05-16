@@ -7,6 +7,7 @@ require_once ('models/user.class.php');
 // Check les formulaire Users
 function checkUserForm($form)
 {
+	$errors = array();
 	if ($form == 'register') {
 		$pseudo = $_POST['pseudo'];
 		$prenom = $_POST['prenom'];
@@ -17,20 +18,47 @@ function checkUserForm($form)
 		$verif_password = $_POST['verif_password'];
 		// Pseudo
 		if (empty($pseudo)) {
-			$errors['pseudo'] = $errors_no['R01E'];
+			$errors['pseudo'] = $errors_no['PSEE'];
 		}
 		// Prenom
 		if (empty($prenom)) {
-			$errors['prenom'] = $errors_no['R02E'];
+			$errors['prenom'] = $errors_no['PREE'];
 		}elseif (!preg_match('/[a-z]/i', $prenom)) {
-			$errors['prenom'] = $errors_no['R02C'];
+			$errors['prenom'] = $errors_no['PREL'];
 		}
-
-		// Si aucune erreur
-		if (empty($errors)) {
-			
+		// Nom
+		if (empty($nom)) {
+			$errors['nom'] = $errors_no['NOME'];
+		}elseif (!preg_match('/[a-z]/i', $nom)) {
+			$errors['nom'] = $errors_no['NOML'];
+		}
+		// Date naissance
+		if (empty($date)) {
+			$errors['date'] = $errors_no['DATE'];
+		}elseif (!preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $date)) {
+			$errors['date'] = $errors_no['DATF'];
+		}
+		// Email
+		if (empty($email)) {
+			$errors['email'] = $errors_no['EMAE'];
+		}elseif (!preg_match('/^[a-z0-9._-]+@[a-z0-9]+.[a-z]+$/i', $email)) {
+			$errors['email'] = $errors_no['EMAF'];
+		}
+		// Password
+		if (empty($password)) {
+			$errors['password'] = $errors_no['PASE'];
+		}elseif (strlen($password < 8)) {
+			$errors['password'] = $errors_no['PASM'];
+		}
+		// Verif Password
+		if (empty($verif_password)) {
+			$errors['verif_password'] = $errors_no['VPAE'];
+		}elseif ($verif_password != $password) {
+			$errors['verif_password'] = $errors_no['VPAD'];
 		}
 	}
+
+	return $errors;
 }
 
 
@@ -54,7 +82,9 @@ function register($pseudo, $prenom, $nom, $email, $password, $date_naissance)
 	$User->set_email($email);
 	$User->set_password($password);
 	$User->set_date_naissance($date_naissance);
-	$User->set_prenom($prenom);
+	$User->set_id_avatar(1);
+	$User->set_date_inscription(date('Y-m-d H:i:s'));
+	$User->save();
 }
 
 

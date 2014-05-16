@@ -5,7 +5,7 @@
 		<meta name="author" content="Blanqui Lucas, " />
 		<meta name="description" content="social club" />
 		<title>Social Club</title>
-		<link rel="stylesheet" type="text/css" href="login.css" />
+		<link rel="stylesheet" type="text/css" href="styles/login.css" />
 	</head>	
 	<body>
 		<header>
