@@ -1,4 +1,4 @@
-html, body{
+*, html {
 
  padding: 0;
  margin: 0;
@@ -81,7 +81,7 @@ nav {
 	margin-top: 0px;
 	display: block;
 	float: left;
-	margin-left: 37%;
+	margin-left: 30%;
 	border-bottom: 3px solid #2980b9;
 	cursor: pointer;
 	
@@ -137,11 +137,12 @@ aside {
 
 .photo_profil {
 
+	background: url('');
 	width: 165px;
 	height: 165px;
 	background-color: #E8E8E8;
 	display: block;
-	margin: 15px 15px 8px 15%;
+	margin: 15px 15px 0px 15%;
 
 
 }
@@ -150,6 +151,7 @@ aside {
 
 	color: #2980b9;
 	text-align: center;
+	margin-top: 10px;
 
 
 }
@@ -157,7 +159,7 @@ aside {
 .aside-line {
 
 	border-bottom: 1px solid #E2E2E2;
-	margin: 15px 30px 10px 30px;
+	margin: 25px 30px 15px 30px;
     
 }
 
@@ -166,14 +168,15 @@ aside {
 	margin: 15px 15px 8px 15%;
 }
 
-.friend-title {
+.title-aside {
 
 	font-size: 14px;
 	font-weight: bold;
 	color: #2980b9;
+	margin-bottom: 20px;
 }
 
-.friend-title:hover {
+.title-aside:hover {
 
 	text-decoration: underline;
 	color: #2980b9;
@@ -215,4 +218,162 @@ aside {
   border: 2px solid #E8E8E8;
 
 }
+
+
+#last_message_bloc {
+
+	margin: 15px 15px 8px 15%;
+	height: 300px;
+	overflow: auto;
+
+}
+
+.last_message {
+
+
+}
+
+.last_message-user{
+
+	margin-bottom: 20px;
+}
+
+.last_message-user-info {
+
+	font-size: 11px;
+
+}
+
+.last_message-date {
+
+	font-size: 10px; 
+	color: #E2E2E2;
+	font-style: italic;
+	float: right;
+	margin-right: 15px;
+}
+
+.last_message-content {
+
+	font-size: 11px;
+	color: #2980b9;	
+}
+
+
+
+/* ----------------------------
+
+			Section
+
+----------------------------- */
+
+section {
+
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E8E8E8;
+    height: 100%;
+	width: 900px;
+	float: left;
+	margin-left: 25%;
+	margin-top: 130px;
+
+
+
+}
+
+
+.title-body {
+
+	font-size: 15px;
+	font-weight: bold;
+	color: #2980b9;
+	margin: 15px 0 15px 20px;
+
+}
+
+.title-body:hover {
+
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.body-line {
+
+	border-bottom: 1px solid #E2E2E2;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#carou {
+
+	width: 90%;
+	height: 150px;
+	background-color: #E2E2E2;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-top: 30px;
+
+}
+
+.last_status-user{
+
+	margin: 30px 0 40px 35px;
+}
+
+
+.last_status_user_info-miniavatar {
+
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #E8E8E8;
+	float: left;
+
+ }
+
+.last_status_user_info-name {
+
+	font-size: 13px;
+	font-weight: bold;
+	color: #2980b9;
+	float: left;
+	margin-left: 15px;
+	margin-top: 7px;
+
+}
+
+.last_status_user_info-name:hover {
+
+	text-decoration: underline;
+	cursor: pointer;
+
+}
+
+
+
+.last_status_user_info-date {
+
+	font-size: 10px; 
+	color: #E2E2E2;
+	font-style: italic;
+	margin-left: 80%;
+
+}
+
+.last_status_user-content {
+
+	width: 80%;
+	font-size: 12px;
+	color: #34495e;
+	margin-top: 40px;
+	margin-left: 40px;
+	margin-bottom: 30px;
+}
+
+
+
+
 
