@@ -58,6 +58,10 @@ function checkUserForm($form)
 		}
 
 		// Utilisateur deja inscrit
+		$result = checkUserExist($email);
+		if ($result != false) {
+			$errors['email'] = $errors_no['EMAD'];
+		}
 		
 	}
 	elseif ($form == 'login') 
