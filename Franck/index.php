@@ -25,6 +25,7 @@ if (file_exists('controllers/'.$legalActions[$action].'Controller.php')) {
 }else{
 	die('404');
 }
+
 $Smarty->display('views/header.tpl');
 $Smarty->display('views/templates/'.$template.'.tpl');
 $Smarty->display('views/footer.tpl');

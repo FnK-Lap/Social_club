@@ -7,19 +7,19 @@ require_once ('models/user.class.php');
 // Check les formulaire Users
 function checkUserForm($form)
 {
+	global $errors_no;
+	
 	$errors = array();
+
 	if ($form == 'register') {
-		$pseudo = $_POST['pseudo'];
+
 		$prenom = $_POST['prenom'];
 		$nom = $_POST['nom'];
 		$date = $_POST['date'];
 		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$verif_password = $_POST['verif_password'];
-		// Pseudo
-		if (empty($pseudo)) {
-			$errors['pseudo'] = $errors_no['PSEE'];
-		}
+		$password = $_POST['pass'];
+		$verif_password = $_POST['verif_pass'];
+
 		// Prenom
 		if (empty($prenom)) {
 			$errors['prenom'] = $errors_no['PREE'];

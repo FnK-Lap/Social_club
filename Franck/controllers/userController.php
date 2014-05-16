@@ -28,7 +28,8 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 		if (!empty($_POST)) {
 
 			$errors = checkUserForm('register');
-			$template = 'home';
+			$template = 'signin';
+			$Smarty->assign('errors', $errors);
 		}else{
 			$template = 'signin';
 		}

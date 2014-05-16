@@ -1,4 +1,25 @@
-<header>
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 00:18:38
+         compiled from "views/templates/profile.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:52191000053768ebe837196-64810214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '0845e53411952ead6f818dedc82ae762005bca5f' => 
+    array (
+      0 => 'views/templates/profile.tpl',
+      1 => 1400278660,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '52191000053768ebe837196-64810214',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_53768ebe87aa59_48921826',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_53768ebe87aa59_48921826')) {function content_53768ebe87aa59_48921826($_smarty_tpl) {?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
@@ -81,4 +102,4 @@
 		<h1 class='title-myprofil'>Ma galerie photo</h1>
 		<div class='my_galery-photo'></div>
 	</div>
-</section>
+</section><?php }} ?>
