@@ -45,7 +45,7 @@
 	                    <div class='bloc_bodycontent'>
 	                        <div class='bloc_bodycentercontent'>
 	                            <div class='bloc_bodygroup'>
-	                                <button class="btn_body_bouton">Connexion</button>
+	                                <input type='submit' class="btn_body_bouton"></input>
 	                            </div>
 	                        </div>
 	                    </div>

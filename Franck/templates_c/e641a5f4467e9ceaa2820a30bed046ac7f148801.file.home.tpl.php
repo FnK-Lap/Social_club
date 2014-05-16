@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-16 20:32:59
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-16 23:45:55
          compiled from "views/templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16458554885376464725d105-33045163%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1400260496,
+      1 => 1400276753,
       2 => 'file',
     ),
   ),
@@ -17,10 +17,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_5376464729e263_38684869',
-  'variables' => 
-  array (
-    'user' => 0,
-  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5376464729e263_38684869')) {function content_5376464729e263_38684869($_smarty_tpl) {?><!DOCTYPE html>
@@ -51,9 +47,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<aside>
 			<div id='photo_bloc'>
 				<div class='photo_profil'></div>
-				<p class='photo-nom'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
- <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
-</p>
+				<p class='photo-nom'>Lucas Blanqui</p>
 			</div>
 			<div class='aside-line'></div>
 			<div id='friend_bloc'>
@@ -91,10 +85,70 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
 						<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
 					</div>
+					<div class='last_message-user'>
+						<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
+						<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
+					</div>
+					<div class='last_message-user'>
+						<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
+						<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
+					</div>
+					<div class='last_message-user'>
+						<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
+						<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
+					</div>
 				</div>
 			</div>
 		</aside>
 		<section>
+			<div id='carrousel-photo'>
+				<h1 class='title-body'>Derniere photos de vos amis</h1>
+				<div id='carou'></div>
+			</div>
+			<div class='body-line'></div>
+			<div id='last_status'>
+				<h1 class='title-body'>Dernier statut de vos amis</h1>
+				<div class='last_status-user'>
+					<div class='last_status_user-info'>
+						<div class='last_status_user_info-miniavatar'></div>
+						<h2 class='last_status_user_info-name'>Franck Laypere</h2>
+						<p class='last_status_user_info-date'>Il y a 1 heure</p>
+					</div>
+					<div class='last_status_user-content'>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
+					</div>
+				</div>
+				<div class='last_status-user'>
+					<div class='last_status_user-info'>
+						<div class='last_status_user_info-miniavatar'></div>
+						<h2 class='last_status_user_info-name'>Franck Laypere</h2>
+						<p class='last_status_user_info-date'>Il y a 1 heure</p>
+					</div>
+					<div class='last_status_user-content'>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
+					</div>
+				</div>
+				<div class='last_status-user'>
+					<div class='last_status_user-info'>
+						<div class='last_status_user_info-miniavatar'></div>
+						<h2 class='last_status_user_info-name'>Franck Laypere</h2>
+						<p class='last_status_user_info-date'>Il y a 1 heure</p>
+					</div>
+					<div class='last_status_user-content'>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
+					</div>
+				</div>
+				<div class='last_status-user'>
+					<div class='last_status_user-info'>
+						<div class='last_status_user_info-miniavatar'></div>
+						<h2 class='last_status_user_info-name'>Franck Laypere</h2>
+						<p class='last_status_user_info-date'>Il y a 1 heure</p>
+					</div>
+					<div class='last_status_user-content'>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
+					</div>
+				</div>
+			</div>
 		</section>
 	</body>
 </html><?php }} ?>
