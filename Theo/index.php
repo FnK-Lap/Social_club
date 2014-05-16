@@ -10,6 +10,19 @@ $Smarty = new Smarty();
 **	Définition des differentes actions possibles
 **	sur une page
 */
+
+if (empty($_SESSION['id_user'])) { // Verif si utilisateur est connectée
+
+	$action = 'login';
+	$is_connected = false;
+}
+else{
+
+	$action = 'home';
+	$is_connected = true;
+
+}
+
 if (!empty($_GET['action']) && array_key_exists($_GET['action'], $legalActions)) {
 	$action = $_GET['action'];
 }

@@ -23,7 +23,7 @@ function dbQuery($query, $link = null)
 		$link = mysqli_connect('localhost', 'root', 'root', 'cinema') or die(mysqli_connect_error());
 	}
 	$result = mysqli_query($link, $query) or die("Error " . mysqli_error($link));
-	echo $query."<br>";
+	
 	return $result;
 }
 
