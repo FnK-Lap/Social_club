@@ -33,6 +33,8 @@ function checkUserForm($form)
 	}
 }
 
+
+// Recupere toute les infos de l'utilisateur
 function getUserInfos($id)
 {
 	$User = new User();
@@ -42,6 +44,18 @@ function getUserInfos($id)
 	return $User;
 }
 
+// Enregistre un utilisateur en BDD
+function register($pseudo, $prenom, $nom, $email, $password, $date_naissance)
+{
+	$User = new User();
+	$User->set_pseudo($pseudo);
+	$User->set_prenom($prenom);
+	$User->set_nom($nom);
+	$User->set_email($email);
+	$User->set_password($password);
+	$User->set_date_naissance($date_naissance);
+	$User->set_prenom($prenom);
+}
 
 
 // Envoie une invitation avec un token unique 

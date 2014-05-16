@@ -26,4 +26,6 @@ if (file_exists('controllers/'.$legalActions[$action].'Controller.php')) {
 	die('404');
 }
 
+$Smarty->display('views/templates/'.$template.'.tpl');
+
 ?>

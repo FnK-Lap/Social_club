@@ -4,9 +4,10 @@ require_once ('models/userModel.php');
 
 if ($action == 'home') {
 	$user = getUserInfos('1');
-	$Smarty->assign('user', $user);
-	$Smarty->display('views/templates/home.tpl');
 
+	$Smarty->assign('user', $user);
+	
+	$template = 'home';
 }
 elseif ($action == 'register' && isset($_GET['token'])) {
 	$token = $_GET['token'];
