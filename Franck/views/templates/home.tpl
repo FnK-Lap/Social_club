@@ -18,7 +18,7 @@
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>Lucas Blanqui</p>
+		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>

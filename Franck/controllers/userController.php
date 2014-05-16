@@ -4,7 +4,7 @@ require_once ('models/userModel.php');
 
 if ($action == 'home') {
 	if ($is_connected == true) {
-		$user = getUserInfos('1');
+		$user = getUserInfos($_SESSION['id_user']);
 
 		$Smarty->assign('user', $user);
 		
