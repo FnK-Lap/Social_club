@@ -23,6 +23,7 @@ $errors_no = array(
 		'R01E' => 'Le pseudo est vide',
 		'R02E' => 'Le prénom est vide',
 		'R02C' => 'Le prénom doit contenir que des lettres',
+		'EMAD' => 'Un utilisateur utilise deja cet email',
 	);
 
 
