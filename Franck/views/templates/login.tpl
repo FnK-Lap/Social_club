@@ -35,7 +35,7 @@
                 <div class='bloc_bodycontent'>
                     <div class='bloc_bodycentercontent'>
                         <div class='bloc_bodygroup'>
-                            <input type'submit' class="btn_body_bouton"></input>
+                            <input type='submit' class="btn_body_bouton"></input>
                         </div>
                     </div>
                 </div>

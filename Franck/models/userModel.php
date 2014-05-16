@@ -7,7 +7,7 @@ require_once ('models/user.class.php');
 // Check les formulaire Users
 function checkUserForm($form)
 {
-	global $errors_no;
+	global $errors_no, $salt;
 
 	$errors = array();
 
@@ -59,6 +59,18 @@ function checkUserForm($form)
 
 		// Utilisateur deja inscrit
 		
+	}
+	elseif ($form == 'login') 
+	{
+		$email = $_POST['email'];
+		$pass = $_POST['pass'];
+
+		$result=checkUserExist($email);
+		var_dump($result);
+		if ($result[0]['password'] == sha1($pass.$salt))
+		{
+			$_SESSION['id_user'] = $result[0]['id'];
+		}
 	}
 
 	return $errors;
@@ -130,6 +142,18 @@ function checkToken($token)
 
 	return false;
 }
+
+function checkUserExist($email)
+{
+	global $link;
+
+	$query = 'SELECT * FROM `users`WHERE `email`="'.mysqli_real_escape_string($link,$email).'"';
+
+	$result = dbFetchAllAssoc($query);
+
+	return $result;
+}
+
 
 
 

@@ -11,7 +11,8 @@ $dbConfig = array(
 
 $legalActions = array(
 		'home'	=>	'user',
-		'register' => 'user'
+		'register' => 'user',
+		'login' => 'user',
 	);
 
 
