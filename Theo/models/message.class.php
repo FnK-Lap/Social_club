@@ -2,12 +2,12 @@
 	/**
 	* 	
 	*/
-	class Message {
-		public $id;
-		public $id_user;
-		public $date;
-		public $id_groupe;
-		public $content;
+	class Message extends Table{
+		private $id;
+		private $id_user;
+		private $date;
+		private $id_groupe;
+		private $content;
 		/*
 		**	CONSTRUCTEUR
 		*/
