@@ -5,13 +5,14 @@ require_once ('tools/dbTools.php');
 $dbConfig = array(
 		'host' => 'localhost',
 		'user' => 'root',
-		'password' => 'root',
+		'password' => '',
 		'dbName' => 'social_club'
 	);
 
 $legalActions = array(
 		'home'	=>	'user',
-		'register' => 'user'
+		'register' => 'user',
+		'login' => 'user'
 	);
 
 

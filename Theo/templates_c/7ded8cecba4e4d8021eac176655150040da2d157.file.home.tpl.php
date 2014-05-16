@@ -1,4 +1,25 @@
-<header>
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-16 22:51:46
+         compiled from "views\templates\home.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '7ded8cecba4e4d8021eac176655150040da2d157' => 
+    array (
+      0 => 'views\\templates\\home.tpl',
+      1 => 1400280465,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '3064753764aa1a9fef4-87272335',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_53764aa1b36870_96751885',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_53764aa1b36870_96751885')) {function content_53764aa1b36870_96751885($_smarty_tpl) {?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
@@ -120,4 +141,4 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section><?php }} ?>

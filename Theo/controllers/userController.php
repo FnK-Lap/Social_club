@@ -2,10 +2,14 @@
 
 require_once ('models/userModel.php');
 
+
+
+
+
 if ($action == 'home') {
 	$user = getUserInfos('1');
 	$Smarty->assign('user', $user);
-	$Smarty->display('views/templates/home.tpl');
+	$template = "home";
 
 }
 elseif ($action == 'register' && isset($_GET['token'])) {
@@ -22,6 +26,35 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 		// La personne est authorise a s'inscrire
 		echo "Inscription Authorisee";
 	}
+}
+
+
+elseif ($action == 'login') {
+
+		if (!empty($_POST)) 
+		{
+			
+			$erros = checkUserForm('login');
+
+
+			if (!empty($errors)) 
+			{
+				$template = "login";
+			}
+			else
+				{
+					$template = "home";
+				}
+
+
+		}
+		
+		else  
+		{
+			$template = "login";
+		}
+
+		
 }
 
 
