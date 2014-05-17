@@ -1,0 +1,466 @@
+*, html {
+
+ padding: 0;
+ margin: 0;
+
+}
+
+body {
+
+	background: url("../images/body-pattern.jpg") top left repeat;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: 'FontStatut';
+    src: url('../fonts/Pacifico.ttf');
+}
+
+/* ----------------------------
+
+			Header
+
+----------------------------- */
+
+header {
+
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #E8E8E8;
+    height: 50px;
+	width: 100%;
+	position: fixed;
+
+}
+
+#title-logo {
+
+
+	padding: 10px 0 1px 70px;
+
+
+}
+
+.title-color {
+
+	color: #2980b9;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.title-status {
+
+	font-family: FontStatut;
+	color: #7f8c8d;
+	float: left;
+	margin-left: 250px;
+	margin-top: -30px;
+
+}
+
+.deconnexion-bloc {
+
+	float: right;
+	margin-top: -30px;
+	margin-right: 50px;
+	width: 160px;
+	height: 30px;
+	background-color: #2980b9;
+}
+
+.deconnexion-bloc:hover {
+
+	background-color: #7f8c8d;
+	cursor: pointer;
+}
+
+.deconnexion_bloc-pict {
+
+	width: 14px;
+	height: 14px;
+	margin-top: 8px;
+	margin-left: 15px;
+
+
+}
+
+a {
+
+	color: #FFFFFF;
+}
+
+.deconnexion_bloc-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -18px;
+	margin-left: 5px;
+
+}
+
+nav {
+
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #E8E8E8;
+    height: 50px;
+	width: 100%;
+	margin-left: 231px;
+	margin-top: 12px;
+	position: fixed;
+}
+
+.nav-menu{
+
+	margin-top: 0px;
+	margin-left: 30%;
+	font-size: 13px;
+}
+
+.nav-title {
+
+	color: #333333;
+	font-weight: bold;
+	margin-top: 0px;
+	display: block;
+	float: left;
+	border-bottom: 3px solid #2980b9;
+	cursor: pointer;
+	
+
+}
+
+.nav-title2 {
+
+	color: #7f8c8d;
+	margin-top: 0px;
+	display: block;
+	float: left;
+	margin-left: 30px;
+	cursor: pointer;
+
+}
+
+.nav-title2:hover {
+
+	border-bottom: 3px solid #2980b9;
+}
+
+ul, li {
+
+	list-style-type:none;
+	display: inline;
+	line-height: 50px;
+
+}
+
+a {
+
+	text-decoration: none;
+}
+
+/* ----------------------------
+
+			Aside
+
+----------------------------- */
+
+
+aside {
+
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-right: 1px solid #E8E8E8;
+    height: 3000px;
+	width: 230px;
+	position: fixed;
+	margin-top: 51px;
+
+}
+
+.photo_profil {
+
+	background: url('');
+	width: 165px;
+	height: 165px;
+	background-color: #E8E8E8;
+	display: block;
+	margin: 15px 15px 0px 15%;
+
+
+}
+
+.photo-nom {
+
+	color: #2980b9;
+	text-align: center;
+	margin-top: 10px;
+
+
+}
+
+.aside-line {
+
+	border-bottom: 1px solid #E2E2E2;
+	margin: 25px 30px 15px 30px;
+    
+}
+
+#friend_bloc {
+
+	margin: 15px 15px 8px 15%;
+}
+
+.title-aside {
+
+	font-size: 14px;
+	font-weight: bold;
+	color: #2980b9;
+	margin-bottom: 20px;
+}
+
+.title-aside:hover {
+
+	text-decoration: underline;
+	color: #2980b9;
+	cursor: pointer;
+}
+
+.friend-user {
+
+	margin-bottom: 10px;
+}
+
+.friend-user-info {
+
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	margin-top: -13px;
+	margin-left: 25px;
+
+
+}
+
+.friend-connected-user {
+
+  background:#bfd70e;
+  border-radius:50%;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #E8E8E8;
+
+}
+
+.friend-deconnected-user {
+
+  background: red;
+  border-radius:50%;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #E8E8E8;
+
+}
+
+
+#last_message_bloc {
+
+	margin: 15px 15px 8px 15%;
+	height: 300px;
+	overflow: auto;
+
+}
+
+.last_message {
+
+
+}
+
+.last_message-user{
+
+	margin-bottom: 20px;
+}
+
+.last_message-user-info {
+
+	font-size: 11px;
+
+}
+
+.last_message-date {
+
+	font-size: 10px; 
+	color: #E2E2E2;
+	font-style: italic;
+	float: right;
+	margin-right: 15px;
+}
+
+.last_message-content {
+
+	font-size: 11px;
+	color: #2980b9;	
+}
+
+
+
+/* ----------------------------
+
+			Section
+
+----------------------------- */
+
+section {
+
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E8E8E8;
+    height: 100%;
+	width: 900px;
+	float: left;
+	margin-left: 25%;
+	margin-top: 130px;
+
+
+
+}
+
+
+.title-body {
+
+	font-size: 15px;
+	font-weight: bold;
+	color: #2980b9;
+	margin: 15px 0 15px 20px;
+
+}
+
+.title-body:hover {
+
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.body-line {
+
+	border-bottom: 1px solid #E2E2E2;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+/* --------------	
+	Page Home  
+--------------- */
+
+#carou {
+
+	width: 90%;
+	height: 150px;
+	background-color: #E2E2E2;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-top: 30px;
+
+}
+
+.last_status-user{
+
+	margin: 30px 0 40px 35px;
+}
+
+
+.last_status_user_info-miniavatar {
+
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #E8E8E8;
+	float: left;
+
+ }
+
+.last_status_user_info-name {
+
+	font-size: 13px;
+	font-weight: bold;
+	color: #2980b9;
+	float: left;
+	margin-left: 15px;
+	margin-top: 7px;
+
+}
+
+.last_status_user_info-name:hover {
+
+	text-decoration: underline;
+	cursor: pointer;
+
+}
+
+
+
+.last_status_user_info-date {
+
+	font-size: 10px; 
+	color: #E2E2E2;
+	font-style: italic;
+	margin-left: 80%;
+
+}
+
+.last_status_user-content {
+
+	width: 80%;
+	font-size: 12px;
+	color: #34495e;
+	margin-top: 40px;
+	margin-left: 40px;
+	margin-bottom: 30px;
+}
+
+
+/* ----------------	
+	Page Profile  
+------------------ */
+
+.title-myprofil {
+
+	font-family: FontStatut;
+	font-size: 20px;
+	color: #7f8c8d;
+	margin: 15px 0 15px 20px;
+}
+
+.title-myprofil:hover {
+
+	color: #2980b9;
+	cursor: pointer;
+
+}
+
+
+.my_profil-photo {
+
+	width: 150px;
+	height: 150px;
+	background-color: #E2E2E2;
+	margin: 25px 0 50px 20px;
+}
+
+
+
+.my_galery-photo {
+
+	width: 80%;
+	height: 150px;
+	background-color: #E2E2E2;
+	margin: 25px auto 50px auto;
+}
+
+
+
+
+
+
+
