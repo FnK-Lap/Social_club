@@ -47,11 +47,15 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 }
 elseif ($action == 'login') {
 	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+
 		$template = 'home';
 	}else{
 		if (!empty($_POST)) 
 		{
-			$erros = checkUserForm('login');
+			$errors = checkUserForm('login');
 
 			if (!empty($errors)) 
 			{
@@ -59,7 +63,7 @@ elseif ($action == 'login') {
 			}
 			else
 			{
-					$template = "home";
+				$template = "home";
 			}
 		}
 		else  
@@ -68,6 +72,16 @@ elseif ($action == 'login') {
 		}
 	}
 		
+}elseif ($action == 'profil') {
+	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+
+		$template = 'profil';
+	}else{
+		die('Faire la 404');
+	}
 }
 
 

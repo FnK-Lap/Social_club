@@ -13,6 +13,7 @@ $legalActions = array(
 		'home'	=>	'user',
 		'register' => 'user',
 		'login' => 'user',
+		'profil' => 'user',
 	);
 
 
@@ -34,6 +35,7 @@ $errors_no = array(
 		'VPAE' => 'La vérification du password est vide',
 		'VPAD' => 'Les passwords sont différents',
 		'EMAD' => 'Un utilisateur utilise deja cet email',
+		'EMAN' => 'Votre email ou votre password est incorrect',
 	);
 
 

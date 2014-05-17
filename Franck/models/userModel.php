@@ -69,11 +69,13 @@ function checkUserForm($form)
 		$email = $_POST['email'];
 		$pass = $_POST['pass'];
 
-		$result=checkUserExist($email);
+		$result = checkUserExist($email);
 
 		if ($result[0]['password'] == sha1($pass.$salt))
 		{
 			$_SESSION['id_user'] = $result[0]['id'];
+		}else{
+			$errors['email'] = $errors_no['EMAN'];
 		}
 	}
 
