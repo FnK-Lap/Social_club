@@ -8,8 +8,8 @@
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title'>Ma page d'accueil</p></li>
-			    <li><p class='nav-title2'>Mon profil</p></li>
+			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
+			    <li><p class='nav-title2'><a href="index.php?action=profil">Mon profil</a></p></li>
 			    <li><p class='nav-title2'>Mes messages</p></li>
 			</ul>
 		</div>
@@ -18,7 +18,7 @@
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>Lucas Blanqui</p>
+		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>

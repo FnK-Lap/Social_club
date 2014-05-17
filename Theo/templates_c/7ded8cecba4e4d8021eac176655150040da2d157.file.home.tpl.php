@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-16 22:51:46
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 00:24:56
          compiled from "views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1400280465,
+      1 => 1400286292,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_53764aa1b36870_96751885',
+  'variables' => 
+  array (
+    'user' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_53764aa1b36870_96751885')) {function content_53764aa1b36870_96751885($_smarty_tpl) {?><header>
@@ -29,8 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title'>Ma page d'accueil</p></li>
-			    <li><p class='nav-title2'>Mon profil</p></li>
+			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
+			    <li><p class='nav-title2'><a href="index.php?action=profil">Mon profil</a></p></li>
 			    <li><p class='nav-title2'>Mes messages</p></li>
 			</ul>
 		</div>
@@ -39,7 +43,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>Lucas Blanqui</p>
+		<p class='photo-nom'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
+ <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
+</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>

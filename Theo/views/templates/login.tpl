@@ -25,7 +25,7 @@
 	                        <div class='bloc_bodycontent'>
 	                            <div class='bloc_bodycentercontent'>
 	                                <div class='bloc_bodygroup'>
-	                                    <input class="body_bouton" type="password" name='pass' placeholder="Password" style="margin-bottom: 35px;"  value='{$smarty.post.pass|default}'>
+	                                    <input class="body_bouton" type="password" name='pass' placeholder="Password" style="margin-bottom: 35px;" >
 	                                </div>
 	                            </div>
 	                        </div>
