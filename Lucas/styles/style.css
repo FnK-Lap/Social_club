@@ -16,6 +16,8 @@ body {
     src: url('../fonts/Pacifico.ttf');
 }
 
+
+
 /* ----------------------------
 
 			Header
@@ -106,6 +108,17 @@ nav {
 	margin-top: 12px;
 	position: fixed;
 }
+
+.nav-title a {
+
+	color: #333333;
+}
+
+.nav-title2 a {
+
+	color: #7f8c8d;
+}
+
 
 .nav-menu{
 
