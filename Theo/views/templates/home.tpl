@@ -5,6 +5,12 @@
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
+	<div id='deconnexion'>
+		<div class='deconnexion-bloc'>
+			<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+			<p class='deconnexion_bloc-text'><a href='index.php?action=logout'>Déconnexion</a></p>
+		</div>
+	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>

@@ -49,7 +49,6 @@ elseif ($action == 'login') {
 	if ($is_connected == true) {
 
 		$user = getUserInfos($_SESSION['id_user']);
-
 		$Smarty->assign('user', $user);
 		
 		$template = 'home';
@@ -67,7 +66,10 @@ elseif ($action == 'login') {
 			}
 			else
 			{
-				$template = "home";
+				$user = getUserInfos($_SESSION['id_user']);
+				$Smarty->assign('user', $user);
+				
+				$template = 'home';
 			}
 		}
 		else  
@@ -79,6 +81,7 @@ elseif ($action == 'login') {
 }
 
 elseif ($action == 'profil') {
+
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
@@ -90,6 +93,15 @@ elseif ($action == 'profil') {
 	}
 }
 
+elseif ($action == 'logout') {
+	if ($is_connected == true) {
+		$template = 'login';
+		logout();
+	}
+	else{
+		$template = 'login';
+	}
+}
 
 	
 

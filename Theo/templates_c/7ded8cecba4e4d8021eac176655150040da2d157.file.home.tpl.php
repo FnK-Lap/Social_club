@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 00:24:56
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 01:36:13
          compiled from "views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1400286292,
+      1 => 1400290570,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
+	</div>
+	<div id='deconnexion'>
+		<div class='deconnexion-bloc'>
+			<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+			<p class='deconnexion_bloc-text'><a href='index.php?action=logout'>Déconnexion</a></p>
+		</div>
 	</div>
 	<nav>
 		<div class='nav-menu'>

@@ -1,4 +1,30 @@
-<header>
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 01:47:17
+         compiled from "views\templates\profil.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:303105376b444befcc2-15172195%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'bd907474ba1c5e43847ecfbd7dfdef0f9e15d339' => 
+    array (
+      0 => 'views\\templates\\profil.tpl',
+      1 => 1400290555,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '303105376b444befcc2-15172195',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5376b444cabe44_73990640',
+  'variables' => 
+  array (
+    'user' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5376b444cabe44_73990640')) {function content_5376b444cabe44_73990640($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
@@ -26,7 +52,9 @@
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()|capitalize}</p>
+		<p class='photo-nom'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
+</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
@@ -89,4 +117,4 @@
 		<h1 class='title-myprofil'>Ma galerie photo</h1>
 		<div class='my_galery-photo'></div>
 	</div>
-</section>
+</section><?php }} ?>
