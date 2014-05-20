@@ -146,6 +146,11 @@ function checkToken($token, $tokenValidity)
 	return false;
 }
 
+function removeToken($token)
+{
+	
+}
+
 function checkUserExist($email)
 {
 	global $link;
