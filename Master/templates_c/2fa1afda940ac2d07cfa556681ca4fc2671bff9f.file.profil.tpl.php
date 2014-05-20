@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:29:16
+=======
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:24:22
+>>>>>>> FETCH_HEAD
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17585082405376a5703fec78-27001824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
+<<<<<<< HEAD
       1 => 1400592538,
+=======
+      1 => 1400595730,
+>>>>>>> FETCH_HEAD
       2 => 'file',
     ),
   ),
@@ -23,7 +31,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
+<<<<<<< HEAD
 <?php if ($_valid && !is_callable('content_5376a57044b457_35111577')) {function content_5376a57044b457_35111577($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
+=======
+<?php if ($_valid && !is_callable('content_5376a57044b457_35111577')) {function content_5376a57044b457_35111577($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
+>>>>>>> FETCH_HEAD
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -31,12 +43,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
+	<div id='deconnexion'>
+		<a href='index.php?action=logout'>
+			<div class='deconnexion-bloc'>
+				<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+				<p class='deconnexion_bloc-text'>Déconnexion</p>
+			</div>
+		</a>
+	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
 			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title2'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title2'>Mes messages</p></li>
+			    <li><p class='nav-title-selected'><a href="index.php?action=profil">Mon profil</a></p></li>
+			    <li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>
