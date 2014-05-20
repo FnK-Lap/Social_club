@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:29:13
+=======
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:23:56
+>>>>>>> FETCH_HEAD
 =======
 <?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:23:56
 >>>>>>> FETCH_HEAD
@@ -12,7 +16,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     array (
       0 => 'views/templates/home.tpl',
 <<<<<<< HEAD
+<<<<<<< HEAD
       1 => 1400592538,
+=======
+      1 => 1400595726,
+>>>>>>> FETCH_HEAD
 =======
       1 => 1400595726,
 >>>>>>> FETCH_HEAD

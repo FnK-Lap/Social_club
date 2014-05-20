@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:29:16
+=======
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:24:22
+>>>>>>> FETCH_HEAD
 =======
 <?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:24:22
 >>>>>>> FETCH_HEAD
@@ -12,7 +16,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     array (
       0 => 'views/templates/profil.tpl',
 <<<<<<< HEAD
+<<<<<<< HEAD
       1 => 1400592538,
+=======
+      1 => 1400595730,
+>>>>>>> FETCH_HEAD
 =======
       1 => 1400595730,
 >>>>>>> FETCH_HEAD
@@ -32,7 +40,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php if ($_valid && !is_callable('content_5376a57044b457_35111577')) {function content_5376a57044b457_35111577($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
+=======
+<?php if ($_valid && !is_callable('content_5376a57044b457_35111577')) {function content_5376a57044b457_35111577($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
+>>>>>>> FETCH_HEAD
 =======
 <?php if ($_valid && !is_callable('content_5376a57044b457_35111577')) {function content_5376a57044b457_35111577($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
 >>>>>>> FETCH_HEAD
