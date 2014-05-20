@@ -51,7 +51,6 @@ abstract class Table
 	public function save()
 	{
 
-		var_dump($this);
 		// Construction du getter pour la primary_key
 		$pk_getter = 'get_'.$this->primary_key;
 		$nb_fields = count($this->fields);
@@ -104,10 +103,16 @@ abstract class Table
 		}
 	}
 
-	public function hydrate()
+	public function hydrate($key = null)
 	{
-	
-		$pk_getter = 'get_'.$this->primary_key;
+		global $link;
+		if ($key == null) {
+			$pk_getter = 'get_'.$this->primary_key;
+		}else{
+
+			$pk_getter = 'get_'.$key;
+		}
+		
 		$pk_value = $this->$pk_getter();
 		
 
@@ -115,9 +120,15 @@ abstract class Table
 			die(get_called_class().': primary key manquant');
 		}
 
+		if ($key == null) {
 			$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
-			$data = dbFetchAllAssoc($query);
+		}else{
+			$query = "SELECT * FROM `".$this->table_name."` WHERE `".$key."` = '".mysqli_real_escape_string($link, $pk_value)."'";
+		}
+
 			
+			$data = dbFetchAllAssoc($query);
+
 
 			foreach ($this->fields as $field) {
 				$setter = 'set_'.$field['Field'];

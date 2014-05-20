@@ -10,6 +10,8 @@ if ($action == 'home') {
 		
 		$template = 'home';
 	}else{
+		// Debug, envoie de mail d'invitation
+		//sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
 		$template = 'login';
 	}
 	
@@ -18,7 +20,6 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 	$token = $_GET['token'];
 
 	$result = checkToken($token, $tokenValidity);
-
 
 	if ($result != true) {
 		// La personne n'est pas authorise a s'inscrire
@@ -34,8 +35,9 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 
 			$errors = checkUserForm('register');
 			if (empty($errors)) {
-				
+				echo "REMOVE TOKEN";
 				register($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pass'], $_POST['date']);
+				removeToken($token);
 				$template = 'login';
 			}else{
 				$template = 'signin';
