@@ -17,7 +17,7 @@ if ($action == 'home') {
 elseif ($action == 'register' && isset($_GET['token'])) {
 	$token = $_GET['token'];
 
-	$result = checkToken($token);
+	$result = checkToken($token, $tokenValidity);
 
 
 	if ($result != true) {

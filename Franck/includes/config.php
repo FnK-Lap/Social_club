@@ -38,5 +38,11 @@ $errors_no = array(
 		'EMAN' => 'Votre email ou votre password est incorrect',
 	);
 
+$invitationMessage = "Bonjour,\nDieu vous invite à rejoindre son Social Club !\nVeuillez cliquer sur ce lien afin de vous inscrire : \nhttp://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token=";
+
+// Validite du token
+// P = plus
+// Y = year,	M = month,	D = day,	
+$tokenValidity = 'P2D';
 
 ?>
