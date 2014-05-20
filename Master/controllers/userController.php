@@ -10,6 +10,8 @@ if ($action == 'home') {
 		
 		$template = 'home';
 	}else{
+		sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
+		echo "cc";
 		$template = 'login';
 	}
 	
@@ -17,7 +19,7 @@ if ($action == 'home') {
 elseif ($action == 'register' && isset($_GET['token'])) {
 	$token = $_GET['token'];
 
-	$result = checkToken($token);
+	$result = checkToken($token, $tokenValidity);
 
 
 	if ($result != true) {
@@ -85,6 +87,15 @@ elseif ($action == 'login') {
 		$template = 'profil';
 	}else{
 		die('Faire la 404');
+	}
+}
+elseif ($action == 'logout') {
+	if ($is_connected == true) {
+		$template = 'login';
+		logout();
+	}
+	else{
+		$template = 'login';
 	}
 }
 

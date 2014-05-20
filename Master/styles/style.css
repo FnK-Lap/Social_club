@@ -57,6 +57,45 @@ header {
 
 }
 
+.deconnexion-bloc {
+
+	float: right;
+	margin-top: -30px;
+	margin-right: 50px;
+	width: 160px;
+	height: 30px;
+	background-color: #2980b9;
+}
+
+.deconnexion-bloc:hover {
+
+	background-color: #7f8c8d;
+	cursor: pointer;
+}
+
+.deconnexion_bloc-pict {
+
+	width: 14px;
+	height: 14px;
+	margin-top: 8px;
+	margin-left: 15px;
+}
+
+.deconnexion_bloc-text a{
+	color: #FFFFFF;
+}
+
+.deconnexion_bloc-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -18px;
+	margin-left: 5px;
+
+}
+
 nav {
 
 	background: none repeat scroll 0 0 #FFFFFF;
