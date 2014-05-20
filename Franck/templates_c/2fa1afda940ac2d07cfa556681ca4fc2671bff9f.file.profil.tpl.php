@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 02:03:48
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:22:16
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17585082405376a5703fec78-27001824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
-      1 => 1400285026,
+      1 => 1400595730,
       2 => 'file',
     ),
   ),
@@ -31,12 +31,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
+	<div id='deconnexion'>
+		<a href='index.php?action=logout'>
+			<div class='deconnexion-bloc'>
+				<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+				<p class='deconnexion_bloc-text'>Déconnexion</p>
+			</div>
+		</a>
+	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
 			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title2'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title2'>Mes messages</p></li>
+			    <li><p class='nav-title-selected'><a href="index.php?action=profil">Mon profil</a></p></li>
+			    <li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>

@@ -34,6 +34,7 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 
 			$errors = checkUserForm('register');
 			if (empty($errors)) {
+				
 				register($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pass'], $_POST['date']);
 				$template = 'login';
 			}else{
