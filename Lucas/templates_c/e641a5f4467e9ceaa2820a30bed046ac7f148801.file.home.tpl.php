@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 02:25:14
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 15:13:35
          compiled from "views/templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16458554885376464725d105-33045163%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1400286312,
+      1 => 1400591611,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_5376464729e263_38684869',
+  'variables' => 
+  array (
+    'user' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5376464729e263_38684869')) {function content_5376464729e263_38684869($_smarty_tpl) {?><header>
@@ -27,16 +31,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
 	<div id='deconnexion'>
-		<div class='deconnexion-bloc'>
-			<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
-			<p class='deconnexion_bloc-text'><a href=''>Déconnexion</a></p>
-		</div>
+		<a href='index.php?action=logout'>
+			<div class='deconnexion-bloc'>
+				<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+				<p class='deconnexion_bloc-text'>Déconnexion</p>
+			</div>
+		</a>
 	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title'>Ma page d'accueil</p></li>
-			    <li><p class='nav-title2'>Mon profil</p></li>
+			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
+			    <li><p class='nav-title2'><a href="index.php?action=profil">Mon profil</a></p></li>
 			    <li><p class='nav-title2'>Mes messages</p></li>
 			</ul>
 		</div>
@@ -45,7 +51,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>Lucas Blanqui</p>
+		<p class='photo-nom'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
+ <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
+</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>

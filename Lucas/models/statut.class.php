@@ -1,6 +1,6 @@
 <?php
 
-class Statut
+class Statut extends Table
 {
 	private $id;
 	private $id_user;
@@ -31,7 +31,7 @@ class Statut
 		return $this->date;
 	}
 
-	public function get_id()
+	public function get_content()
 	{
 		return $this->content;
 	}

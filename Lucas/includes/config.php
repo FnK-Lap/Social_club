@@ -13,6 +13,8 @@ $legalActions = array(
 		'home'	=>	'user',
 		'register' => 'user',
 		'login' => 'user',
+		'profil' => 'user',
+		'logout' => 'user'
 	);
 
 
@@ -34,7 +36,14 @@ $errors_no = array(
 		'VPAE' => 'La vérification du password est vide',
 		'VPAD' => 'Les passwords sont différents',
 		'EMAD' => 'Un utilisateur utilise deja cet email',
+		'EMAN' => 'Votre email ou votre password est incorrect',
 	);
 
+$invitationMessage = "Bonjour,\nDieu vous invite à rejoindre son Social Club !\nVeuillez cliquer sur ce lien afin de vous inscrire : \nhttp://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token=";
+
+// Validite du token
+// P = plus
+// Y = year,	M = month,	D = day,	
+$tokenValidity = 'P2D';
 
 ?>

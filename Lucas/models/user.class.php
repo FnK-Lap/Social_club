@@ -6,7 +6,6 @@
 
 		private $id;
 		private $id_avatar;
-		private $pseudo;
 		private $prenom;
 		private $nom;
 		private $password;
@@ -14,6 +13,8 @@
 		private $description;
 		private $date_naissance;
 		private $date_inscription;
+
+		private $statuts;
 
 		public function __construct()
 		{
@@ -39,16 +40,6 @@
 		public function set_id_avatar($id_avatar)
 		{
 			$this->id_avatar=$id_avatar;
-		}
-
-		public function get_pseudo()
-		{
-			return $this->pseudo;
-		}
-
-		public function set_pseudo($pseudo)
-		{
-			$this->pseudo=$pseudo;
 		}
 
 		public function get_prenom()
@@ -120,16 +111,6 @@
 		{
 			$this->date_inscription=$date_inscription;
 		}
-		
-
-
-
-
-
-
 	}
-
-
-
 
 ?>

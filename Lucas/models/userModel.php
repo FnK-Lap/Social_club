@@ -3,6 +3,7 @@
 require_once ('models/table.class.php');
 require_once ('models/token.class.php');
 require_once ('models/user.class.php');
+require_once ('models/statut.class.php');
 
 // Check les formulaire Users
 function checkUserForm($form)
@@ -69,10 +70,13 @@ function checkUserForm($form)
 		$email = $_POST['email'];
 		$pass = $_POST['pass'];
 
-		$result=checkUserExist($email);
+		$result = checkUserExist($email);
+
 		if ($result[0]['password'] == sha1($pass.$salt))
 		{
 			$_SESSION['id_user'] = $result[0]['id'];
+		}else{
+			$errors['email'] = $errors_no['EMAN'];
 		}
 	}
 
@@ -114,13 +118,9 @@ function sendInvitation($destinataire, $message, $salt)
 	// Creation et cryptage du token unique
 	$token = sha1(uniqid().$salt);
 	// On envoie le mail
-	$result = mail($destinataire, 'Invitation au Social Club', 
-		'Bonjour, \n
-		Dieu vous invite à rejoindre son Social Club ! \n\n
-		Veuillez cliquer sur ce lien afin de vous inscrire : 
-		http://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token='.$token);
-
+	$result = mail($destinataire, 'Invitation au Social Club', $message.$token, 'From: no-reply@socialclub.fr');
 	// Si le mail est envoye on save le token en BDD
+
 	if ($result == true) {
 		$Token->set_token($token);
 		$Token->set_date(date('Y-m-d H:i:s'));
@@ -129,7 +129,7 @@ function sendInvitation($destinataire, $message, $salt)
 }
 
 // Verifie la validite du token
-function checkToken($token)
+function checkToken($token, $tokenValidity)
 {
 	global $link;
 	$result = dbFetchAllAssoc("SELECT * FROM `tokens` WHERE token = '".mysqli_real_escape_string($link, $token)."'");
@@ -137,7 +137,7 @@ function checkToken($token)
 	if ($result != false) {
 		$date = new DateTime($result[0]['date']);
 		$datelimit = new DateTime($result[0]['date']);
-		$datelimit->add(new DateInterval('P2D'));
+		$datelimit->add(new DateInterval($tokenValidity));
 		if ($datelimit->format('Y-m-d H:i:s') > date('Y-m-d H:i:s')) {
 			return true;
 		}
@@ -155,6 +155,12 @@ function checkUserExist($email)
 	$result = dbFetchAllAssoc($query);
 
 	return $result;
+}
+
+function logout()
+{
+	unset($_SESSION['id_user']);
+	session_destroy();
 }
 
 

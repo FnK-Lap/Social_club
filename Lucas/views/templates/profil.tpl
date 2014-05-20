@@ -5,17 +5,11 @@
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
-	<div id='deconnexion'>
-		<div class='deconnexion-bloc'>
-			<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
-			<p class='deconnexion_bloc-text'><a href=''>Déconnexion</a></p>
-		</div>
-	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title2' style="margin-right: 30px; margin-left: 0px;">Ma page d'accueil</p></li>
-			    <li><p class='nav-title'>Mon profil</p></li>
+			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
+			    <li><p class='nav-title2'><a href="index.php?action=profil">Mon profil</a></p></li>
 			    <li><p class='nav-title2'>Mes messages</p></li>
 			</ul>
 		</div>
@@ -24,7 +18,7 @@
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>Lucas Blanqui</p>
+		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()|capitalize}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>

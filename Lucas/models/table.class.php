@@ -106,8 +106,10 @@ abstract class Table
 
 	public function hydrate()
 	{
+	
 		$pk_getter = 'get_'.$this->primary_key;
 		$pk_value = $this->$pk_getter();
+		
 
 		if (empty($pk_value)) {
 			die(get_called_class().': primary key manquant');
@@ -122,6 +124,7 @@ abstract class Table
 				$fieldName = $field['Field'];
 				$this->$setter($data[0][$fieldName]);
 			}
+		
 	}
 }
 
