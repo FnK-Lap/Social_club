@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 01:36:13
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 14:48:06
          compiled from "views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1400290570,
+      1 => 1400597284,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'user' => 0,
+    'friends' => 0,
+    'friend' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53764aa1b36870_96751885')) {function content_53764aa1b36870_96751885($_smarty_tpl) {?><header>
+<?php if ($_valid && !is_callable('content_53764aa1b36870_96751885')) {function content_53764aa1b36870_96751885($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
@@ -49,29 +52,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
- <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
+		<p class='photo-nom'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
 </p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p>
+		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
+$_smarty_tpl->tpl_vars['friend']->_loop = true;
+?>
 		<div class='friend-user'>
 			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Franck Laypere</p>
+			<p class='friend-user-info'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
+</p>
 		</div>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Theo Tison</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Claudy NZIMBU</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Tom LANGLAIS</p>
-		</div>
+		<?php } ?>
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>

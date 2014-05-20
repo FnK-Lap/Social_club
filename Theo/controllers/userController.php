@@ -6,7 +6,11 @@ if ($action == 'home') {
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
+		$friends = getUserFriends($_SESSION['id_user']);
+
 		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friends',$friends);
 		
 		$template = 'home';
 	}else{
@@ -84,8 +88,12 @@ elseif ($action == 'profil') {
 
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
+		$friends = getUserFriends($_SESSION['id_user']);
 
 		$Smarty->assign('user', $user);
+		
+		$Smarty->assign('friends',$friends);
+
 
 		$template = 'profil';
 	}else{
