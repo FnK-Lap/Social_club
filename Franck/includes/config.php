@@ -14,6 +14,7 @@ $legalActions = array(
 		'register' => 'user',
 		'login' => 'user',
 		'profil' => 'user',
+		'logout' => 'user'
 	);
 
 

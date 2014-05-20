@@ -157,6 +157,12 @@ function checkUserExist($email)
 	return $result;
 }
 
+function logout()
+{
+	unset($_SESSION['id_user']);
+	session_destroy();
+}
+
 
 
 

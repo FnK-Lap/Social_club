@@ -87,6 +87,15 @@ elseif ($action == 'login') {
 		die('Faire la 404');
 	}
 }
+elseif ($action == 'logout') {
+	if ($is_connected == true) {
+		$template = 'login';
+		logout();
+	}
+	else{
+		$template = 'login';
+	}
+}
 
 
 ?>
