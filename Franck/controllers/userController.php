@@ -10,6 +10,8 @@ if ($action == 'home') {
 		
 		$template = 'home';
 	}else{
+		sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
+		echo "cc";
 		$template = 'login';
 	}
 	
