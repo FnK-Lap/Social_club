@@ -15,7 +15,6 @@ if ($action == 'home') {
 		$template = 'home';
 	}else{
 		sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
-		echo "cc";
 		$template = 'login';
 	}
 	
@@ -41,6 +40,7 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 			$errors = checkUserForm('register');
 			if (empty($errors)) {
 				register($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pass'], $_POST['date']);
+				removeToken($token);
 				$template = 'login';
 			}else{
 				$template = 'signin';

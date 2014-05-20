@@ -167,10 +167,20 @@ function checkToken($token, $tokenValidity)
 		$datelimit->add(new DateInterval($tokenValidity));
 		if ($datelimit->format('Y-m-d H:i:s') > date('Y-m-d H:i:s')) {
 			return true;
+		}else{
+			removeToken($token);
 		}
 	}
 
 	return false;
+}
+
+function removeToken($token)
+{
+	$Token = new Token();
+	$Token->set_token($token);
+	$Token->hydrate('token');
+	$Token->delete();
 }
 
 function checkUserExist($email)
