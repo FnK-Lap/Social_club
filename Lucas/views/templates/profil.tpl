@@ -5,12 +5,20 @@
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
+	<div id='deconnexion'>
+		<a href='index.php?action=logout'>
+			<div class='deconnexion-bloc'>
+				<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+				<p class='deconnexion_bloc-text'>Déconnexion</p>
+			</div>
+		</a>
+	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
 			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
-			    <a href="index.php?action=profil"><li><p class='nav-title2'>Mon profil</p></li></a>
-			    <a href="index.php"><li><p class='nav-title2'>Mes messages</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title-selected'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>
@@ -23,22 +31,12 @@
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p>
+		{foreach $friends as $friend}
 		<div class='friend-user'>
 			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Franck Laypere</p>
+			<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
 		</div>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Theo Tison</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Claudy NZIMBU</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Tom LANGLAIS</p>
-		</div>
+		{/foreach}
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>

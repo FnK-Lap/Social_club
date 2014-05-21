@@ -6,12 +6,15 @@ if ($action == 'home') {
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
+		$friends = getUserFriends($_SESSION['id_user']);
+
 		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friends',$friends);
 		
 		$template = 'home';
 	}else{
 		sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
-		echo "cc";
 		$template = 'login';
 	}
 	
@@ -37,6 +40,7 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 			$errors = checkUserForm('register');
 			if (empty($errors)) {
 				register($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['pass'], $_POST['date']);
+				removeToken($token);
 				$template = 'login';
 			}else{
 				$template = 'signin';
@@ -82,7 +86,11 @@ elseif ($action == 'login') {
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
+		$friends = getUserFriends($_SESSION['id_user']);
+
 		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friends',$friends);
 
 		$template = 'profil';
 	}else{
@@ -93,6 +101,34 @@ elseif ($action == 'logout') {
 	if ($is_connected == true) {
 		$template = 'login';
 		logout();
+	}
+	else{
+		$template = 'login';
+	}
+}
+
+elseif ($action == 'message') {
+	if ($is_connected == true) {
+
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friends',$friends);
+
+		$template = 'message';
+	}
+	else{
+		$template = 'login';
+	}
+}
+
+elseif ($action == '404') {
+	if ($is_connected == true) {
+
+		$template = '404';
 	}
 	else{
 		$template = 'login';

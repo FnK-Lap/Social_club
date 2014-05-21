@@ -1,29 +1,32 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-20 16:25:30
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-21 11:20:03
          compiled from "views/templates/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:16458554885376464725d105-33045163%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:425639683537b6990d7dd97-02610794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1400595924,
+      1 => 1400663972,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16458554885376464725d105-33045163',
+  'nocache_hash' => '425639683537b6990d7dd97-02610794',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5376464729e263_38684869',
+  'unifunc' => 'content_537b6990dc4692_87946240',
   'variables' => 
   array (
     'user' => 0,
+    'friends' => 0,
+    'friend' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5376464729e263_38684869')) {function content_5376464729e263_38684869($_smarty_tpl) {?><header>
+<?php if ($_valid && !is_callable('content_537b6990dc4692_87946240')) {function content_537b6990dc4692_87946240($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.capitalize.php';
+?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
@@ -41,9 +44,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
-			    <a href="index.php?action=profil"><li><p class='nav-title2'>Mon profil</p></li></a>
-			    <a href="index.php"><li><p class='nav-title2'>Mes messages</p></li></a>
+			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>
@@ -58,22 +61,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p>
+		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
+$_smarty_tpl->tpl_vars['friend']->_loop = true;
+?>
 		<div class='friend-user'>
 			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Franck Laypere</p>
+			<p class='friend-user-info'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
+</p>
 		</div>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Theo Tison</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Claudy NZIMBU</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Tom LANGLAIS</p>
-		</div>
+		<?php } ?>
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
