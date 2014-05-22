@@ -31,22 +31,14 @@
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Franck Laypere</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Theo Tison</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Claudy NZIMBU</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Tom LANGLAIS</p>
-		</div>
+		{foreach $friends as $friend}
+			<div class='friend-user'>
+				<div class='friend-connected-user'></div>
+				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
+			</div>
+		{foreachelse}
+			<p>Vous n'avez pas d'amis</p>
+		{/foreach}
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>

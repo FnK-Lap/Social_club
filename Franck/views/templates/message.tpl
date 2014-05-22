@@ -1,37 +1,24 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 00:18:38
-         compiled from "views/templates/profile.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:52191000053768ebe837196-64810214%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    '0845e53411952ead6f818dedc82ae762005bca5f' => 
-    array (
-      0 => 'views/templates/profile.tpl',
-      1 => 1400278660,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '52191000053768ebe837196-64810214',
-  'function' => 
-  array (
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_53768ebe87aa59_48921826',
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53768ebe87aa59_48921826')) {function content_53768ebe87aa59_48921826($_smarty_tpl) {?><header>
+<header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
 	<div class='title-status'>
 		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
 	</div>
+	<div id='deconnexion'>
+		<a href='index.php?action=logout'>
+			<div class='deconnexion-bloc'>
+				<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+				<p class='deconnexion_bloc-text'>Déconnexion</p>
+			</div>
+		</a>
+	</div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title2' style="margin-right: 30px; margin-left: 0px;">Ma page d'accueil</p></li>
-			    <li><p class='nav-title'>Mon profil</p></li>
-			    <li><p class='nav-title2'>Mes messages</p></li>
+			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title-selected'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>
@@ -39,27 +26,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'></div>
-		<p class='photo-nom'>Lucas Blanqui</p>
+		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Franck Laypere</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>Theo Tison</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Claudy NZIMBU</p>
-		</div>
-		<div class='friend-user'>
-			<div class='friend-deconnected-user'></div>
-			<p class='friend-user-info'>Tom LANGLAIS</p>
-		</div>
+		{foreach $friends as $friend}
+			<div class='friend-user'>
+				<div class='friend-connected-user'></div>
+				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
+			</div>
+		{foreachelse}
+			<p>Vous n'avez pas d'amis</p>
+		{/foreach}
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
@@ -93,13 +72,34 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 </aside>
 <section>
-	<div id='my-profil'>
-		<h1 class='title-myprofil'>Mon Profil </h1>
-		<div class='my_profil-photo'></div>
+	<div id='list-message'>
+		<div class='list_message-user'>
+			<div class='list_message_user-photo'></div>
+			<p class='list_message_user-name'>Theo Tison</p>
+			<span class='list_message_user_info-new'>1 nouveau message</span>
+		</div>
+		<div class='list_message-user'>
+			<div class='list_message_user-photo'></div>
+			<p class='list_message_user-name'>Franck Lapeyre</p>
+			<span class='list_message_user_info-nonew'>0 nouveau message</span>
+		</div>
+		<div class='list_message-user'>
+			<div class='list_message_user-photo'></div>
+			<p class='list_message_user-name'>Cris James</p>
+			<span class='list_message_user_info-new'>3 nouveau message</span>
+		</div>
 	</div>
-	<div class='body-line'></div>
-	<div id='my-galery'>
-		<h1 class='title-myprofil'>Ma galerie photo</h1>
-		<div class='my_galery-photo'></div>
+	<div id='list-message-bloc'>
+
 	</div>
-</section><?php }} ?>
+	<div id='message-bloc-reponse'>
+		<textarea class='text-area-styled' rows='3'></textarea>
+		<div id='send-message'>
+			<a href='index.php?action=logout'>
+				<div class='send-message-bloc'>
+					<p class='send-message-bloc-text'>Envoyer</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>

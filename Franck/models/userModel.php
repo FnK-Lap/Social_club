@@ -94,6 +94,29 @@ function getUserInfos($id)
 	return $User;
 }
 
+// recupere touts les amis de l'utilisateur
+function getUserFriends($id)
+{
+	$query = 'SELECT id_user1, id_user2 FROM `users_friends` WHERE `id_user1` = "'.$id.'" OR `id_user2` = "'.$id.'"';
+
+	$result = dbFetchAllAssoc($query);
+
+	if ($result != false) {
+		foreach ($result as $key => $value){ //premier tableau resortie de la bdd		
+			foreach ($value as $key => $id_Friend) { // resortir les id en string 
+				if ($id_Friend != $id) {
+					$Friends = new User();
+					$Friends->set_id($id_Friend);
+					$Friends->hydrate();
+					$friends[] = $Friends; // ajout de l'objet $Friends dans le tableau $friends
+				}
+			}
+		}
+		return $friends;	
+	}			
+	
+}
+
 // Enregistre un utilisateur en BDD
 function register($prenom, $nom, $email, $password, $date_naissance)
 {

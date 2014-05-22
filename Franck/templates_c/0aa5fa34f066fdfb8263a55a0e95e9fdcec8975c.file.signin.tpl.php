@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-17 01:00:38
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-22 13:45:11
          compiled from "views/templates/signin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:32050067753768a200d5696-36666348%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1803831620537de347242655-03401440%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '32050067753768a200d5696-36666348',
+  'nocache_hash' => '1803831620537de347242655-03401440',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_53768a201120c2_93735356',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_537de347375773_16450710',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53768a201120c2_93735356')) {function content_53768a201120c2_93735356($_smarty_tpl) {?><header>
+<?php if ($_valid && !is_callable('content_537de347375773_16450710')) {function content_537de347375773_16450710($_smarty_tpl) {?><header>
 	<div id='title-logo-center'>
 		Social<span class='title-color'>Club</span>
 	</div>
