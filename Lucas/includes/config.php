@@ -16,7 +16,8 @@ $legalActions = array(
 		'profil' => 'user',
 		'logout' => 'user',
 		'message' => 'user',
-		'404' => 'user'
+		'404' => 'user',
+		'users' => 'user'
 	);
 
 

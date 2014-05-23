@@ -135,5 +135,23 @@ elseif ($action == '404') {
 	}
 }
 
+elseif ($action == 'users') {
+	if ($is_connected == true) {
+
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friends',$friends);
+
+		$template = 'users';
+	}
+	else{
+		$template = 'login';
+	}
+}
+
 
 ?>

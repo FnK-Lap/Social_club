@@ -616,3 +616,72 @@ section {
 	margin-top: 7px;
 
 }
+
+
+/* ----------------	
+	Page users
+------------------ */
+
+.users_list-bloc {
+
+	margin: 15px 15px 15px 15px;
+	width: 150px;
+	float: left;
+
+}
+.users_list_bloc-photo {
+
+	width: 150px;
+	height: 150px;
+	background-color: #E8E8E8;
+	display: block;
+	margin-bottom: 10px;
+
+}
+
+
+.users_list_bloc-name {
+
+	color: #7f8c8d;
+	font-weight: bold;
+	font-size: 14px;
+	width: 150px;
+
+}
+
+
+
+.users_list_bloc-name:hover {
+
+	color: #2980b9;
+	cursor: pointer;
+
+}
+
+
+.users_list_bloc-buttom {
+
+	width: 150px;
+	height: 30px;
+	background-color: #2980b9;
+	margin-top: 7px;
+
+}
+
+.users_list_bloc-buttom:hover {
+
+	background-color: #7f8c8d;
+	cursor: pointer;
+}
+
+.users_list_bloc-buttom-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 35%;
+	float: left;
+	margin-top: 7px;
+
+}
+
