@@ -1,12 +1,13 @@
 <?php
 
 require_once ('models/userModel.php');
+require_once ('models/statutModel.php');
 
 if ($action == 'home') {
 	if ($is_connected == true) {
 
 		$user = getUserInfos($_SESSION['id_user']);
-
+		// var_dump($user);
 		$friends = getUserFriends($_SESSION['id_user']);
 
 		$Smarty->assign('user', $user);
