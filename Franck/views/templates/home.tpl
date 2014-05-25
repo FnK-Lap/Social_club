@@ -3,7 +3,7 @@
 		Social<span class='title-color'>Club</span>
 	</div>
 	<div class='title-status'>
-		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
+		Votre statut : "{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}" 
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>
@@ -16,9 +16,9 @@
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title-selected'><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title'>Mes messages</p></li>
+			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>

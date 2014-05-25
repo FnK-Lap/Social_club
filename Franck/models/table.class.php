@@ -103,7 +103,7 @@ abstract class Table
 		}
 	}
 
-	public function hydrate($key = null)
+	public function hydrate($key = null, $profondeur = 0)
 	{
 		global $link;
 		if ($key == null) {
@@ -120,21 +120,37 @@ abstract class Table
 			die(get_called_class().': primary key manquant');
 		}
 
+		$date = false;
+		foreach ($this->fields as $field) {
+			if ($field['Field'] == 'date') {
+				$date = true;
+			}
+		}
+
 		if ($key == null) {
-			$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
+			if ($date == true) {
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value)."' ORDER BY `".$this->table_name."`.`date`";
+			}else{
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
+			}
 		}else{
-			$query = "SELECT * FROM `".$this->table_name."` WHERE `".$key."` = '".mysqli_real_escape_string($link, $pk_value)."'";
+			if ($date == true) {
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$key."` = '".mysqli_real_escape_string($link, $pk_value)."' ORDER BY `".$this->table_name."`.`date`";
+			}else{
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$key."` = '".mysqli_real_escape_string($link, $pk_value)."'";
+			}
 		}
 
 			
 			$data = dbFetchAllAssoc($query);
 
-
 			foreach ($this->fields as $field) {
 				$setter = 'set_'.$field['Field'];
 				$fieldName = $field['Field'];
-				$this->$setter($data[0][$fieldName]);
+				$this->$setter($data[$profondeur][$fieldName]);
 			}
+
+		return $data;
 		
 	}
 }
