@@ -3,7 +3,7 @@
 		Social<span class='title-color'>Club</span>
 	</div>
 	<div class='title-status'>
-		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
+		Votre statut : "{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}" 
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>

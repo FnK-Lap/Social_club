@@ -16,9 +16,9 @@
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title-selected'><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title'>Mes messages</p></li>
+			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>

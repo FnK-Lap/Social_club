@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-24 19:33:09
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-24 19:48:31
          compiled from "views/templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1425733260537de39d553436-50652738%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1400952788,
+      1 => 1400953667,
       2 => 'file',
     ),
   ),
@@ -55,9 +55,9 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title-selected'><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title'>Mes messages</p></li>
+			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-22 14:41:30
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-24 19:46:59
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1279235272537de3ed130777-27972838%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
-      1 => 1400762483,
+      1 => 1400953615,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'user' => 0,
+    'statut' => 0,
+    'statutContent' => 0,
     'friends' => 0,
     'friend' => 0,
   ),
@@ -31,7 +33,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		Social<span class='title-color'>Club</span>
 	</div>
 	<div class='title-status'>
-		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
+		Votre statut : "<?php  $_smarty_tpl->tpl_vars['statut'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['statut']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['user']->value->get_statuts(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['statut']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['statut']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['statut']->key => $_smarty_tpl->tpl_vars['statut']->value) {
+$_smarty_tpl->tpl_vars['statut']->_loop = true;
+ $_smarty_tpl->tpl_vars['statut']->iteration++;
+ $_smarty_tpl->tpl_vars['statut']->last = $_smarty_tpl->tpl_vars['statut']->iteration === $_smarty_tpl->tpl_vars['statut']->total;
+?><?php $_smarty_tpl->tpl_vars['statutContent'] = new Smarty_variable($_smarty_tpl->tpl_vars['statut']->value->get_content(), null, 0);?><?php if ($_smarty_tpl->tpl_vars['statut']->last) {?><?php echo $_smarty_tpl->tpl_vars['statutContent']->value;?>
+<?php }?><?php } ?>" 
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>
