@@ -97,27 +97,23 @@ function getUserInfos($id)
 // recupere touts les amis de l'utilisateur
 function getUserFriends($id)
 {
-	
-
 	$query = 'SELECT id_user1, id_user2 FROM `users_friends` WHERE `id_user1` = "'.$id.'" OR `id_user2` = "'.$id.'"';
 
 	$result = dbFetchAllAssoc($query);
 
-	
-	foreach ($result as $key => $value){ //premier tableau resortie de la bdd
-				
-				foreach ($value as $key => $id_Friend) { // resortir les id en string 
-					
-					if ($id_Friend != $id) {
-						$Friends = new User();
-						$Friends->set_id($id_Friend);
-						$Friends->hydrate();
-						$friends[] = $Friends; // ajout de l'objet $Friends dans le tableau $friends
-					}
+	if ($result != false) {
+		foreach ($result as $key => $value){ //premier tableau resortie de la bdd		
+			foreach ($value as $key => $id_Friend) { // resortir les id en string 
+				if ($id_Friend != $id) {
+					$Friends = new User();
+					$Friends->set_id($id_Friend);
+					$Friends->hydrate();
+					$friends[] = $Friends; // ajout de l'objet $Friends dans le tableau $friends
 				}
 			}
-		return $friends;			
-	
+		}
+		return $friends;	
+	}			
 	
 }
 
@@ -182,6 +178,7 @@ function removeToken($token)
 	$Token->hydrate('token');
 	$Token->delete();
 }
+
 
 function checkUserExist($email)
 {

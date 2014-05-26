@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-25 23:22:11
-         compiled from "views/templates/message.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1722059208537bd47c13f984-23249046%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-26 13:48:07
+         compiled from "views/templates/invite.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:15635872985383270e0a5c10-74034868%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '8be31a25383fc02da49f7414103103aa67bb7e54' => 
+    'ff57c4b5a5b628cbc64bfe6ffb328ed54df5a78a' => 
     array (
-      0 => 'views/templates/message.tpl',
-      1 => 1401052917,
+      0 => 'views/templates/invite.tpl',
+      1 => 1401104884,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1722059208537bd47c13f984-23249046',
+  'nocache_hash' => '15635872985383270e0a5c10-74034868',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_537bd47c2a28e4_41037008',
+  'unifunc' => 'content_5383270e1f7899_72561566',
   'variables' => 
   array (
     'user' => 0,
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_537bd47c2a28e4_41037008')) {function content_537bd47c2a28e4_41037008($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5383270e1f7899_72561566')) {function content_5383270e1f7899_72561566($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -46,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<ul>
 			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
 			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
-			    <a href="index.php?action=message"><li><p class='nav-title-selected'>Mes messages</p></li>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>
@@ -106,35 +106,9 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
 	</div>
 </aside>
 <section>
-	<div id='list-message'>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Theo Tison</p>
-			<span class='list_message_user_info-new'>1 nouveau message</span>
-		</div>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Franck Lapeyre</p>
-			<span class='list_message_user_info-nonew'>0 nouveau message</span>
-		</div>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Cris James</p>
-			<span class='list_message_user_info-new'>3 nouveau message</span>
-		</div>
-	</div>
-	<div id='list-message-bloc'>
-
-	</div>
-	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'>
-		</textarea>
-		<div id='send-message'>
-			<a href='index.php?action=logout'>
-				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
-				</div>
-			</a>
-		</div>
-	</div>
+	<form action="index.php" method="post">
+		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
+		<input type='submit' class='invite_bloc-buttom'>
+		</input>
+	</form>
 </section><?php }} ?>

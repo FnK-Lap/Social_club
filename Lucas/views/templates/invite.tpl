@@ -18,7 +18,7 @@
 			<ul>
 			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
 			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
-			    <a href="index.php?action=message"><li><p class='nav-title-selected'>Mes messages</p></li>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>
@@ -70,35 +70,9 @@
 	</div>
 </aside>
 <section>
-	<div id='list-message'>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Theo Tison</p>
-			<span class='list_message_user_info-new'>1 nouveau message</span>
-		</div>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Franck Lapeyre</p>
-			<span class='list_message_user_info-nonew'>0 nouveau message</span>
-		</div>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Cris James</p>
-			<span class='list_message_user_info-new'>3 nouveau message</span>
-		</div>
-	</div>
-	<div id='list-message-bloc'>
-
-	</div>
-	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'>
-		</textarea>
-		<div id='send-message'>
-			<a href='index.php?action=logout'>
-				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
-				</div>
-			</a>
-		</div>
-	</div>
+	<form action="index.php" method="post">
+		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
+		<input type='submit' class='invite_bloc-buttom'>
+		</input>
+	</form>
 </section>
