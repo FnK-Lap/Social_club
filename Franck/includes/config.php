@@ -13,6 +13,7 @@ $legalActions = array(
 		'login' => 'user',
 		'profil' => 'user',
 		'logout' => 'user',
+		'message' => 'message'
 	);
 
 

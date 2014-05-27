@@ -2,8 +2,8 @@
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
-	<div class='title-status'>
-		Votre statut : "{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}" 
+	<div id='statut' class='title-status'>
+		Votre statut : <input type='text' class='hidden' id='statut-input'><span id='statut-span'>"{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}"</span>
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>
@@ -25,8 +25,8 @@
 </header>
 <aside>
 	<div id='photo_bloc'>
-		<div class='photo_profil'></div>
-		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
+		<div class='photo_profil'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		<p class='photo-nom'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
@@ -73,21 +73,13 @@
 </aside>
 <section>
 	<div id='list-message'>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Theo Tison</p>
-			<span class='list_message_user_info-new'>1 nouveau message</span>
-		</div>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Franck Lapeyre</p>
-			<span class='list_message_user_info-nonew'>0 nouveau message</span>
-		</div>
-		<div class='list_message-user'>
-			<div class='list_message_user-photo'></div>
-			<p class='list_message_user-name'>Cris James</p>
-			<span class='list_message_user_info-new'>3 nouveau message</span>
-		</div>
+		{foreach $userConversations as $key => $userConversation}
+			<div class='list_message-user'>
+				<div class='list_message_user-photo'></div>
+				<p class='list_message_user-name'>{foreach $allUsers as $allUser}{if $key == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</p>
+				<span class='list_message_user_info-new'>1 nouveau message</span>
+			</div>
+		{/foreach}
 	</div>
 	<div id='list-message-bloc'>
 

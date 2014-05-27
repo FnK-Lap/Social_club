@@ -69,6 +69,20 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 			}
 		}
 	}else{
+		$user = getUserInfos($_SESSION['id_user']);
+		
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+		
 		$template = 'home';
 	}
 	

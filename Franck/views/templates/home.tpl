@@ -26,7 +26,7 @@
 <aside>
 	<div id='photo_bloc'>
 		<div class='photo_profil'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
-		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
+		<p class='photo-nom'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
