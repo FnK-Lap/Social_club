@@ -122,7 +122,9 @@ function getUserFriends($id)
 			}
 		}
 		return $friends;	
-	}			
+	}else{
+		return false;
+	}		
 	
 }
 
