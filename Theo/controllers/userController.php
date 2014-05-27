@@ -71,7 +71,12 @@ elseif ($action == 'login') {
 			else
 			{
 				$user = getUserInfos($_SESSION['id_user']);
+
+				$friends = getUserFriends($_SESSION['id_user']);
+
 				$Smarty->assign('user', $user);
+				
+				$Smarty->assign('friends',$friends);
 				
 				$template = 'home';
 			}
