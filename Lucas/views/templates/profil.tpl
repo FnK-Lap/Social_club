@@ -1,3 +1,4 @@
+
 <header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -111,6 +112,19 @@
 	<div class='body-line'></div>
 	<div id='my-status'>
 		<h1 class='title-myprofil'>Mes Derniers status</h1>
+		{foreach $user->get_statuts() as $statuts}
+			<div class='last_status-user'>
+				<div class='last_status_user-info'>
+					<div class='last_status_user_info-miniavatar'></div>
+					<h2 class='last_status_user_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
+					<p class='last_status_user_info-date'>{$statuts->get_date()|date_format}</p>
+					<div class='clear'></div>
+				</div>
+				<div class='last_status_user-content'>
+					{$statuts->get_content()}
+				</div>
+			</div>
+		{/foreach}
 	</div>
 	<div class='body-line'></div>
 	<div id='my-friendslist'>

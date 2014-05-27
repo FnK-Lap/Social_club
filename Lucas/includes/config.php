@@ -12,6 +12,7 @@ $legalActions = array(
 		'register' => 'user',
 		'login' => 'user',
 		'profil' => 'user',
+		'profillite' => 'user',
 		'logout' => 'user',
 		'users' => 'user',
 		'message' => 'message',

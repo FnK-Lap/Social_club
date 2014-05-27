@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 19:06:30
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 00:39:09
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1705675009537b699327a298-88362251%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
-      1 => 1401210332,
+      1 => 1401230348,
       2 => 'file',
     ),
   ),
@@ -25,11 +25,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
+    'statuts' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_537b6993323bb5_32272218')) {function content_537b6993323bb5_32272218($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.capitalize.php';
-?><header>
+if (!is_callable('smarty_modifier_date_format')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.date_format.php';
+?>
+<header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
@@ -166,6 +169,27 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 	<div class='body-line'></div>
 	<div id='my-status'>
 		<h1 class='title-myprofil'>Mes Derniers status</h1>
+		<?php  $_smarty_tpl->tpl_vars['statuts'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['statuts']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['user']->value->get_statuts(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['statuts']->key => $_smarty_tpl->tpl_vars['statuts']->value) {
+$_smarty_tpl->tpl_vars['statuts']->_loop = true;
+?>
+			<div class='last_status-user'>
+				<div class='last_status_user-info'>
+					<div class='last_status_user_info-miniavatar'></div>
+					<h2 class='last_status_user_info-name'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
+</h2>
+					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['statuts']->value->get_date());?>
+</p>
+					<div class='clear'></div>
+				</div>
+				<div class='last_status_user-content'>
+					<?php echo $_smarty_tpl->tpl_vars['statuts']->value->get_content();?>
+
+				</div>
+			</div>
+		<?php } ?>
 	</div>
 	<div class='body-line'></div>
 	<div id='my-friendslist'>
