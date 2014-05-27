@@ -47,32 +47,14 @@
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
-		<p class='title-aside'>Mes derniers messages</p>
+		<p class='title-aside'>Derniers statuts</p>
 		<div class='last_message'>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
+			{section name=friendsStatut loop=$friendsStatuts step=-1}
+				<div class='last_message-user'>
+					<p class='last_message-user-info'>{foreach $allUsers as $allUser}{if $friendsStatuts[friendsStatut]->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}<span class='last_message-date'> {$friendsStatuts[friendsStatut]->get_date()|date_format}</span></p>
+					<div class='last_message-content'>"{$friendsStatuts[friendsStatut]->get_content()}"</div>
+				</div>
+			{/section}
 		</div>
 	</div>
 </aside>
@@ -81,10 +63,10 @@
 		<h1 class='title-myprofil'>Mon Profil </h1>
 		<div class='my_profil-photo'></div>
 		<div class='my_profil-info'>
-			<h2 class='my_profil_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
-			<span class='my_profil_info-date'>{$user->get_date_naissance()}</span>
+			<h2 class='my_profil_info-name'>{$profil->get_prenom()|capitalize} {$profil->get_nom()|capitalize}</h2>
+			<span class='my_profil_info-date'>{$profil->get_date_naissance()}</span>
 			<h3 class='title-my_profil_info_description'>Ma description</h3>
-			<span class='my_profil_info-description'>{$user->get_description()}</span>
+			<span class='my_profil_info-description'>{$profil->get_description()}</span>
 		</div>
 	</div>
 	<div class='body-line'></div>
@@ -115,10 +97,10 @@
 	<div class='body-line'></div>
 	<div id='my-friendslist'>
 		<h1 class='title-myprofil'>Mes Amis</h1>
-		{foreach $friends as $friend}
+		{foreach $profilFriends as $profilFriend}
 		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</center></span>
+			<div class='users_list_bloc-photo'> <img src="{$profilAvatar = $profilFriend->get_avatar()}{$profilAvatar->get_photo()}" alt='avatar utilisateur'></div>
+			<span class='users_list_bloc-name'><center>{$profilFriend->get_prenom()|capitalize} {$profilFriend->get_nom()|capitalize}</center></span>
 		</div>
 		{/foreach}
 	</div>

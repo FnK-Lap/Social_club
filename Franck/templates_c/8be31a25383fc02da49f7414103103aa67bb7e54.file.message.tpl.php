@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 22:43:05
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 00:56:30
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401223307,
+      1 => 1401231365,
       2 => 'file',
     ),
   ),
@@ -25,15 +25,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
-    'userConversations' => 0,
-    'key' => 0,
+    'friendsStatuts' => 0,
     'allUsers' => 0,
     'allUser' => 0,
+    'userConversations' => 0,
+    'key' => 0,
     'userConversation' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_537de1a3152893_52398603')) {function content_537de1a3152893_52398603($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Franck/libs/smarty/plugins/modifier.capitalize.php';
+if (!is_callable('smarty_modifier_date_format')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Franck/libs/smarty/plugins/modifier.date_format.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -103,32 +105,45 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
-		<p class='title-aside'>Mes derniers messages</p>
+		<p class='title-aside'>Derniers statuts</p>
 		<div class='last_message'>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
-			<div class='last_message-user'>
-				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
-				<div class='last_message-content'>" Ce soir, je fini l'ORM du projet et apres on ce rejoind sur Skype ?"</div>
-			</div>
+			<?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['name'] = 'friendsStatut';
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['friendsStatuts']->value) ? count($_loop) : max(0, (int) $_loop); unset($_loop);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'] = ((int) -1) == 0 ? 1 : (int) -1;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['show'] = true;
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['max'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['loop'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['start'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'] > 0 ? 0 : $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['loop']-1;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['show']) {
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['total'] = min(ceil(($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'] > 0 ? $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['loop'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['start'] : $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['start']+1)/abs($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'])), $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['max']);
+    if ($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['total'] == 0)
+        $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['show'] = false;
+} else
+    $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['total'] = 0;
+if ($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['show']):
+
+            for ($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['index'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['start'], $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['iteration'] = 1;
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['iteration'] <= $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['total'];
+                 $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['index'] += $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'], $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['iteration']++):
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['rownum'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['iteration'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['index_prev'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['index'] - $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['index_next'] = $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['index'] + $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['step'];
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['iteration'] == 1);
+$_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['friendsStatut']['total']);
+?>
+				<div class='last_message-user'>
+					<p class='last_message-user-info'><?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['allUser']->key => $_smarty_tpl->tpl_vars['allUser']->value) {
+$_smarty_tpl->tpl_vars['allUser']->_loop = true;
+?><?php if ($_smarty_tpl->tpl_vars['friendsStatuts']->value[$_smarty_tpl->getVariable('smarty')->value['section']['friendsStatut']['index']]->get_id_user()==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
+<?php }?><?php } ?><span class='last_message-date'> <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatuts']->value[$_smarty_tpl->getVariable('smarty')->value['section']['friendsStatut']['index']]->get_date());?>
+</span></p>
+					<div class='last_message-content'>"<?php echo $_smarty_tpl->tpl_vars['friendsStatuts']->value[$_smarty_tpl->getVariable('smarty')->value['section']['friendsStatut']['index']]->get_content();?>
+"</div>
+				</div>
+			<?php endfor; endif; ?>
 		</div>
 	</div>
 </aside>

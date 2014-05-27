@@ -143,11 +143,30 @@ elseif ($action == 'profil') {
 
 		$friends = getUserFriends($_SESSION['id_user']);
 
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+
+		if (!empty($_GET['id'])) {
+			if (checkIfFriend($_SESSION['id_user'], $_GET['id'])) {
+				$template = 'profil';
+			}else{
+				die('profil-lite');
+				$template = 'profil-lite';
+			}
+			$profil = getUserInfos($_GET['id']);
+			$profilFriends = getUserFriends($_GET['id']);
+		}else{
+			$profil = getUserInfos($_SESSION['id_user']);
+			$profilFriends = getUserFriends($_SESSION['id_user']);
+		}
 		$Smarty->assign('user', $user);
-
+		$Smarty->assign('profil', $profil);
 		$Smarty->assign('friends',$friends);
-
-		$template = 'profil';
+		$Smarty->assign('profilFriends',$profilFriends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+		
 	}else{
 		$template = '404';
 	}

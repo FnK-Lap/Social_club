@@ -62,6 +62,7 @@ if ($action = 'message') {
 	else{
 		require_once ('models/userModel.php');
 		require_once ('models/messageModel.php');
+		require_once ('models/statutModel.php');
 
 		require_once ('models/table.class.php');
 		require_once ('models/user.class.php');
@@ -73,14 +74,18 @@ if ($action = 'message') {
 
 		$friends = getUserFriends($_SESSION['id_user']);
 
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
 		$userConversations = userConversations($_SESSION['id_user']);
 
 		$allUsers = getAllUsers();
 
 		$Smarty->assign('user', $user);
 		$Smarty->assign('friends', $friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
 		$Smarty->assign('userConversations', $userConversations);
 		$Smarty->assign('allUsers', $allUsers);
+		
 
 		$template = 'message';
 	}

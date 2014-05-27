@@ -51,7 +51,7 @@
 		<div class='last_message'>
 			{section name=friendsStatut loop=$friendsStatuts step=-1}
 				<div class='last_message-user'>
-					<p class='last_message-user-info'>{foreach $allUsers as $allUser}{if $friendsStatuts[friendsStatut]->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}<span class='last_message-date'> {$friendsStatuts[friendsStatut]->get_date()|date_format}</span></p>
+					<a href="index.php?action=profil&amp;id={$friendsStatuts[friendsStatut]->get_id_user()}"><p class='last_message-user-info'>{foreach $allUsers as $allUser}{if $friendsStatuts[friendsStatut]->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}<span class='last_message-date'> {$friendsStatuts[friendsStatut]->get_date()|date_format}</span></p></a>
 					<div class='last_message-content'>"{$friendsStatuts[friendsStatut]->get_content()}"</div>
 				</div>
 			{/section}
@@ -70,7 +70,7 @@
 			<div class='last_status-user'>
 				<div class='last_status_user-info'>
 					<div class='last_status_user_info-miniavatar'></div>
-					<h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatuts[friendsStatut]->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2>
+					<a href="index.php?action=profil&amp;id={$friendsStatuts[friendsStatut]->get_id_user()}"><h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatuts[friendsStatut]->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2></a>
 					<p class='last_status_user_info-date'>{$friendsStatuts[friendsStatut]->get_date()|date_format}</p>
 				</div>
 				<div class='last_status_user-content'>
