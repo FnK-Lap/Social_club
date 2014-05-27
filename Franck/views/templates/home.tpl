@@ -35,7 +35,7 @@
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
-		<p class='title-aside'>Mes amis</p>
+		<p class='title-aside'>Mes amis</p><a href="index.php?action=users"><div class='photo-plusfriends'></div></a>
 		{foreach $friends as $friend}
 			<div class='friend-user'>
 				<div class='friend-connected-user'></div>

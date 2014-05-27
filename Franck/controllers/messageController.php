@@ -19,7 +19,7 @@ if ($action = 'message') {
 
 	$allUsers = getAllUsers();
 
-	var_dump($userConversations);
+	
 
 	$Smarty->assign('user', $user);
 	$Smarty->assign('friends', $friends);
