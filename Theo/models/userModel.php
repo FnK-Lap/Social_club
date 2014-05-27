@@ -1,8 +1,5 @@
 <?php
 
-require_once ('models/table.class.php');
-require_once ('models/token.class.php');
-require_once ('models/user.class.php');
 
 // Check les formulaire Users
 function checkUserForm($form)
@@ -70,14 +67,11 @@ function checkUserForm($form)
 		$pass = $_POST['pass'];
 
 		$result = checkUserExist($email);
-		
-		
+
 		if ($result[0]['password'] == sha1($pass.$salt))
 		{
 			$_SESSION['id_user'] = $result[0]['id'];
-		}
-		else{
-
+		}else{
 			$errors['email'] = $errors_no['EMAN'];
 		}
 	}
@@ -85,6 +79,19 @@ function checkUserForm($form)
 	return $errors;
 }
 
+function getAllUsers()
+{
+	$users = array();
+	$query = 'SELECT * FROM `users`';
+	$result = dbFetchAllAssoc($query);
+	foreach ($result as $key => $user) {
+		$users[$key] = new User();
+		$users[$key]->set_id($user['id']);
+		$users[$key]->hydrate();
+	}
+
+	return $users;
+}
 
 // Recupere toute les infos de l'utilisateur
 function getUserInfos($id)
@@ -92,35 +99,30 @@ function getUserInfos($id)
 	$User = new User();
 	$User->set_id($id);
 	$User->hydrate();
-	
+
 	return $User;
 }
-
 
 // recupere touts les amis de l'utilisateur
 function getUserFriends($id)
 {
-	
-
 	$query = 'SELECT id_user1, id_user2 FROM `users_friends` WHERE `id_user1` = "'.$id.'" OR `id_user2` = "'.$id.'"';
 
 	$result = dbFetchAllAssoc($query);
 
-	
-	foreach ($result as $key => $value){ //premier tableau resortie de la bdd
-				
-				foreach ($value as $key => $id_Friend) { // resortir les id en string 
-					
-					if ($id_Friend != $id) {
-						$Friends = new User();
-						$Friends->set_id($id_Friend);
-						$Friends->hydrate();
-						$friends[] = $Friends; // ajout de l'objet $Friends dans le tableau $friends
-					}
+	if ($result != false) {
+		foreach ($result as $key => $value){ //premier tableau resortie de la bdd		
+			foreach ($value as $key => $id_Friend) { // resortir les id en string 
+				if ($id_Friend != $id) {
+					$Friends = new User();
+					$Friends->set_id($id_Friend);
+					$Friends->hydrate();
+					$friends[] = $Friends; // ajout de l'objet $Friends dans le tableau $friends
 				}
 			}
-		return $friends;			
-	
+		}
+		return $friends;	
+	}			
 	
 }
 
@@ -148,13 +150,9 @@ function sendInvitation($destinataire, $message, $salt)
 	// Creation et cryptage du token unique
 	$token = sha1(uniqid().$salt);
 	// On envoie le mail
-	$result = mail($destinataire, 'Invitation au Social Club', 
-		'Bonjour, \n
-		Dieu vous invite à rejoindre son Social Club ! \n\n
-		Veuillez cliquer sur ce lien afin de vous inscrire : 
-		http://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token='.$token);
-
+	$result = mail($destinataire, 'Invitation au Social Club', $message.$token, 'From: no-reply@socialclub.fr');
 	// Si le mail est envoye on save le token en BDD
+
 	if ($result == true) {
 		$Token->set_token($token);
 		$Token->set_date(date('Y-m-d H:i:s'));
@@ -163,7 +161,7 @@ function sendInvitation($destinataire, $message, $salt)
 }
 
 // Verifie la validite du token
-function checkToken($token)
+function checkToken($token, $tokenValidity)
 {
 	global $link;
 	$result = dbFetchAllAssoc("SELECT * FROM `tokens` WHERE token = '".mysqli_real_escape_string($link, $token)."'");
@@ -171,14 +169,25 @@ function checkToken($token)
 	if ($result != false) {
 		$date = new DateTime($result[0]['date']);
 		$datelimit = new DateTime($result[0]['date']);
-		$datelimit->add(new DateInterval('P2D'));
+		$datelimit->add(new DateInterval($tokenValidity));
 		if ($datelimit->format('Y-m-d H:i:s') > date('Y-m-d H:i:s')) {
 			return true;
+		}else{
+			removeToken($token);
 		}
 	}
 
 	return false;
 }
+
+function removeToken($token)
+{
+	$Token = new Token();
+	$Token->set_token($token);
+	$Token->hydrate('token');
+	$Token->delete();
+}
+
 
 function checkUserExist($email)
 {
@@ -196,6 +205,10 @@ function logout()
 	unset($_SESSION['id_user']);
 	session_destroy();
 }
+
+
+
+
 
 
 ?>

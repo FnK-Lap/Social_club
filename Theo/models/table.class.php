@@ -51,7 +51,6 @@ abstract class Table
 	public function save()
 	{
 
-		var_dump($this);
 		// Construction du getter pour la primary_key
 		$pk_getter = 'get_'.$this->primary_key;
 		$nb_fields = count($this->fields);
@@ -100,28 +99,56 @@ abstract class Table
 			$last_id = last_insert_id();
 			$pk_setter = "set_".$this->primary_key;
 			$this->$pk_setter($last_id);
-			echo $last_id;
 		}
 	}
 
-	public function hydrate()
+	public function hydrate($key = null, $profondeur = 0)
 	{
-		$pk_getter = 'get_'.$this->primary_key;
+		global $link;
+		if ($key == null) {
+			$pk_getter = 'get_'.$this->primary_key;
+		}else{
+			$pk_getter = 'get_'.$key;
+		}
+		
 		$pk_value = $this->$pk_getter();
 
 		if (empty($pk_value)) {
 			die(get_called_class().': primary key manquant');
 		}
 
-			$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
-			$data = dbFetchAllAssoc($query);
+		$date = false;
+		foreach ($this->fields as $field) {
+			if ($field['Field'] == 'date') {
+				$date = true;
+			}
+		}
+
+		if ($key == null) {
+			if ($date == true) {
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value)." ORDER BY `".$this->table_name."`.`date`";
+			}else{
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
+			}
+		}else{
+			if ($date == true) {
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$key."` = '".mysqli_real_escape_string($link, $pk_value)."' ORDER BY `".$this->table_name."`.`date`";
+			}else{
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$key."` = '".mysqli_real_escape_string($link, $pk_value)."'";
+			}
+		}
+
 			
+			$data = dbFetchAllAssoc($query);
 
 			foreach ($this->fields as $field) {
 				$setter = 'set_'.$field['Field'];
 				$fieldName = $field['Field'];
-				$this->$setter($data[0][$fieldName]);
+				$this->$setter($data[$profondeur][$fieldName]);
 			}
+
+		return $data;
+		
 	}
 }
 
