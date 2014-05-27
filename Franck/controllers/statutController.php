@@ -11,6 +11,7 @@ if ($_POST['action'] == 'new_statut') {
 
 	// Models
 	require_once ('../models/statutModel.php');
+	require_once ('../models/userModel.php');
 
 	// ORM
 	require_once ('../models/table.class.php');
