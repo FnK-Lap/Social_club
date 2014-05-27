@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 14:47:50
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 16:27:21
          compiled from "views\templates\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:248715384bae0e563f1-15730995%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1401202067,
+      1 => 1401208039,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3064753764aa1a9fef4-87272335',
+  'nocache_hash' => '248715384bae0e563f1-15730995',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_53764aa1b36870_96751885',
+  'unifunc' => 'content_5384bae0f37454_13140586',
   'variables' => 
   array (
     'user' => 0,
@@ -32,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53764aa1b36870_96751885')) {function content_53764aa1b36870_96751885($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5384bae0f37454_13140586')) {function content_5384bae0f37454_13140586($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.date_format.php';
 ?><header>
 	<div id='title-logo'>
@@ -58,6 +58,11 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 			</div>
 		</a>
 	</div>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<div id="light" class="white_content">
+		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+	</div>
+	<div id="fade" class="black_overlay" ></div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
@@ -72,8 +77,8 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 	<div id='photo_bloc'>
 		<div class='photo_profil'><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
 " alt='Avatar utilisateur'></div>
-		<p class='photo-nom'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
- <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
+		<p class='photo-nom'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
 </p>
 	</div>
 	<div class='aside-line'></div>
@@ -150,7 +155,7 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 ?><?php if ($_smarty_tpl->tpl_vars['friendsStatut']->value->get_id_user()==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
 <?php }?><?php } ?></h2>
-					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date());?>
+					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date(),'%Y/%m/%d');?>
 </p>
 				</div>
 				<div class='last_status_user-content'>

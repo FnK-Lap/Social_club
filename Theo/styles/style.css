@@ -16,6 +16,9 @@ body {
     src: url('../fonts/Pacifico.ttf');
 }
 
+.hidden{display: none;}
+.visible{display: block;}
+
 /* ----------------------------
 
 			Header
@@ -29,14 +32,6 @@ header {
     height: 50px;
 	width: 100%;
 	position: fixed;
-
-}
-
-#title-logo {
-
-
-	padding: 10px 0 1px 70px;
-
 
 }
 
@@ -55,6 +50,13 @@ header {
 
 }
 
+#title-logo {
+
+
+	padding: 10px 0 1px 70px;
+
+
+}
 
 .title-color {
 
@@ -169,6 +171,54 @@ a {
 	text-decoration: none;
 }
 
+.black_overlay {
+
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 1200px;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+
+.white_content {
+
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 300px;
+	padding: 16px;
+	border: 5px solid gray;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+
+}
+
+.textright {
+
+	float: right;
+
+}
+
+.plus-info {
+
+	float: right;
+	background: url("../images/plus.png");
+	width: 16px;
+	height: 16px;
+	margin-top: -22px;
+	margin-right: 20px;
+
+}
+
 /* ----------------------------
 
 			Aside
@@ -189,7 +239,7 @@ aside {
 
 .photo_profil {
 
-	background: url('../images/avatar-vide.jpg');
+	background: url('');
 	width: 165px;
 	height: 165px;
 	background-color: #E8E8E8;
@@ -456,13 +506,17 @@ section {
 }
 
 
-
-
-
-
 /* ----------------	
 	Page Profile  
 ------------------ */
+
+#my-profil {
+
+	width: 100%;
+	height: 300px;
+
+
+}
 
 .title-myprofil {
 
@@ -479,6 +533,14 @@ section {
 
 }
 
+.title-my_profil_info_description {
+
+	font-family: FontStatut;
+	color: #7f8c8d;
+	margin-top: 10px;
+
+}
+
 
 .my_profil-photo {
 
@@ -486,17 +548,72 @@ section {
 	height: 150px;
 	background-color: #E2E2E2;
 	margin: 25px 0 50px 20px;
+	float: left;
 }
 
+.my_profil-info {
 
+	float: left;
+	margin-left: 50px;
+	margin-top: 25px;
+}
+
+.my_profil_info-date {
+
+	font-size: 12px;
+	font-style: italic;
+	color: #7f8c8d;
+	font-weight: bold;
+	padding-top: 15px;
+
+}
+
+#my-galery {
+
+	width: 100%;
+	height: 500px;
+
+}
+
+.from-myprofil {
+
+	margin-top: -35px;
+	margin-bottom: 15px;
+	margin-left: 50%;
+}
+
+.btn_upload {
+
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 1px;
+  font-family: Arial;
+  color: #333333;
+  font-size: 12px;
+  background: #ffffff;
+  padding: 9px 13px 8px 13px;
+  border: solid #CCCCCC 1px;
+  text-decoration: none;
+}
+
+.btn_upload:hover {
+  
+  border-color: #ADADAD;
+  background: #EBEBEB;
+  text-decoration: none;
+
+}
 
 .my_galery-photo {
 
-	width: 80%;
+	width: 150px;
 	height: 150px;
+	float: left;
 	background-color: #E2E2E2;
-	margin: 25px auto 50px auto;
+	margin: 25px 0 50px 25px;
+
 }
+
 
 
 /* ----------------	
@@ -644,7 +761,6 @@ section {
 
 }
 
-
 /* ----------------	
 	Page users
 ------------------ */
@@ -734,4 +850,7 @@ section {
 	background-color: #7f8c8d;
 	cursor: pointer;
 }
+
+
+
 

@@ -20,7 +20,7 @@ function blurStatut(e)
 	  data: {action: 'new_statut', statut: statutContent},
 	  success: function(response){
 	  	if (response != false) {
-	  		//document.getElementById('statut-span').innerHTML = '"'+response+'"';
+	  		document.getElementById('statut-span').innerHTML = '"'+response+'"';
 	  	};
 	  	document.getElementById('statut-input').className = 'hidden';
 	  	document.getElementById('statut-span').className = '';

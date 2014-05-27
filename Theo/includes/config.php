@@ -1,7 +1,5 @@
 <?php
 
-require_once ('tools/dbTools.php');
-
 $dbConfig = array(
 		'host' => 'localhost',
 		'user' => 'root',
@@ -15,7 +13,7 @@ $legalActions = array(
 		'login' => 'user',
 		'profil' => 'user',
 		'logout' => 'user',
-
+		'message' => 'message'
 	);
 
 
@@ -48,6 +46,5 @@ $invitationMessage = "Bonjour,\nDieu vous invite à rejoindre son Social Club !\
 // P = plus
 // Y = year,	M = month,	D = day,	
 $tokenValidity = 'P2D';
-
 
 ?>
