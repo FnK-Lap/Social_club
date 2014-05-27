@@ -93,9 +93,14 @@ elseif ($action == 'login') {
 
 		$friends = getUserFriends($_SESSION['id_user']);
 
-		$Smarty->assign('user', $user);
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+		$allUsers = getAllUsers();
+
+		$Smarty->assign('user', $user);
 		$Smarty->assign('friends',$friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
 
 		$template = 'home';
 	}else{
@@ -113,9 +118,14 @@ elseif ($action == 'login') {
 
 				$friends = getUserFriends($_SESSION['id_user']);
 
-				$Smarty->assign('user', $user);
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+				$allUsers = getAllUsers();
+
+				$Smarty->assign('user', $user);
 				$Smarty->assign('friends',$friends);
+				$Smarty->assign('friendsStatuts', $friendsStatuts);
+				$Smarty->assign('allUsers', $allUsers);
 
 				$template = 'home';
 			}
