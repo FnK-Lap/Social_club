@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:56:14
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 20:28:35
          compiled from "views\templates\users.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:304785384c931852cb7-87476021%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bff21c330e4cdb9fd82f826179203300fa61eef0' => 
     array (
       0 => 'views\\templates\\users.tpl',
-      1 => 1401213371,
+      1 => 1401222511,
       2 => 'file',
     ),
   ),
@@ -26,6 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'friends' => 0,
     'friend' => 0,
     'allUsers' => 0,
+    'allUser' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -131,22 +132,22 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 <section>
 	
 	<div id='users-list'>
-		<?php  $_smarty_tpl->tpl_vars['user'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['user']->_loop = false;
+		<?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['user']->key => $_smarty_tpl->tpl_vars['user']->value) {
-$_smarty_tpl->tpl_vars['user']->_loop = true;
+foreach ($_from as $_smarty_tpl->tpl_vars['allUser']->key => $_smarty_tpl->tpl_vars['allUser']->value) {
+$_smarty_tpl->tpl_vars['allUser']->_loop = true;
 ?>
 		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
 $_smarty_tpl->tpl_vars['friend']->_loop = true;
 ?>
-		<?php if ($_smarty_tpl->tpl_vars['user']->value!=$_smarty_tpl->tpl_vars['friend']->value) {?>
+		<?php if ($_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['friend']->value&&$_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['user']->value) {?>
 		<div class='users_list-bloc'>
 			<div class='users_list_bloc-photo'></div>
 			<span class='users_list_bloc-name'><center>	
-				<?php echo $_smarty_tpl->tpl_vars['user']->value->get_prenom();?>
- <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
+				<?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_prenom();?>
+ <?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_nom();?>
 	
 			</center></span>
 			<a href='index.php?action=request_friend&id=<?php echo $_smarty_tpl->tpl_vars['user']->value->get_id();?>

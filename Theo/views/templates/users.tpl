@@ -79,13 +79,13 @@
 <section>
 	
 	<div id='users-list'>
-		{foreach $allUsers as $user}
+		{foreach $allUsers as $allUser}
 		{foreach $friends as $friend}
-		{if $user != $friend}
+		{if $allUser != $friend && $allUser != $user }
 		<div class='users_list-bloc'>
 			<div class='users_list_bloc-photo'></div>
 			<span class='users_list_bloc-name'><center>	
-				{$user->get_prenom()} {$user->get_nom()}	
+				{$allUser->get_prenom()} {$allUser->get_nom()}	
 			</center></span>
 			<a href='index.php?action=request_friend&id={$user->get_id()}'>
 				<div class='users_list_bloc-buttom'>
