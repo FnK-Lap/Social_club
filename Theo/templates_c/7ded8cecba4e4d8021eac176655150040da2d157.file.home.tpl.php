@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 13:27:46
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 14:47:50
          compiled from "views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1401196725,
+      1 => 1401202067,
       2 => 'file',
     ),
   ),
@@ -78,7 +78,7 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
-		<p class='title-aside'>Mes amis</p>
+		<p class='title-aside'>Mes amis</p><a href="index.php?action=users"><div class='photo-plusfriends'></div></a>
 		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
