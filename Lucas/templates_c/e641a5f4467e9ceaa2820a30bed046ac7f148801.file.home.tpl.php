@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-25 23:20:58
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:12:49
          compiled from "views/templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:425639683537b6990d7dd97-02610794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1401052856,
+      1 => 1401203566,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</a>
 	</div>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<div id="light" class="white_content">
+
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+
+
+	</div>
+	<div id="fade" class="black_overlay" ></div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>

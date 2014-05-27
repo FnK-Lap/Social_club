@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-25 23:22:10
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:12:51
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1705675009537b699327a298-88362251%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
-      1 => 1401052912,
+      1 => 1401203560,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			</div>
 		</a>
 	</div>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<div id="light" class="white_content">
+
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+
+
+	</div>
+	<div id="fade" class="black_overlay" ></div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
@@ -109,10 +117,56 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
 		<div class='my_profil-photo'></div>
+		<div class='my_profil-info'>
+			<h2 class='my_profil_info-name'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
+</h2>
+			<span class='my_profil_info-date'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_date_naissance();?>
+</span>
+			<h3 class='title-my_profil_info_description'>Ma description</h3>
+			<span class='my_profil_info-description'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_description();?>
+</span>
+		</div>
 	</div>
 	<div class='body-line'></div>
 	<div id='my-galery'>
-		<h1 class='title-myprofil'>Ma galerie photo</h1>
+		<h1 class='title-myprofil'>Ma Galerie photo</h1>
+		<form class='from-myprofil' method="post" enctype="multipart/form-data" action="">
+		<p>
+			<input class='btn_upload' type="file" name="files" size="30">
+			<input class='btn_upload' type="submit" name="upload" value="Ajouter une photo">
+			<input type="hidden" name="MAX_FILE_SIZE" value="10000" />
+		</p>
+	</form>
 		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+	</div>
+	<div class='body-line'></div>
+	<div id='my-status'>
+		<h1 class='title-myprofil'>Mes Derniers status</h1>
+	</div>
+	<div class='body-line'></div>
+	<div id='my-friendslist'>
+		<h1 class='title-myprofil'>Mes Amis</h1>
+		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
+$_smarty_tpl->tpl_vars['friend']->_loop = true;
+?>
+		<div class='users_list-bloc'>
+			<div class='users_list_bloc-photo'></div>
+			<span class='users_list_bloc-name'><center><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
+</center></span>
+		</div>
+		<?php } ?>
 	</div>
 </section><?php }} ?>

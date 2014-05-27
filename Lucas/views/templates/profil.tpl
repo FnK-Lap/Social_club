@@ -13,6 +13,14 @@
 			</div>
 		</a>
 	</div>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<div id="light" class="white_content">
+
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+
+
+	</div>
+	<div id="fade" class="black_overlay" ></div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
@@ -73,10 +81,46 @@
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
 		<div class='my_profil-photo'></div>
+		<div class='my_profil-info'>
+			<h2 class='my_profil_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
+			<span class='my_profil_info-date'>{$user->get_date_naissance()}</span>
+			<h3 class='title-my_profil_info_description'>Ma description</h3>
+			<span class='my_profil_info-description'>{$user->get_description()}</span>
+		</div>
 	</div>
 	<div class='body-line'></div>
 	<div id='my-galery'>
-		<h1 class='title-myprofil'>Ma galerie photo</h1>
+		<h1 class='title-myprofil'>Ma Galerie photo</h1>
+		<form class='from-myprofil' method="post" enctype="multipart/form-data" action="">
+		<p>
+			<input class='btn_upload' type="file" name="files" size="30">
+			<input class='btn_upload' type="submit" name="upload" value="Ajouter une photo">
+			<input type="hidden" name="MAX_FILE_SIZE" value="10000" />
+		</p>
+	</form>
 		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+	</div>
+	<div class='body-line'></div>
+	<div id='my-status'>
+		<h1 class='title-myprofil'>Mes Derniers status</h1>
+	</div>
+	<div class='body-line'></div>
+	<div id='my-friendslist'>
+		<h1 class='title-myprofil'>Mes Amis</h1>
+		{foreach $friends as $friend}
+		<div class='users_list-bloc'>
+			<div class='users_list_bloc-photo'></div>
+			<span class='users_list_bloc-name'><center>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</center></span>
+		</div>
+		{/foreach}
 	</div>
 </section>
