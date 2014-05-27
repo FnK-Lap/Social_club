@@ -55,6 +55,8 @@ class Statut extends Table
 	{
 		$this->content = $content;
 	}
+
+
 }
 
 ?>

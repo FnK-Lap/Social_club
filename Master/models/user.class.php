@@ -15,6 +15,7 @@
 		private $date_inscription;
 
 		private $statuts;
+		private $avatar;
 
 		public function __construct()
 		{
@@ -111,6 +112,49 @@
 		{
 			$this->date_inscription=$date_inscription;
 		}
+
+		public function get_statuts()
+	    {
+	        return $this->statuts;
+	    }
+
+	    public function get_avatar()
+	    {
+	    	return $this->avatar;
+	    }
+
+		public function hydrate($key = null, $profondeur = 0)
+		{
+			parent::hydrate();
+			
+			$Statuts = new Statut();
+			$Statuts->set_id_user($this->id);
+			$nbStatut = $Statuts->hydrate('id_user');
+			if ($nbStatut != false) {
+				$nbStatut = count($nbStatut);
+			}else{
+				$nbStatut = 0;
+			}
+			for ($i=0; $i < $nbStatut; $i++) { 
+				$this->statuts[$i] = new Statut();
+				$this->statuts[$i]->set_id_user($this->id);
+				$this->statuts[$i]->hydrate('id_user', $i);
+			}
+
+			$this->avatar = new Photo();
+			$this->avatar->set_id($this->id_avatar);
+			$this->avatar->hydrate();
+
+		}
+
+
 	}
+
+
+
+
+
+
+
 
 ?>

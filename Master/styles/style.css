@@ -16,6 +16,9 @@ body {
     src: url('../fonts/Pacifico.ttf');
 }
 
+.hidden{display: none;}
+.visible{display: block;}
+
 /* ----------------------------
 
 			Header
@@ -29,6 +32,21 @@ header {
     height: 50px;
 	width: 100%;
 	position: fixed;
+
+}
+
+.error-message {
+
+
+  display: inline;
+  color: #ff5b5b;
+  border-color: rgba(191, 68, 68, 0.75);
+  padding: 5px 0 5px 0;
+  margin-left: 40px;
+  display: none;
+  float: left
+
+
 
 }
 
@@ -151,6 +169,54 @@ ul, li {
 a {
 
 	text-decoration: none;
+}
+
+.black_overlay {
+
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 1200px;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+
+.white_content {
+
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 300px;
+	padding: 16px;
+	border: 5px solid gray;
+	background-color: white;
+	z-index:1002;
+	overflow: auto;
+
+}
+
+.textright {
+
+	float: right;
+
+}
+
+.plus-info {
+
+	float: right;
+	background: url("../images/plus.png");
+	width: 16px;
+	height: 16px;
+	margin-top: -22px;
+	margin-right: 20px;
+
 }
 
 /* ----------------------------
@@ -413,10 +479,33 @@ section {
 	margin-bottom: 30px;
 }
 
+/* ----------------	
+	Page 404 
+------------------ */
+
+
+#error-404 {
+
+	font-family: FontStatut;
+	color: #7f8c8d;
+	text-align: center;
+	margin-top: 50px;
+	font-size: 24px;
+
+}
+
 
 /* ----------------	
 	Page Profile  
 ------------------ */
+
+#my-profil {
+
+	width: 100%;
+	height: 300px;
+
+
+}
 
 .title-myprofil {
 
@@ -433,6 +522,14 @@ section {
 
 }
 
+.title-my_profil_info_description {
+
+	font-family: FontStatut;
+	color: #7f8c8d;
+	margin-top: 10px;
+
+}
+
 
 .my_profil-photo {
 
@@ -440,20 +537,308 @@ section {
 	height: 150px;
 	background-color: #E2E2E2;
 	margin: 25px 0 50px 20px;
+	float: left;
 }
 
+.my_profil-info {
 
+	float: left;
+	margin-left: 50px;
+	margin-top: 25px;
+}
+
+.my_profil_info-date {
+
+	font-size: 12px;
+	font-style: italic;
+	color: #7f8c8d;
+	font-weight: bold;
+	padding-top: 15px;
+
+}
+
+#my-galery {
+
+	width: 100%;
+	height: 500px;
+
+}
+
+.from-myprofil {
+
+	margin-top: -35px;
+	margin-bottom: 15px;
+	margin-left: 50%;
+}
+
+.btn_upload {
+
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 1px;
+  font-family: Arial;
+  color: #333333;
+  font-size: 12px;
+  background: #ffffff;
+  padding: 9px 13px 8px 13px;
+  border: solid #CCCCCC 1px;
+  text-decoration: none;
+}
+
+.btn_upload:hover {
+  
+  border-color: #ADADAD;
+  background: #EBEBEB;
+  text-decoration: none;
+
+}
 
 .my_galery-photo {
 
-	width: 80%;
+	width: 150px;
 	height: 150px;
+	float: left;
 	background-color: #E2E2E2;
-	margin: 25px auto 50px auto;
+	margin: 25px 0 50px 25px;
+
 }
 
 
 
+/* ----------------	
+	Page Message 
+------------------ */
+
+#list-message {
+
+	width: 230px;
+	height: 700px;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-right: 1px solid #E8E8E8;
+}
+
+.list_message-user {
+
+	margin: 0 0 0 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #E8E8E8;
+}
+
+.list_message_user-photo {
+
+
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #E8E8E8;
+	float: left;
+}
+
+
+.list_message_user-name {
+
+
+	color: #7f8c8d;
+	font-weight: bold;
+	margin-left: 50px;
+	padding-top: 5px;
+
+}
+
+.list_message_user-name:hover {
+
+	color: #2980b9;
+	cursor: pointer;
+
+}
+
+.list_message_user_info-new {
+
+	color: #2980b9;
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 23px;
+
+}
+
+.list_message_user_info-nonew {
+
+	color: #7f8c8d;
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 23px;
+
+}
+
+#list-message-bloc {
+
+	width: 670px;
+	height: 550px;
+	border-bottom: 1px solid #E8E8E8;
+	margin-left: 230px;
+	margin-top: -700px;
+
+}
+
+#message-bloc-reponse {
+
+	width: 670px;
+	height: 120px;
+	margin-left: 230px;
+
+
+}
+
+
+.text-area-styled {
+
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+
+}
+
+.send-message-bloc {
+
+	float: right;
+	margin-right: 70px;
+	width: 160px;
+	height: 30px;
+	background-color: #2980b9;
+	margin-top: 20px;
+}
+
+.send-message-bloc:hover {
+
+	background-color: #7f8c8d;
+	cursor: pointer;
+}
+
+.send-message-bloc-pict {
+
+	width: 14px;
+	height: 14px;
+	margin-top: 8px;
+	margin-left: 15px;
+}
+
+.send-message-bloc-text a{
+	color: #FFFFFF;
+}
+
+.send-message-bloc-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 7px;
+
+}
+
+/* ----------------	
+	Page users
+------------------ */
+
+.users_list-bloc {
+
+	margin: 15px 15px 15px 15px;
+	width: 150px;
+	float: left;
+
+}
+.users_list_bloc-photo {
+
+	width: 150px;
+	height: 150px;
+	background-color: #E8E8E8;
+	display: block;
+	margin-bottom: 10px;
+
+}
+
+
+.users_list_bloc-name {
+
+	color: #7f8c8d;
+	font-weight: bold;
+	font-size: 14px;
+	width: 150px;
+
+}
+
+
+
+.users_list_bloc-name:hover {
+
+	color: #2980b9;
+	cursor: pointer;
+
+}
+
+
+.users_list_bloc-buttom {
+
+	width: 150px;
+	height: 30px;
+	background-color: #2980b9;
+	margin-top: 7px;
+
+}
+
+.users_list_bloc-buttom:hover {
+
+	background-color: #7f8c8d;
+	cursor: pointer;
+}
+
+.users_list_bloc-buttom-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 35%;
+	float: left;
+	margin-top: 7px;
+
+}
+
+
+.invite_bloc-buttom {
+
+	width: 150px;
+	height: 30px;
+	background-color: #2980b9;
+	margin-top: 7px;
+	float: right;
+	margin-top: -40px;
+	margin-right: 180px;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+
+
+}
+
+.invite_bloc-buttom:hover {
+
+	background-color: #7f8c8d;
+	cursor: pointer;
+}
 
 
 

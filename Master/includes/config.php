@@ -1,7 +1,5 @@
 <?php
 
-require_once ('tools/dbTools.php');
-
 $dbConfig = array(
 		'host' => 'localhost',
 		'user' => 'root',
@@ -14,7 +12,8 @@ $legalActions = array(
 		'register' => 'user',
 		'login' => 'user',
 		'profil' => 'user',
-		'logout' => 'user'
+		'logout' => 'user',
+		'message' => 'message'
 	);
 
 
@@ -37,6 +36,8 @@ $errors_no = array(
 		'VPAD' => 'Les passwords sont différents',
 		'EMAD' => 'Un utilisateur utilise deja cet email',
 		'EMAN' => 'Votre email ou votre password est incorrect',
+		'STAE' => 'Le statut est vide',
+		'STAL' => 'Le statut depasse les 160 characteres'
 	);
 
 $invitationMessage = "Bonjour,\nDieu vous invite à rejoindre son Social Club !\nVeuillez cliquer sur ce lien afin de vous inscrire : \nhttp://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token=";
