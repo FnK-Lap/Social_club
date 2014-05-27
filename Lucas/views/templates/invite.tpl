@@ -2,8 +2,8 @@
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
-	<div class='title-status'>
-		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
+	<div id='statut' class='title-status'>
+		Votre statut : <input type='text' class='hidden' id='statut-input'><span id='statut-span'>"{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}"</span>
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>
@@ -33,17 +33,19 @@
 </header>
 <aside>
 	<div id='photo_bloc'>
-		<div class='photo_profil'></div>
-		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
+		<div class='photo_profil'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		<p class='photo-nom'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p><a href="index.php?action=users"><div class='photo-plusfriends'></div></a>
 		{foreach $friends as $friend}
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
-		</div>
+			<div class='friend-user'>
+				<div class='friend-connected-user'></div>
+				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
+			</div>
+		{foreachelse}
+			<p>Vous n'avez pas d'amis</p>
 		{/foreach}
 	</div>
 	<div class='aside-line'></div>

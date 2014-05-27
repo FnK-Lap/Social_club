@@ -1,23 +1,37 @@
 <?php
 
+// Models
 require_once ('models/userModel.php');
 require_once ('models/statutModel.php');
+
+// ORM
+require_once ('models/table.class.php');
+require_once ('models/token.class.php');
+require_once ('models/user.class.php');
+require_once ('models/statut.class.php');
+require_once ('models/photo.class.php');
 
 if ($action == 'home') {
 	if ($is_connected == true) {
 
 		$user = getUserInfos($_SESSION['id_user']);
-		// var_dump($user);
+		
 		$friends = getUserFriends($_SESSION['id_user']);
 
-		$Smarty->assign('user', $user);
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
 		$Smarty->assign('friends',$friends);
-		
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+
 		$template = 'home';
 	}else{
 		// Debug, envoie de mail d'invitation
-		sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
+		//sendInvitation('franck.lapeyre@supinternet.fr', $invitationMessage, $salt);
 		$template = 'login';
 	}
 	
@@ -55,6 +69,20 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 			}
 		}
 	}else{
+		$user = getUserInfos($_SESSION['id_user']);
+		
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+		
 		$template = 'home';
 	}
 	
@@ -65,9 +93,14 @@ elseif ($action == 'login') {
 
 		$friends = getUserFriends($_SESSION['id_user']);
 
-		$Smarty->assign('user', $user);
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+		$allUsers = getAllUsers();
+
+		$Smarty->assign('user', $user);
 		$Smarty->assign('friends',$friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
 
 		$template = 'home';
 	}else{
@@ -85,9 +118,14 @@ elseif ($action == 'login') {
 
 				$friends = getUserFriends($_SESSION['id_user']);
 
-				$Smarty->assign('user', $user);
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+				$allUsers = getAllUsers();
+
+				$Smarty->assign('user', $user);
 				$Smarty->assign('friends',$friends);
+				$Smarty->assign('friendsStatuts', $friendsStatuts);
+				$Smarty->assign('allUsers', $allUsers);
 
 				$template = 'home';
 			}
@@ -114,22 +152,6 @@ elseif ($action == 'profil') {
 		$template = '404';
 	}
 }
-elseif ($action == 'invite') {
-	if ($is_connected == true) {
-		$user = getUserInfos($_SESSION['id_user']);
-
-		$friends = getUserFriends($_SESSION['id_user']);
-
-		$Smarty->assign('user', $user);
-
-		$Smarty->assign('friends',$friends);
-
-		$template = 'invite';
-	}else{
-		$template = '404';
-	}
-}
-
 elseif ($action == 'users') {
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
@@ -145,22 +167,6 @@ elseif ($action == 'users') {
 		$template = '404';
 	}
 }
-
-elseif ($action == 'message') {
-	if ($is_connected == true) {
-		$user = getUserInfos($_SESSION['id_user']);
-
-		$friends = getUserFriends($_SESSION['id_user']);
-
-		$Smarty->assign('user', $user);
-
-		$Smarty->assign('friends',$friends);
-
-		$template = 'message';
-	}else{
-		$template = '404';
-	}
-}
 elseif ($action == 'logout') {
 	if ($is_connected == true) {
 		$template = 'login';
@@ -169,11 +175,10 @@ elseif ($action == 'logout') {
 	else{
 		$template = 'login';
 	}
-}else{
+}
+else{
 	$template = '404';
 }
-
-
 
 
 ?>

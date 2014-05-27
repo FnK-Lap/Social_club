@@ -16,6 +16,9 @@ body {
     src: url('../fonts/Pacifico.ttf');
 }
 
+.hidden{display: none;}
+.visible{display: block;}
+
 /* ----------------------------
 
 			Header
@@ -29,14 +32,6 @@ header {
     height: 50px;
 	width: 100%;
 	position: fixed;
-
-}
-
-#title-logo {
-
-
-	padding: 10px 0 1px 70px;
-
 
 }
 
@@ -55,6 +50,13 @@ header {
 
 }
 
+#title-logo {
+
+
+	padding: 10px 0 1px 70px;
+
+
+}
 
 .title-color {
 
@@ -116,11 +118,13 @@ nav {
 
 	background: none repeat scroll 0 0 #FFFFFF;
     border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
     height: 50px;
 	width: 100%;
 	margin-left: 231px;
 	margin-top: 12px;
 	position: fixed;
+	top: 38px;
 }
 
 .nav-menu{
@@ -193,16 +197,22 @@ a {
 	width: 50%;
 	height: 300px;
 	padding: 16px;
-	border: 5px solid gray;
-	background-color: white;
+	border: 2px solid gray;
+	background: url("../images/body-pattern.jpg") top left repeat;
 	z-index:1002;
 	overflow: auto;
 
 }
 
-.textright {
+.btn-close {
 
-	float: right;
+	margin-left: 98%;
+	display: block;
+	top : 0;
+	background: url("../images/plus.png");
+	width: 16px;
+	height: 16px;
+
 
 }
 
@@ -214,6 +224,97 @@ a {
 	height: 16px;
 	margin-top: -22px;
 	margin-right: 20px;
+
+}
+
+.ask_friend-user {
+
+	margin: 15px 15px 15px 15px;
+	width: 600px;
+	height: 240px;
+	float: left;
+	background-color: white;
+	border: 1px solid #E8E8E8;
+
+}
+
+.ask_friend_user-bloc {
+
+	margin-top: 15px;
+
+
+}
+
+
+
+
+.ask_friend_user-photo {
+
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #E8E8E8;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+
+
+	
+}
+
+.ask_friend_user-name {
+
+	font-size: 16px;
+	color: #7f8c8d;
+	float: left;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-top: 5px;
+
+
+}
+
+.ask_friend_user-buttom {
+
+	width: 150px;
+	height: 30px;
+	background-color: #2980b9;
+	float: left;
+	margin-right: 5px;
+
+}
+
+.ask_friend_user-buttom:hover {
+
+	background-color: #27ae60;
+	cursor: pointer;
+}
+
+.ask_friend_user-buttom2 {
+
+	width: 150px;
+	height: 30px;
+	background-color: #7f8c8d;
+	float: left;
+	margin-right: 5px;
+
+}
+
+.ask_friend_user-buttom2:hover {
+
+	background-color: #c0392b;
+	cursor: pointer;
+}
+
+.ask_friend_user-buttom-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 35%;
+	float: left;
+	margin-top: 7px;
 
 }
 
@@ -237,7 +338,7 @@ aside {
 
 .photo_profil {
 
-	background: url('../images/avatar-vide.jpg');
+	background: url('');
 	width: 165px;
 	height: 165px;
 	background-color: #E8E8E8;
@@ -245,6 +346,11 @@ aside {
 	margin: 15px 15px 0px 15%;
 
 
+}
+
+.clear {
+
+	clear: both;
 }
 
 .photo-plusfriends {
@@ -474,7 +580,9 @@ section {
 	font-size: 10px; 
 	color: #E2E2E2;
 	font-style: italic;
-	margin-left: 80%;
+	float: right;
+	margin-right: 30px;
+
 
 }
 
@@ -502,10 +610,6 @@ section {
 	font-size: 24px;
 
 }
-
-
-
-
 
 
 /* ----------------	
@@ -615,6 +719,7 @@ section {
 	margin: 25px 0 50px 25px;
 
 }
+
 
 
 /* ----------------	
@@ -762,7 +867,6 @@ section {
 
 }
 
-
 /* ----------------	
 	Page users
 ------------------ */
@@ -852,4 +956,7 @@ section {
 	background-color: #7f8c8d;
 	cursor: pointer;
 }
+
+
+
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:41:31
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 18:00:27
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401205276,
+      1 => 1401205846,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_537de1a3152893_52398603')) {function content_537de1a3152893_52398603($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Franck/libs/smarty/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_537de1a3152893_52398603')) {function content_537de1a3152893_52398603($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>

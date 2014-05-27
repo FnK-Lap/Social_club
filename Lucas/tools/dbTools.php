@@ -19,9 +19,10 @@ function dbQuery($query, $link = null)
 {
 	global $link;
 
+	// echo $query."<br>";
+	
 	$result = mysqli_query($link, $query) or die("Error " . mysqli_error($link));
 	
-	//echo $query."<br>";
 	
 	return $result;
 }
