@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:08:00
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:14:45
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401203279,
+      1 => 1401203683,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'allUsers' => 0,
     'key' => 0,
     'allUser' => 0,
+    'userConversation' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -144,7 +145,8 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 ?><?php if ($_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
 <?php }?><?php } ?></p>
-				<span class='list_message_user_info-new'>1 nouveau message</span>
+				<span class='list_message_user_info-new'><?php echo count($_smarty_tpl->tpl_vars['userConversation']->value);?>
+ messages</span>
 			</div>
 		<?php } ?>
 	</div>
