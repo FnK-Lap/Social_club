@@ -87,7 +87,7 @@
 			<span class='users_list_bloc-name'><center>	
 				{$user->get_prenom()} {$user->get_nom()}	
 			</center></span>
-			<a href='index.php'>
+			<a href='index.php?action=request_friend&id={$user->get_id()}'>
 				<div class='users_list_bloc-buttom'>
 					<span class='users_list_bloc-buttom-text'>Ajouter</span>
 				</div>

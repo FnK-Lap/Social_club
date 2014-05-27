@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:44:24
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:56:14
          compiled from "views\templates\users.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:304785384c931852cb7-87476021%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bff21c330e4cdb9fd82f826179203300fa61eef0' => 
     array (
       0 => 'views\\templates\\users.tpl',
-      1 => 1401212661,
+      1 => 1401213371,
       2 => 'file',
     ),
   ),
@@ -149,7 +149,8 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
  <?php echo $_smarty_tpl->tpl_vars['user']->value->get_nom();?>
 	
 			</center></span>
-			<a href='index.php'>
+			<a href='index.php?action=request_friend&id=<?php echo $_smarty_tpl->tpl_vars['user']->value->get_id();?>
+'>
 				<div class='users_list_bloc-buttom'>
 					<span class='users_list_bloc-buttom-text'>Ajouter</span>
 				</div>

@@ -177,6 +177,27 @@ elseif ($action == 'users') {
 		$template = '404';
 	}
 }
+elseif ($action == 'request_friend') 
+{
+		$id_friend = $_GET['id'];
+		$id = $_SESSION['id_user'];
+		$result = request_friend($id,$id_friend);
+
+		$user = getUserInfos($_SESSION['id_user']);
+		
+		$friends = getUserFriends($_SESSION['id_user']);
+
+
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('allUsers', $allUsers);
+
+		$template = 'users';
+
+}
 
 else{
 	$template = '404';

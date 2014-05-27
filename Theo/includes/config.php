@@ -14,7 +14,8 @@ $legalActions = array(
 		'profil' => 'user',
 		'logout' => 'user',
 		'message' => 'message',
-		'users' => 'user'
+		'users' => 'user',
+		'request_friend'=>'user'
 	);
 
 
