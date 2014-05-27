@@ -3,39 +3,41 @@
 		Social<span class='title-color'>Club</span>
 	</div>
 	<div class='title-status'>
-		Votre statut : "Le projet SocialClub, c'est genial j'ai plus de vie pendants 2 semaines !" 
+		Votre statut : "{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}" 
 	</div>
-
 	<div id='deconnexion'>
-		<div class='deconnexion-bloc'>
-			<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
-			<p class='deconnexion_bloc-text'><a href='index.php?action=logout'>Déconnexion</a></p>
-		</div>
+		<a href='index.php?action=logout'>
+			<div class='deconnexion-bloc'>
+				<img src="images/logout.png" class='deconnexion_bloc-pict' alt='logout'>
+				<p class='deconnexion_bloc-text'>Déconnexion</p>
+			</div>
+		</a>
 	</div>
-
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p <p class='nav-title2' style="margin-right: 30px; margin-left: 0px;"><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title2'>Mes messages</p></li>
+			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
+			    <li><p class='nav-title-selected'><a href="index.php?action=profil">Mon profil</a></p></li>
+			    <li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>
 </header>
 <aside>
 	<div id='photo_bloc'>
-		<div class='photo_profil'></div>
-		<p class='photo-nom'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</p>
+		<div class='photo_profil'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()|capitalize}</p>
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
 		<p class='title-aside'>Mes amis</p>
 		{foreach $friends as $friend}
-		<div class='friend-user'>
-			<div class='friend-connected-user'></div>
-			<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
-		</div>
+			<div class='friend-user'>
+				<div class='friend-connected-user'></div>
+				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
+			</div>
+		{foreachelse}
+			<p>Vous n'avez pas d'amis</p>
 		{/foreach}
 	</div>
 	<div class='aside-line'></div>
@@ -72,7 +74,7 @@
 <section>
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
-		<div class='my_profil-photo'></div>
+		<div class='my_profil-photo'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
 	</div>
 	<div class='body-line'></div>
 	<div id='my-galery'>

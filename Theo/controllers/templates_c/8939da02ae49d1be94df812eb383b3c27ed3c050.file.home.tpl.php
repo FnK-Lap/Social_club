@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 13:27:46
-         compiled from "views\templates\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3064753764aa1a9fef4-87272335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 15:23:11
+         compiled from "../views/templates/home.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:635914255538491bfaf4763-76303162%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '7ded8cecba4e4d8021eac176655150040da2d157' => 
+    '8939da02ae49d1be94df812eb383b3c27ed3c050' => 
     array (
-      0 => 'views\\templates\\home.tpl',
-      1 => 1401196725,
+      0 => '../views/templates/home.tpl',
+      1 => 1401195108,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3064753764aa1a9fef4-87272335',
+  'nocache_hash' => '635914255538491bfaf4763-76303162',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_53764aa1b36870_96751885',
   'variables' => 
   array (
     'user' => 0,
@@ -31,9 +29,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'allUser' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_538491bfc2cd85_33902197',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53764aa1b36870_96751885')) {function content_53764aa1b36870_96751885($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
-if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_538491bfc2cd85_33902197')) {function content_538491bfc2cd85_33902197($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Franck/libs/smarty/plugins/modifier.capitalize.php';
+if (!is_callable('smarty_modifier_date_format')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Franck/libs/smarty/plugins/modifier.date_format.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>

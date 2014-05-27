@@ -6,7 +6,6 @@
 
 		private $id;
 		private $id_avatar;
-		private $pseudo;
 		private $prenom;
 		private $nom;
 		private $password;
@@ -14,6 +13,9 @@
 		private $description;
 		private $date_naissance;
 		private $date_inscription;
+
+		private $statuts;
+		private $avatar;
 
 		public function __construct()
 		{
@@ -39,16 +41,6 @@
 		public function set_id_avatar($id_avatar)
 		{
 			$this->id_avatar=$id_avatar;
-		}
-
-		public function get_pseudo()
-		{
-			return $this->pseudo;
-		}
-
-		public function set_pseudo($pseudo)
-		{
-			$this->pseudo=$pseudo;
 		}
 
 		public function get_prenom()
@@ -120,14 +112,47 @@
 		{
 			$this->date_inscription=$date_inscription;
 		}
-		
 
+		public function get_statuts()
+	    {
+	        return $this->statuts;
+	    }
 
+	    public function get_avatar()
+	    {
+	    	return $this->avatar;
+	    }
 
+		public function hydrate($key = null, $profondeur = 0)
+		{
+			parent::hydrate();
+			
+			$Statuts = new Statut();
+			$Statuts->set_id_user($this->id);
+			$nbStatut = $Statuts->hydrate('id_user');
+			if ($nbStatut != false) {
+				$nbStatut = count($nbStatut);
+			}else{
+				$nbStatut = 0;
+			}
+			for ($i=0; $i < $nbStatut; $i++) { 
+				$this->statuts[$i] = new Statut();
+				$this->statuts[$i]->set_id_user($this->id);
+				$this->statuts[$i]->hydrate('id_user', $i);
+			}
 
+			$this->avatar = new Photo();
+			$this->avatar->set_id($this->id_avatar);
+			$this->avatar->hydrate();
+
+		}
 
 
 	}
+
+
+
+
 
 
 
