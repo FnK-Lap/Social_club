@@ -47,7 +47,7 @@
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
-		<p class='title-aside'>Mes derniers messages</p>
+		<p class='title-aside'>Derniers statuts</p>
 		<div class='last_message'>
 			<div class='last_message-user'>
 				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>
@@ -84,17 +84,18 @@
 	<div class='body-line'></div>
 	<div id='last_status'>
 		<h1 class='title-body'>Dernier statut de vos amis</h1>
-		{foreach $friendsStatuts as $friendsStatut}
+		{section name=friendsStatut loop=$friendsStatuts step=-1}		
 			<div class='last_status-user'>
 				<div class='last_status_user-info'>
 					<div class='last_status_user_info-miniavatar'></div>
-					<h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatut->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2>
-					<p class='last_status_user_info-date'>{$friendsStatut->get_date()|date_format}</p>
+					<h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatuts[friendsStatut]->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2>
+					<p class='last_status_user_info-date'>{$friendsStatuts[friendsStatut]->get_date()|date_format}</p>
 				</div>
 				<div class='last_status_user-content'>
-					{$friendsStatut->get_content()}
+					{$friendsStatuts[friendsStatut]->get_content()}
 				</div>
 			</div>
-		{/foreach}
+		
+		{/section}
 	</div>
 </section>

@@ -90,9 +90,9 @@ function userConversationMessage($idSender, $idReceiver)
 		foreach ($conversations as $key => $value) {
 			if ($key == $idReceiver) {
 				$messages = $value;
+				return $messages;
 			}
 		}
-		return $messages;
 	}else{
 		return false;
 	}

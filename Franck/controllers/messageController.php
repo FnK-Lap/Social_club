@@ -46,7 +46,7 @@ if ($action = 'message') {
 		require_once ('../models/table.class.php');
 		require_once ('../models/message.class.php');
 		require_once ('../models/user.class.php');
-
+	
 		$conversation = userConversationMessage($_SESSION['id_user'], $_POST['receiver']);
 		
 		$message = array();
