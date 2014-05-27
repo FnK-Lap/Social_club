@@ -77,141 +77,24 @@
 	</div>
 </aside>
 <section>
+	
 	<div id='users-list'>
+		{foreach $allUsers as $user}
+		{foreach $friends as $friend}
+		{if $user != $friend}
 		<div class='users_list-bloc'>
 			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
+			<span class='users_list_bloc-name'><center>	
+				{$user->get_prenom()} {$user->get_nom()}	
+			</center></span>
 			<a href='index.php'>
 				<div class='users_list_bloc-buttom'>
 					<span class='users_list_bloc-buttom-text'>Ajouter</span>
 				</div>
 			</a>
 		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>Lucas Alumni</center></span>
-			<a href='index.php'>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
+		{/if}
+		{/foreach}
+		{/foreach}
 	</div>
 </section>

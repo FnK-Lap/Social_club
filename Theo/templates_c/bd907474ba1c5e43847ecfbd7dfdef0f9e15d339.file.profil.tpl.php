@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 16:22:25
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:46
          compiled from "views\templates\profil.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:109255384bbc13f8540-64205386%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:304235384a9f34fd526-10880943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd907474ba1c5e43847ecfbd7dfdef0f9e15d339' => 
     array (
       0 => 'views\\templates\\profil.tpl',
-      1 => 1401205707,
+      1 => 1401210295,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '109255384bbc13f8540-64205386',
+  'nocache_hash' => '304235384a9f34fd526-10880943',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5384a9f35f8869_30129821',
   'variables' => 
   array (
     'user' => 0,
@@ -25,16 +27,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'friend' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5384bbc14ebe23_39134118',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5384bbc14ebe23_39134118')) {function content_5384bbc14ebe23_39134118($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5384a9f35f8869_30129821')) {function content_5384a9f35f8869_30129821($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
-	<div class='title-status'>
-		Votre statut : "<?php  $_smarty_tpl->tpl_vars['statut'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['statut']->_loop = false;
+	<div id='statut' class='title-status'>
+		Votre statut : <input type='text' class='hidden' id='statut-input'><span id='statut-span'>"<?php  $_smarty_tpl->tpl_vars['statut'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['statut']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['user']->value->get_statuts(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['statut']->total= $_smarty_tpl->_count($_from);
  $_smarty_tpl->tpl_vars['statut']->iteration=0;
@@ -43,7 +43,7 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
  $_smarty_tpl->tpl_vars['statut']->iteration++;
  $_smarty_tpl->tpl_vars['statut']->last = $_smarty_tpl->tpl_vars['statut']->iteration === $_smarty_tpl->tpl_vars['statut']->total;
 ?><?php $_smarty_tpl->tpl_vars['statutContent'] = new Smarty_variable($_smarty_tpl->tpl_vars['statut']->value->get_content(), null, 0);?><?php if ($_smarty_tpl->tpl_vars['statut']->last) {?><?php echo $_smarty_tpl->tpl_vars['statutContent']->value;?>
-<?php }?><?php } ?>" 
+<?php }?><?php } ?>"</span>
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>

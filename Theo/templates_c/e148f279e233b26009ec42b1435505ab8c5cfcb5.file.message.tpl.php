@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 16:28:04
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:52
          compiled from "views\templates\message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:228065384bd141d6218-61585281%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e148f279e233b26009ec42b1435505ab8c5cfcb5' => 
     array (
       0 => 'views\\templates\\message.tpl',
-      1 => 1401206324,
+      1 => 1401210295,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_5384bd14348403_74389274',
   'variables' => 
   array (
     'user' => 0,
@@ -30,8 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'userConversation' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5384bd14348403_74389274',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5384bd14348403_74389274')) {function content_5384bd14348403_74389274($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 ?><header>
@@ -165,11 +165,11 @@ if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
 
 	</div>
 	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'></textarea>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>
 			<a href='index.php?action=logout'>
 				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
+					<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
 				</div>
 			</a>
 		</div>

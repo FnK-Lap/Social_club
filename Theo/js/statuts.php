@@ -28,10 +28,16 @@ function blurStatut(e)
 	});
 }
 
+function sendMessage(e)
+{
+	var message = document.getElementById('message-content');
+	console.log(message);
+}
+
 
 function initStatut(e)
 {
 	document.getElementById('statut').addEventListener('click', clickStatut);
-	
+	document.getElementById('send-message-button').addEventListener('click', sendMessage);
 
 }

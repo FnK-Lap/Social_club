@@ -159,7 +159,26 @@ elseif ($action == 'logout') {
 	else{
 		$template = 'login';
 	}
-}else{
+}
+elseif ($action == 'users') {
+	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+		
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('allUsers', $allUsers);
+		$template = 'users';
+	}else{
+		$template = '404';
+	}
+}
+
+else{
 	$template = '404';
 }
 
