@@ -99,7 +99,6 @@ abstract class Table
 			$last_id = last_insert_id();
 			$pk_setter = "set_".$this->primary_key;
 			$this->$pk_setter($last_id);
-			echo $last_id;
 		}
 	}
 
@@ -109,12 +108,10 @@ abstract class Table
 		if ($key == null) {
 			$pk_getter = 'get_'.$this->primary_key;
 		}else{
-
 			$pk_getter = 'get_'.$key;
 		}
 		
 		$pk_value = $this->$pk_getter();
-		
 
 		if (empty($pk_value)) {
 			die(get_called_class().': primary key manquant');
@@ -129,7 +126,7 @@ abstract class Table
 
 		if ($key == null) {
 			if ($date == true) {
-				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value)."' ORDER BY `".$this->table_name."`.`date`";
+				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value)." ORDER BY `".$this->table_name."`.`date`";
 			}else{
 				$query = "SELECT * FROM `".$this->table_name."` WHERE `".$this->primary_key."` = ".intval($pk_value);
 			}

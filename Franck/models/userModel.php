@@ -1,9 +1,5 @@
 <?php
 
-require_once ('models/table.class.php');
-require_once ('models/token.class.php');
-require_once ('models/user.class.php');
-require_once ('models/statut.class.php');
 
 // Check les formulaire Users
 function checkUserForm($form)
@@ -83,6 +79,19 @@ function checkUserForm($form)
 	return $errors;
 }
 
+function getAllUsers()
+{
+	$users = array();
+	$query = 'SELECT * FROM `users`';
+	$result = dbFetchAllAssoc($query);
+	foreach ($result as $key => $user) {
+		$users[$key] = new User();
+		$users[$key]->set_id($user['id']);
+		$users[$key]->hydrate();
+	}
+
+	return $users;
+}
 
 // Recupere toute les infos de l'utilisateur
 function getUserInfos($id)
@@ -90,7 +99,7 @@ function getUserInfos($id)
 	$User = new User();
 	$User->set_id($id);
 	$User->hydrate();
-	
+
 	return $User;
 }
 
@@ -196,6 +205,8 @@ function logout()
 	unset($_SESSION['id_user']);
 	session_destroy();
 }
+
+
 
 
 

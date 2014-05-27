@@ -16,6 +16,9 @@ body {
     src: url('../fonts/Pacifico.ttf');
 }
 
+.hidden{display: none;}
+.visible{display: block;}
+
 /* ----------------------------
 
 			Header

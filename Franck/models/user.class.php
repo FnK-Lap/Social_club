@@ -15,6 +15,7 @@
 		private $date_inscription;
 
 		private $statuts;
+		private $avatar;
 
 		public function __construct()
 		{
@@ -117,6 +118,11 @@
 	        return $this->statuts;
 	    }
 
+	    public function get_avatar()
+	    {
+	    	return $this->avatar;
+	    }
+
 		public function hydrate($key = null, $profondeur = 0)
 		{
 			parent::hydrate();
@@ -134,6 +140,10 @@
 				$this->statuts[$i]->set_id_user($this->id);
 				$this->statuts[$i]->hydrate('id_user', $i);
 			}
+
+			$this->avatar = new Photo();
+			$this->avatar->set_id($this->id_avatar);
+			$this->avatar->hydrate();
 
 		}
 

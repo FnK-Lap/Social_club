@@ -1,19 +1,33 @@
 <?php
 
+// Models
 require_once ('models/userModel.php');
 require_once ('models/statutModel.php');
+
+// ORM
+require_once ('models/table.class.php');
+require_once ('models/token.class.php');
+require_once ('models/user.class.php');
+require_once ('models/statut.class.php');
+require_once ('models/photo.class.php');
 
 if ($action == 'home') {
 	if ($is_connected == true) {
 
 		$user = getUserInfos($_SESSION['id_user']);
-		// var_dump($user);
+		
 		$friends = getUserFriends($_SESSION['id_user']);
 
-		$Smarty->assign('user', $user);
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
 		$Smarty->assign('friends',$friends);
-		
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+
 		$template = 'home';
 	}else{
 		// Debug, envoie de mail d'invitation

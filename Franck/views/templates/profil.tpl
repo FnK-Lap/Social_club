@@ -25,7 +25,7 @@
 </header>
 <aside>
 	<div id='photo_bloc'>
-		<div class='photo_profil'></div>
+		<div class='photo_profil'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
 		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()|capitalize}</p>
 	</div>
 	<div class='aside-line'></div>
@@ -74,7 +74,7 @@
 <section>
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
-		<div class='my_profil-photo'></div>
+		<div class='my_profil-photo'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
 	</div>
 	<div class='body-line'></div>
 	<div id='my-galery'>

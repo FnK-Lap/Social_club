@@ -2,8 +2,8 @@
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
-	<div class='title-status'>
-		Votre statut : "{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}" 
+	<div id='statut' class='title-status'>
+		Votre statut : <input type='text' class='hidden' id='statut-input'><span id='statut-span'>"{foreach $user->get_statuts() as $statut}{$statutContent = $statut->get_content()}{if $statut@last}{$statutContent}{/if}{/foreach}"</span>
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>
@@ -25,7 +25,7 @@
 </header>
 <aside>
 	<div id='photo_bloc'>
-		<div class='photo_profil'></div>
+		<div class='photo_profil'><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
 		<p class='photo-nom'>{$user->get_prenom()} {$user->get_nom()}</p>
 	</div>
 	<div class='aside-line'></div>
@@ -79,45 +79,17 @@
 	<div class='body-line'></div>
 	<div id='last_status'>
 		<h1 class='title-body'>Dernier statut de vos amis</h1>
-		<div class='last_status-user'>
-			<div class='last_status_user-info'>
-				<div class='last_status_user_info-miniavatar'></div>
-				<h2 class='last_status_user_info-name'>Franck Laypere</h2>
-				<p class='last_status_user_info-date'>Il y a 1 heure</p>
+		{foreach $friendsStatuts as $friendsStatut}
+			<div class='last_status-user'>
+				<div class='last_status_user-info'>
+					<div class='last_status_user_info-miniavatar'></div>
+					<h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatut->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2>
+					<p class='last_status_user_info-date'>{$friendsStatut->get_date()|date_format}</p>
+				</div>
+				<div class='last_status_user-content'>
+					{$friendsStatut->get_content()}
+				</div>
 			</div>
-			<div class='last_status_user-content'>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
-			</div>
-		</div>
-		<div class='last_status-user'>
-			<div class='last_status_user-info'>
-				<div class='last_status_user_info-miniavatar'></div>
-				<h2 class='last_status_user_info-name'>Franck Laypere</h2>
-				<p class='last_status_user_info-date'>Il y a 1 heure</p>
-			</div>
-			<div class='last_status_user-content'>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
-			</div>
-		</div>
-		<div class='last_status-user'>
-			<div class='last_status_user-info'>
-				<div class='last_status_user_info-miniavatar'></div>
-				<h2 class='last_status_user_info-name'>Franck Laypere</h2>
-				<p class='last_status_user_info-date'>Il y a 1 heure</p>
-			</div>
-			<div class='last_status_user-content'>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
-			</div>
-		</div>
-		<div class='last_status-user'>
-			<div class='last_status_user-info'>
-				<div class='last_status_user_info-miniavatar'></div>
-				<h2 class='last_status_user_info-name'>Franck Laypere</h2>
-				<p class='last_status_user_info-date'>Il y a 1 heure</p>
-			</div>
-			<div class='last_status_user-content'>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam posuere congue egestas. Etiam placerat, dui in egestas sagittis, tortor risus sollicitudin libero, dignissim hendrerit lacus ante quis nunc. Vivamus eget velit nibh. Donec id risus quam. Cras imperdiet consectetur libero, eget vestibulum enim vulputate sed. Fusce consequat mauris elit, a faucibus magna sollicitudin quis. Suspendisse hendrerit, tellus vitae sagittis placerat, nunc elit porta magna, ut ultricies orci neque at lorem. Sed nec imperdiet dolor. Proin a sem eu arcu commodo malesuada ac eu lectus. 
-			</div>
-		</div>
+		{/foreach}
 	</div>
 </section>
