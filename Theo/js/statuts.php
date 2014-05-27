@@ -20,7 +20,7 @@ function blurStatut(e)
 	  data: {action: 'new_statut', statut: statutContent},
 	  success: function(response){
 	  	if (response != false) {
-	  		//document.getElementById('statut-span').innerHTML = '"'+response+'"';
+	  		document.getElementById('statut-span').innerHTML = '"'+response+'"';
 	  	};
 	  	document.getElementById('statut-input').className = 'hidden';
 	  	document.getElementById('statut-span').className = '';
@@ -28,10 +28,16 @@ function blurStatut(e)
 	});
 }
 
+function sendMessage(e)
+{
+	var message = document.getElementById('message-content');
+	console.log(message);
+}
+
 
 function initStatut(e)
 {
 	document.getElementById('statut').addEventListener('click', clickStatut);
-	
+	document.getElementById('send-message-button').addEventListener('click', sendMessage);
 
 }

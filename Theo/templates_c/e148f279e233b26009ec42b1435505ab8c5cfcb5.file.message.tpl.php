@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:42
-         compiled from "views\templates\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:62315384a9d20264e9-66455068%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:52
+         compiled from "views\templates\message.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:228065384bd141d6218-61585281%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '7ded8cecba4e4d8021eac176655150040da2d157' => 
+    'e148f279e233b26009ec42b1435505ab8c5cfcb5' => 
     array (
-      0 => 'views\\templates\\home.tpl',
-      1 => 1401210638,
+      0 => 'views\\templates\\message.tpl',
+      1 => 1401210295,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '62315384a9d20264e9-66455068',
+  'nocache_hash' => '228065384bd141d6218-61585281',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5384a9d2111226_91332024',
+  'unifunc' => 'content_5384bd14348403_74389274',
   'variables' => 
   array (
     'user' => 0,
@@ -25,15 +25,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
-    'friendsStatuts' => 0,
+    'userConversations' => 0,
     'allUsers' => 0,
-    'friendsStatut' => 0,
+    'key' => 0,
     'allUser' => 0,
+    'userConversation' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5384a9d2111226_91332024')) {function content_5384a9d2111226_91332024($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
-if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5384bd14348403_74389274')) {function content_5384bd14348403_74389274($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -66,9 +66,9 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
 			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
-			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title-selected'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>
@@ -133,36 +133,45 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 	</div>
 </aside>
 <section>
-	<div id='carrousel-photo'>
-		<h1 class='title-body'>Derniere photos de vos amis</h1>
-		<div id='carou'></div>
-	</div>
-	<div class='body-line'></div>
-	<div id='last_status'>
-		<h1 class='title-body'>Dernier statut de vos amis</h1>
-		<?php  $_smarty_tpl->tpl_vars['friendsStatut'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friendsStatut']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['friendsStatuts']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['friendsStatut']->key => $_smarty_tpl->tpl_vars['friendsStatut']->value) {
-$_smarty_tpl->tpl_vars['friendsStatut']->_loop = true;
+	<div id='list-message'>
+		<?php  $_smarty_tpl->tpl_vars['userConversation'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['userConversation']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['userConversations']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['userConversation']->key => $_smarty_tpl->tpl_vars['userConversation']->value) {
+$_smarty_tpl->tpl_vars['userConversation']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['userConversation']->key;
 ?>
-			<div class='last_status-user'>
-				<div class='last_status_user-info'>
-					<div class='last_status_user_info-miniavatar'></div>
-					<h2 class='last_status_user_info-name'><?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
+			<div class='list_message-user'>
+				<div class='list_message_user-photo'></div>
+				<p class='list_message_user-name'><?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['allUser']->key => $_smarty_tpl->tpl_vars['allUser']->value) {
 $_smarty_tpl->tpl_vars['allUser']->_loop = true;
-?><?php if ($_smarty_tpl->tpl_vars['friendsStatut']->value->get_id_user()==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
+?><?php if ($_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
-<?php }?><?php } ?></h2>
-					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date(),'%Y/%m/%d');?>
-</p>
-				</div>
-				<div class='last_status_user-content'>
-					<?php echo $_smarty_tpl->tpl_vars['friendsStatut']->value->get_content();?>
-
-				</div>
+<?php }?><?php } ?></p>
+				<span class='list_message_user_info-new'><?php echo count($_smarty_tpl->tpl_vars['userConversation']->value);?>
+ messages</span>
+			</div>
+		<?php }
+if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
+?>
+			<div class='list_message-user'>
+				<p>Aucunes conversations</p>
 			</div>
 		<?php } ?>
+	</div>
+	<div id='list-message-bloc'>
+
+	</div>
+	<div id='message-bloc-reponse'>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
+		<div id='send-message'>
+			<a href='index.php?action=logout'>
+				<div class='send-message-bloc'>
+					<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+				</div>
+			</a>
+		</div>
 	</div>
 </section><?php }} ?>

@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 13:29:14
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:46
          compiled from "views\templates\profil.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:303105376b444befcc2-15172195%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:304235384a9f34fd526-10880943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd907474ba1c5e43847ecfbd7dfdef0f9e15d339' => 
     array (
       0 => 'views\\templates\\profil.tpl',
-      1 => 1401196725,
+      1 => 1401210295,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '303105376b444befcc2-15172195',
+  'nocache_hash' => '304235384a9f34fd526-10880943',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5376b444cabe44_73990640',
+  'unifunc' => 'content_5384a9f35f8869_30129821',
   'variables' => 
   array (
     'user' => 0,
@@ -28,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5376b444cabe44_73990640')) {function content_5376b444cabe44_73990640($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5384a9f35f8869_30129821')) {function content_5384a9f35f8869_30129821($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
 	</div>
-	<div class='title-status'>
-		Votre statut : "<?php  $_smarty_tpl->tpl_vars['statut'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['statut']->_loop = false;
+	<div id='statut' class='title-status'>
+		Votre statut : <input type='text' class='hidden' id='statut-input'><span id='statut-span'>"<?php  $_smarty_tpl->tpl_vars['statut'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['statut']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['user']->value->get_statuts(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['statut']->total= $_smarty_tpl->_count($_from);
  $_smarty_tpl->tpl_vars['statut']->iteration=0;
@@ -43,7 +43,7 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
  $_smarty_tpl->tpl_vars['statut']->iteration++;
  $_smarty_tpl->tpl_vars['statut']->last = $_smarty_tpl->tpl_vars['statut']->iteration === $_smarty_tpl->tpl_vars['statut']->total;
 ?><?php $_smarty_tpl->tpl_vars['statutContent'] = new Smarty_variable($_smarty_tpl->tpl_vars['statut']->value->get_content(), null, 0);?><?php if ($_smarty_tpl->tpl_vars['statut']->last) {?><?php echo $_smarty_tpl->tpl_vars['statutContent']->value;?>
-<?php }?><?php } ?>" 
+<?php }?><?php } ?>"</span>
 	</div>
 	<div id='deconnexion'>
 		<a href='index.php?action=logout'>
@@ -53,12 +53,17 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 			</div>
 		</a>
 	</div>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<div id="light" class="white_content">
+		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+	</div>
+	<div id="fade" class="black_overlay" ></div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <li><p class='nav-title'><a href="index.php">Ma page d'accueil</a></p></li>
-			    <li><p class='nav-title-selected'><a href="index.php?action=profil">Mon profil</a></p></li>
-			    <li><p class='nav-title'>Mes messages</p></li>
+			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
+			    <a href="index.php?action=profil"><li><p class='nav-title-selected'>Mon profil</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>
@@ -73,7 +78,7 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 	</div>
 	<div class='aside-line'></div>
 	<div id='friend_bloc'>
-		<p class='title-aside'>Mes amis</p>
+		<p class='title-aside'>Mes amis</p><a href="index.php?action=users"><div class='photo-plusfriends'></div></a>
 		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
@@ -125,12 +130,57 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 <section>
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
-		<div class='my_profil-photo'><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
-" alt='Avatar utilisateur'></div>
+		<div class='my_profil-photo'></div>
+		<div class='my_profil-info'>
+			<h2 class='my_profil_info-name'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
+</h2>
+			<span class='my_profil_info-date'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_date_naissance();?>
+</span>
+			<h3 class='title-my_profil_info_description'>Ma description</h3>
+			<span class='my_profil_info-description'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_description();?>
+</span>
+		</div>
 	</div>
 	<div class='body-line'></div>
 	<div id='my-galery'>
-		<h1 class='title-myprofil'>Ma galerie photo</h1>
+		<h1 class='title-myprofil'>Ma Galerie photo</h1>
+		<form class='from-myprofil' method="post" enctype="multipart/form-data" action="">
+		<p>
+			<input class='btn_upload' type="file" name="files" size="30">
+			<input class='btn_upload' type="submit" name="upload" value="Ajouter une photo">
+			<input type="hidden" name="MAX_FILE_SIZE" value="10000" />
+		</p>
+	</form>
 		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+		<div class='my_galery-photo'></div>
+	</div>
+	<div class='body-line'></div>
+	<div id='my-status'>
+		<h1 class='title-myprofil'>Mes Derniers status</h1>
+	</div>
+	<div class='body-line'></div>
+	<div id='my-friendslist'>
+		<h1 class='title-myprofil'>Mes Amis</h1>
+		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
+$_smarty_tpl->tpl_vars['friend']->_loop = true;
+?>
+		<div class='users_list-bloc'>
+			<div class='users_list_bloc-photo'></div>
+			<span class='users_list_bloc-name'><center><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
+</center></span>
+		</div>
+		<?php } ?>
 	</div>
 </section><?php }} ?>

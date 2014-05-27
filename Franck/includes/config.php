@@ -37,7 +37,9 @@ $errors_no = array(
 		'EMAD' => 'Un utilisateur utilise deja cet email',
 		'EMAN' => 'Votre email ou votre password est incorrect',
 		'STAE' => 'Le statut est vide',
-		'STAL' => 'Le statut depasse les 160 characteres'
+		'STAL' => 'Le statut depasse les 160 characteres',
+		'MESE' => 'Le message est vide',
+		'MESN' => 'L\'utilisateur n\'est pas amis avec vous'
 	);
 
 $invitationMessage = "Bonjour,\nDieu vous invite à rejoindre son Social Club !\nVeuillez cliquer sur ce lien afin de vous inscrire : \nhttp://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token=";

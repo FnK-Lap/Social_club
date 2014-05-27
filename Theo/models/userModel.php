@@ -122,7 +122,9 @@ function getUserFriends($id)
 			}
 		}
 		return $friends;	
-	}			
+	}else{
+		return false;
+	}		
 	
 }
 
@@ -204,6 +206,28 @@ function logout()
 {
 	unset($_SESSION['id_user']);
 	session_destroy();
+}
+
+function request_friend($id,$id_friend)
+{
+	$check=checkRequestExist($id,$id_friend);
+	if ($check == false) 
+	{
+		$query ='INSERT INTO `users_friends_requests` (id_user1,id_user2) VALUES ("'.$id.'","'.$id_friend.'")';
+		$result=dbQuery($query);
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
+function checkRequestExist($id,$id_friend)
+{
+	$query = 'SELECT id_user1, id_user2 FROM `users_friends_requests` WHERE (`id_user1` = "'.$id.'" AND `id_user2` ="'.$id_friend.'") OR (`id_user1` = "'.$id_friend.'" AND `id_user2` ="'.$id.'")';
+	$result = dbFetchAllAssoc($query);
+	return $result;
 }
 
 

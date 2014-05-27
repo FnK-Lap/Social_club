@@ -21,7 +21,7 @@
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
 			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
 			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
 			</ul>
@@ -77,24 +77,24 @@
 	</div>
 </aside>
 <section>
-	<div id='carrousel-photo'>
-		<h1 class='title-body'>Derniere photos de vos amis</h1>
-		<div id='carou'></div>
-	</div>
-	<div class='body-line'></div>
-	<div id='last_status'>
-		<h1 class='title-body'>Dernier statut de vos amis</h1>
-		{foreach $friendsStatuts as $friendsStatut}
-			<div class='last_status-user'>
-				<div class='last_status_user-info'>
-					<div class='last_status_user_info-miniavatar'></div>
-					<h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatut->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2>
-					<p class='last_status_user_info-date'>{$friendsStatut->get_date()|date_format:'%Y/%m/%d'}</p>
+	
+	<div id='users-list'>
+		{foreach $allUsers as $allUser}
+		{foreach $friends as $friend}
+		{if $allUser != $friend && $allUser != $user }
+		<div class='users_list-bloc'>
+			<div class='users_list_bloc-photo'></div>
+			<span class='users_list_bloc-name'><center>	
+				{$allUser->get_prenom()} {$allUser->get_nom()}	
+			</center></span>
+			<a href='index.php?action=request_friend&id={$user->get_id()}'>
+				<div class='users_list_bloc-buttom'>
+					<span class='users_list_bloc-buttom-text'>Ajouter</span>
 				</div>
-				<div class='last_status_user-content'>
-					{$friendsStatut->get_content()}
-				</div>
-			</div>
+			</a>
+		</div>
+		{/if}
+		{/foreach}
 		{/foreach}
 	</div>
 </section>

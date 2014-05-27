@@ -54,15 +54,20 @@ function getAllStatuts()
 	$statuts = array();
 	$query = "SELECT * FROM `statuts` ORDER BY `statuts`.`date` ASC";
 	$result = dbFetchAllAssoc($query);
-	foreach ($result as $key => $statut) {
-
-		$Statuts = new Statut();
-		$Statuts->set_id($statut['id']);
-		$Statuts->hydrate();
-		$statuts[] = $Statuts;
+	if ($result != false) {
+		foreach ($result as $key => $statut) {
+			$Statuts = new Statut();
+			$Statuts->set_id($statut['id']);
+			$Statuts->hydrate();
+			$statuts[] = $Statuts;
+		}
+		return $statuts;
+	}else{
+		return false;
 	}
+	
 
-	return $statuts;	
+		
 }
 
 function getFriendsStatuts($idUser)
@@ -70,14 +75,18 @@ function getFriendsStatuts($idUser)
 	$friendsStatuts = array();
 	$friends = getUserFriends($idUser);
 	$statuts = getAllStatuts();
-	foreach ($statuts as $statut) {
-		foreach ($friends as $friend) {
-			if ($statut->get_id_user() == $friend->get_id()) {
-				$friendsStatuts[] = $statut;
+	if ($statuts != false) {
+		foreach ($statuts as $statut) {
+			if ($friends != false) {
+				foreach ($friends as $friend) {
+					if ($statut->get_id_user() == $friend->get_id()) {
+						$friendsStatuts[] = $statut;
+					}
+				}
 			}
 		}
 	}
-
+	
 	return $friendsStatuts;
 
 }

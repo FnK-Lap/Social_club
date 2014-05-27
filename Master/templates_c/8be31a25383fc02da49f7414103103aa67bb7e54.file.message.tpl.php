@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 18:00:27
+=======
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 18:14:51
+>>>>>>> FETCH_HEAD
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
+<<<<<<< HEAD
       1 => 1401205846,
+=======
+      1 => 1401206094,
+>>>>>>> FETCH_HEAD
       2 => 'file',
     ),
   ),
@@ -33,7 +41,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
+<<<<<<< HEAD
 <?php if ($_valid && !is_callable('content_537de1a3152893_52398603')) {function content_537de1a3152893_52398603($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
+=======
+<?php if ($_valid && !is_callable('content_537de1a3152893_52398603')) {function content_537de1a3152893_52398603($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/PHP/Social club/Social_club/Master/libs/smarty/plugins/modifier.capitalize.php';
+>>>>>>> FETCH_HEAD
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -152,6 +164,12 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 <?php }?><?php } ?></p>
 				<span class='list_message_user_info-new'><?php echo count($_smarty_tpl->tpl_vars['userConversation']->value);?>
  messages</span>
+			</div>
+		<?php }
+if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
+?>
+			<div class='list_message-user'>
+				<p>Aucunes conversations</p>
 			</div>
 		<?php } ?>
 	</div>

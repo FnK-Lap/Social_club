@@ -15,15 +15,18 @@
 	</div>
 	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
 	<div id="light" class="white_content">
-		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+
+
 	</div>
 	<div id="fade" class="black_overlay" ></div>
 	<nav>
 		<div class='nav-menu'>
 			<ul>
-			    <a href="index.php"><li><p class='nav-title-selected'>Ma page d'accueil</p></li></a>
+			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
 			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
-			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li></a>
+			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li>
 			</ul>
 		</div>
 	</nav>
@@ -77,24 +80,9 @@
 	</div>
 </aside>
 <section>
-	<div id='carrousel-photo'>
-		<h1 class='title-body'>Derniere photos de vos amis</h1>
-		<div id='carou'></div>
-	</div>
-	<div class='body-line'></div>
-	<div id='last_status'>
-		<h1 class='title-body'>Dernier statut de vos amis</h1>
-		{foreach $friendsStatuts as $friendsStatut}
-			<div class='last_status-user'>
-				<div class='last_status_user-info'>
-					<div class='last_status_user_info-miniavatar'></div>
-					<h2 class='last_status_user_info-name'>{foreach $allUsers as $allUser}{if $friendsStatut->get_id_user() == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</h2>
-					<p class='last_status_user_info-date'>{$friendsStatut->get_date()|date_format:'%Y/%m/%d'}</p>
-				</div>
-				<div class='last_status_user-content'>
-					{$friendsStatut->get_content()}
-				</div>
-			</div>
-		{/foreach}
-	</div>
+	<form action="index.php" method="post">
+		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
+		<input type='submit' class='invite_bloc-buttom'>
+		</input>
+	</form>
 </section>

@@ -84,6 +84,10 @@
 				<p class='list_message_user-name'>{foreach $allUsers as $allUser}{if $key == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</p>
 				<span class='list_message_user_info-new'>{$userConversation|@count} messages</span>
 			</div>
+		{foreachelse}
+			<div class='list_message-user'>
+				<p>Aucunes conversations</p>
+			</div>
 		{/foreach}
 	</div>
 	<div id='list-message-bloc'>

@@ -69,6 +69,20 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 			}
 		}
 	}else{
+		$user = getUserInfos($_SESSION['id_user']);
+		
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+		
 		$template = 'home';
 	}
 	
@@ -84,7 +98,6 @@ elseif ($action == 'login') {
 		$allUsers = getAllUsers();
 
 		$Smarty->assign('user', $user);
-
 		$Smarty->assign('friends',$friends);
 		$Smarty->assign('friendsStatuts', $friendsStatuts);
 		$Smarty->assign('allUsers', $allUsers);
@@ -105,9 +118,14 @@ elseif ($action == 'login') {
 
 				$friends = getUserFriends($_SESSION['id_user']);
 
-				$Smarty->assign('user', $user);
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+				$allUsers = getAllUsers();
+
+				$Smarty->assign('user', $user);
 				$Smarty->assign('friends',$friends);
+				$Smarty->assign('friendsStatuts', $friendsStatuts);
+				$Smarty->assign('allUsers', $allUsers);
 
 				$template = 'home';
 			}
@@ -141,7 +159,47 @@ elseif ($action == 'logout') {
 	else{
 		$template = 'login';
 	}
-}else{
+}
+elseif ($action == 'users') {
+	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+		
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('allUsers', $allUsers);
+		$template = 'users';
+	}else{
+		$template = '404';
+	}
+}
+elseif ($action == 'request_friend') 
+{
+		$id_friend = $_GET['id'];
+		$id = $_SESSION['id_user'];
+		$result = request_friend($id,$id_friend);
+
+		$user = getUserInfos($_SESSION['id_user']);
+		
+		$friends = getUserFriends($_SESSION['id_user']);
+
+
+		$allUsers = getAllUsers();
+	
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('allUsers', $allUsers);
+
+		$template = 'users';
+
+}
+
+else{
 	$template = '404';
 }
 

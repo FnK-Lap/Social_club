@@ -79,7 +79,7 @@
 <section>
 	<div id='list-message'>
 		{foreach $userConversations as $key => $userConversation}
-			<div class='list_message-user'>
+			<div class='list_message-user' id='{$key}'>
 				<div class='list_message_user-photo'></div>
 				<p class='list_message_user-name'>{foreach $allUsers as $allUser}{if $key == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</p>
 				<span class='list_message_user_info-new'>{$userConversation|@count} messages</span>
@@ -91,16 +91,13 @@
 		{/foreach}
 	</div>
 	<div id='list-message-bloc'>
-
 	</div>
 	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'></textarea>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>
-			<a href='index.php?action=logout'>
-				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
-				</div>
-			</a>
+			<div class='send-message-bloc'>
+				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+			</div>
 		</div>
 	</div>
 </section>

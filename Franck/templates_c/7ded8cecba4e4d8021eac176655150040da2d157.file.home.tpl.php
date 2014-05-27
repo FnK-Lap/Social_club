@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:42
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 15:57:10
          compiled from "views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62315384a9d20264e9-66455068%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1401210638,
+      1 => 1401205707,
       2 => 'file',
     ),
   ),
@@ -32,8 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5384a9d2111226_91332024')) {function content_5384a9d2111226_91332024($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
-if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5384a9d2111226_91332024')) {function content_5384a9d2111226_91332024($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Franck\\libs\\smarty\\plugins\\modifier.capitalize.php';
+if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\Social_club\\Franck\\libs\\smarty\\plugins\\modifier.date_format.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -155,7 +155,7 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 ?><?php if ($_smarty_tpl->tpl_vars['friendsStatut']->value->get_id_user()==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
 <?php }?><?php } ?></h2>
-					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date(),'%Y/%m/%d');?>
+					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date());?>
 </p>
 				</div>
 				<div class='last_status_user-content'>
