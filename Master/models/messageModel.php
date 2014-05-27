@@ -8,17 +8,22 @@ function getUserMessages($idUser)
 
 	$userMessages = array();
 
-	foreach ($result as $message) {
-		$Message = new Message();
-		foreach ($message as $key => $messageInfo) {
-			$setter = 'set_'.$key;
-			$Message->$setter($messageInfo);
+	if ($result != false) {
+		foreach ($result as $message) {
+			$Message = new Message();
+			foreach ($message as $key => $messageInfo) {
+				$setter = 'set_'.$key;
+				$Message->$setter($messageInfo);
 
+			}
+			$userMessages[] = $Message;
 		}
-		$userMessages[] = $Message;
+		return $userMessages;
+
+	}else{
+		return false;
 	}
 
-	return $userMessages;
 }
 
 function userConversations($idUser)
@@ -27,15 +32,21 @@ function userConversations($idUser)
 
 	$userConversations = array();
 
-	foreach ($userMessages as $message) {
-		if ($message->get_id_sender() != $idUser) {
-			$userConversations[$message->get_id_sender()][] = $message;
-		}elseif ($message->get_id_receiver() != $idUser) {
-			$userConversations[$message->get_id_receiver()][] = $message;
+	if ($userMessages != false) {
+		foreach ($userMessages as $message) {
+			if ($message->get_id_sender() != $idUser) {
+				$userConversations[$message->get_id_sender()][] = $message;
+			}elseif ($message->get_id_receiver() != $idUser) {
+				$userConversations[$message->get_id_receiver()][] = $message;
+			}
 		}
-	}
 
-	return $userConversations;
+		return $userConversations;
+
+	}else{
+		return false;
+	}
+	
 }
 
 ?>

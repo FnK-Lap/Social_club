@@ -94,11 +94,11 @@
 
 	</div>
 	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'></textarea>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>
 			<a href='index.php?action=logout'>
 				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
+					<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
 				</div>
 			</a>
 		</div>

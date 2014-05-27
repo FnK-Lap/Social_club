@@ -19,8 +19,6 @@ if ($action = 'message') {
 
 	$allUsers = getAllUsers();
 
-	
-
 	$Smarty->assign('user', $user);
 	$Smarty->assign('friends', $friends);
 	$Smarty->assign('userConversations', $userConversations);
