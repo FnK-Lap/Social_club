@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 18:59:32
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 22:38:38
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401209971,
+      1 => 1401223117,
       2 => 'file',
     ),
   ),
@@ -26,8 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'friends' => 0,
     'friend' => 0,
     'userConversations' => 0,
-    'allUsers' => 0,
     'key' => 0,
+    'allUsers' => 0,
     'allUser' => 0,
     'userConversation' => 0,
   ),
@@ -141,7 +141,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['userConversation']->key => $_smarty_t
 $_smarty_tpl->tpl_vars['userConversation']->_loop = true;
  $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['userConversation']->key;
 ?>
-			<div class='list_message-user'>
+			<div class='list_message-user' id='<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+'>
 				<div class='list_message_user-photo'></div>
 				<p class='list_message_user-name'><?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -162,16 +163,13 @@ if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
 		<?php } ?>
 	</div>
 	<div id='list-message-bloc'>
-
 	</div>
 	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'></textarea>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>
-			<a href='index.php?action=logout'>
-				<div class='send-message-bloc'>
-					<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
-				</div>
-			</a>
+			<div class='send-message-bloc'>
+				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+			</div>
 		</div>
 	</div>
 </section><?php }} ?>

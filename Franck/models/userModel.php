@@ -128,6 +128,19 @@ function getUserFriends($id)
 	
 }
 
+function checkIfFriend($idUser, $idUser2)
+{
+	$query = "SELECT * FROM `users_friends` WHERE (id_user1 = ".intval($idUser)." OR id_user2 = ".intval($idUser).") AND (id_user1 = ".intval($idUser2)." OR id_user2 = ".intval($idUser2).")";
+	
+	$result = dbFetchAllAssoc($query);
+
+	if ($result != false) {
+		return true;
+	}else{
+		return false;
+	}
+}
+
 // Enregistre un utilisateur en BDD
 function register($prenom, $nom, $email, $password, $date_naissance)
 {

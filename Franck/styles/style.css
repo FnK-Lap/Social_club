@@ -19,6 +19,18 @@ body {
 .hidden{display: none;}
 .visible{display: block;}
 
+.message-receive{
+	text-align: left;
+	margin: auto;
+	width: 570px;
+}
+
+.message-send{
+	text-align: right;
+	margin: auto;
+	width: 570px;
+}
+
 /* ----------------------------
 
 			Header
