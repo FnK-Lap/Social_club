@@ -65,9 +65,7 @@ function getAllStatuts()
 	}else{
 		return false;
 	}
-	
-
-		
+			
 }
 
 function getFriendsStatuts($idUser)

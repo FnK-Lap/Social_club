@@ -136,7 +136,8 @@ elseif ($action == 'login') {
 		}
 	}
 		
-}elseif ($action == 'profil') {
+}
+elseif ($action == 'profil') {
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
@@ -159,7 +160,15 @@ elseif ($action == 'logout') {
 	else{
 		$template = 'login';
 	}
-}else{
+}
+elseif ($action == 'reset_pass') {
+	if ($is_connected != true) {
+		$template = 'reset';
+	}else{
+		$template = '404';
+	}
+}
+else{
 	$template = '404';
 }
 
