@@ -91,19 +91,51 @@
 		{/foreach}
 	</div>
 	<div id='list-message-bloc'>
-		<div class='list-message_bloc-info'>
-			<div class='list-message_bloc-info-miniavatar'></div>
-			<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
-			<p class='list-message_bloc-info-date'>dans ton cu</p>
-			<div class='list-message_bloc-info-delete'></div>
+		<div class='list-message-bloc-recu'>
+			<div class='list-message_bloc-info'>
+				<div class='list-message_bloc-info-miniavatar'></div>
+				<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
+				<p class='list-message_bloc-info-date'>dans ton cu</p>
+				<div class='list-message_bloc-info-delete'></div>
+			</div>
+			<div class='list-message_bloc-content'>
+				<span class='list-message_bloc_content-text'>
+					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+					fhdgjgkjhgfsafdghjg
+				</span>
+			</div>
+			<div class='clear'></div>
 		</div>
-		<div class='list-message_bloc-content'>
-			<span class='list-message_bloc_content-text'>
-				cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
-				fhdgjgkjhgfsafdghjg
-			</span>
+		<div class='list-message-bloc-envoyer'>
+			<div class='list-message_bloc-info'>
+				<div class='list-message_bloc-info-miniavatar2'></div>
+				<h2 class='list-message_bloc-info-name2'>Franck le pd</h2>
+				<p class='list-message_bloc-info-date2'>dans ton cu</p>
+				<div class='list-message_bloc-info-delete2'></div>
+			</div>
+			<div class='list-message_bloc-content2'>
+				<span class='list-message_bloc_content-text'>
+					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+					fhdgjgkjhgfsafdghjg
+				</span>
+			</div>
+			<div class='clear'></div>
 		</div>
-		<div class='clear'></div>
+		<div class='list-message-bloc-recu'>
+			<div class='list-message_bloc-info'>
+				<div class='list-message_bloc-info-miniavatar'></div>
+				<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
+				<p class='list-message_bloc-info-date'>dans ton cu</p>
+				<div class='list-message_bloc-info-delete'></div>
+			</div>
+			<div class='list-message_bloc-content'>
+				<span class='list-message_bloc_content-text'>
+					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+					fhdgjgkjhgfsafdghjg
+				</span>
+			</div>
+			<div class='clear'></div>
+		</div>
 	</div>
 	<div id='message-bloc-reponse'>
 		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 02:01:12
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:00:10
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401235058,
+      1 => 1401238808,
       2 => 'file',
     ),
   ),
@@ -163,19 +163,51 @@ if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
 		<?php } ?>
 	</div>
 	<div id='list-message-bloc'>
-		<div class='list-message_bloc-info'>
-			<div class='list-message_bloc-info-miniavatar'></div>
-			<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
-			<p class='list-message_bloc-info-date'>dans ton cu</p>
-			<div class='list-message_bloc-info-delete'></div>
+		<div class='list-message-bloc-recu'>
+			<div class='list-message_bloc-info'>
+				<div class='list-message_bloc-info-miniavatar'></div>
+				<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
+				<p class='list-message_bloc-info-date'>dans ton cu</p>
+				<div class='list-message_bloc-info-delete'></div>
+			</div>
+			<div class='list-message_bloc-content'>
+				<span class='list-message_bloc_content-text'>
+					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+					fhdgjgkjhgfsafdghjg
+				</span>
+			</div>
+			<div class='clear'></div>
 		</div>
-		<div class='list-message_bloc-content'>
-			<span class='list-message_bloc_content-text'>
-				cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
-				fhdgjgkjhgfsafdghjg
-			</span>
+		<div class='list-message-bloc-envoyer'>
+			<div class='list-message_bloc-info'>
+				<div class='list-message_bloc-info-miniavatar2'></div>
+				<h2 class='list-message_bloc-info-name2'>Franck le pd</h2>
+				<p class='list-message_bloc-info-date2'>dans ton cu</p>
+				<div class='list-message_bloc-info-delete2'></div>
+			</div>
+			<div class='list-message_bloc-content2'>
+				<span class='list-message_bloc_content-text'>
+					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+					fhdgjgkjhgfsafdghjg
+				</span>
+			</div>
+			<div class='clear'></div>
 		</div>
-		<div class='clear'></div>
+		<div class='list-message-bloc-recu'>
+			<div class='list-message_bloc-info'>
+				<div class='list-message_bloc-info-miniavatar'></div>
+				<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
+				<p class='list-message_bloc-info-date'>dans ton cu</p>
+				<div class='list-message_bloc-info-delete'></div>
+			</div>
+			<div class='list-message_bloc-content'>
+				<span class='list-message_bloc_content-text'>
+					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+					fhdgjgkjhgfsafdghjg
+				</span>
+			</div>
+			<div class='clear'></div>
+		</div>
 	</div>
 	<div id='message-bloc-reponse'>
 		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
