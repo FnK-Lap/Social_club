@@ -22,11 +22,13 @@ if ($action = 'message') {
 
 		$errors = checkMessageForm('new');
 
+		var_dump($errors);
 		if (empty($errors)) {
 			$message = $_POST['message'];
 			$idReceiver = $_POST['receiver'];
 
 			sendMessage($idReceiver, $message);
+
 		}
 
 	}
@@ -52,12 +54,31 @@ if ($action = 'message') {
 		$message = array();
 		foreach ($conversation as $value) {
 			if ($value->get_id_receiver() == $_SESSION['id_user']) {
-				$message[] = array('receive', $value->get_content());
+				$message[] = array('receive', $value->get_content(), $value->get_id());
 			}else{
-				$message[] = array('send', $value->get_content());
+				$message[] = array('send', $value->get_content(), $value->get_id());
 			}
 		}
 		echo json_encode($message);
+	}
+	elseif (!empty($_POST['action']) && $_POST['action'] == 'delete_message') {
+		session_start();
+
+		require_once ('../tools/dbTools.php');
+		require_once ('../includes/config.php');
+
+		dbConnect($dbConfig);
+
+		// Models
+		require_once ('../models/messageModel.php');
+		require_once ('../models/userModel.php');
+
+		// ORM
+		require_once ('../models/table.class.php');
+		require_once ('../models/message.class.php');
+		require_once ('../models/user.class.php');
+
+		deleteMessage($_POST['id']);
 	}
 	else{
 		require_once ('models/userModel.php');

@@ -33,6 +33,14 @@ function sendMessage($idReceiver, $message)
 	$Message->save();
 }
 
+function deleteMessage($id)
+{
+	$Message = new Message();
+	$Message->set_id($id);
+	$Message->hydrate();
+	$Message->delete();
+}
+
 function getUserMessages($idUser)
 {
 	$query = "SELECT * FROM `messages` WHERE id_sender = ".intval($idUser)." OR id_receiver = ".intval($idUser)." ORDER BY messages.date ASC";
