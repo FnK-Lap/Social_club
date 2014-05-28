@@ -268,22 +268,23 @@ elseif ($action == 'refuse_friend')
 
 
 				$user = getUserInfos($_SESSION['id_user']);
-
+		
 				$friends = getUserFriends($_SESSION['id_user']);
 
 				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
 				$allUsers = getAllUsers();
 
-				$friends_request = getFriendsRequest($_SESSION['id_user']);
+				$friends_requests = getFriendsRequest($_SESSION['id_user']);
+	
 
 				$Smarty->assign('user', $user);
 				$Smarty->assign('friends',$friends);
 				$Smarty->assign('friendsStatuts', $friendsStatuts);
 				$Smarty->assign('allUsers', $allUsers);
-				$Smarty->assign('friends_request', $friends_request);
-
-				$template = 'home';
+				$Smarty->assign('friends_requests', $friends_requests);
+	
+				$template = "home";
 }
 else{
 	$template = '404';
