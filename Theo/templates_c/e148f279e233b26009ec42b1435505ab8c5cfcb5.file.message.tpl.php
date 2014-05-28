@@ -1,27 +1,29 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:52
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 01:56:59
          compiled from "views\templates\message.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:228065384bd141d6218-61585281%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:28645538541805340a3-02465377%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e148f279e233b26009ec42b1435505ab8c5cfcb5' => 
     array (
       0 => 'views\\templates\\message.tpl',
-      1 => 1401210295,
+      1 => 1401242179,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '228065384bd141d6218-61585281',
+  'nocache_hash' => '28645538541805340a3-02465377',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5384bd14348403_74389274',
+  'unifunc' => 'content_538541805f1860_76467230',
   'variables' => 
   array (
     'user' => 0,
     'statut' => 0,
     'statutContent' => 0,
+    'friends_requests' => 0,
+    'friend_request' => 0,
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
@@ -33,7 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5384bd14348403_74389274')) {function content_5384bd14348403_74389274($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_538541805f1860_76467230')) {function content_538541805f1860_76467230($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -58,9 +60,46 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 			</div>
 		</a>
 	</div>
-	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div>
+	</a>
 	<div id="light" class="white_content">
-		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+		<div>
+			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn-close">
+			</a>
+		</div>
+		<div id='ask-friend'>
+			<div class='ask_friend-user'>
+				<?php if ($_smarty_tpl->tpl_vars['friends_requests']->value!=false) {?>
+				<?php  $_smarty_tpl->tpl_vars['friend_request'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend_request']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['friends_requests']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['friend_request']->key => $_smarty_tpl->tpl_vars['friend_request']->value) {
+$_smarty_tpl->tpl_vars['friend_request']->_loop = true;
+?>
+				<div class='ask_friend_user-bloc'>
+					<div class='ask_friend_user-bloc-info'>
+						<div class='ask_friend_user-photo'></div>
+						<p class='ask_friend_user-name'><?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_prenom();?>
+ <?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_nom();?>
+</p>
+						<a href='index.php?action=add_friend&id_friend=<?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_id();?>
+'>
+							<div class='ask_friend_user-buttom'>
+								<span class='ask_friend_user-buttom-text'>Ajouter</span>
+							</div>
+						</a>
+						<a href='index.php?action=refuse_friend&id_friend'>
+							<div class='ask_friend_user-buttom2'>
+								<span class='ask_friend_user-buttom-text'>Décliner</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<?php } ?>
+				<?php } else { ?>
+				<p class='ask_friend_user-name'>Vous n'avez pas demande d'amis </p>
+				<?php }?>
+			</div>
+		</div>
 	</div>
 	<div id="fade" class="black_overlay" ></div>
 	<nav>

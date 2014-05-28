@@ -1,27 +1,29 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 17:10:42
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:05:16
          compiled from "views\templates\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:62315384a9d20264e9-66455068%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:642953853c16e25a03-13797641%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1401210638,
+      1 => 1401246313,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '62315384a9d20264e9-66455068',
+  'nocache_hash' => '642953853c16e25a03-13797641',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5384a9d2111226_91332024',
+  'unifunc' => 'content_53853c16f0c152_33393481',
   'variables' => 
   array (
     'user' => 0,
     'statut' => 0,
     'statutContent' => 0,
+    'friends_requests' => 0,
+    'friend_request' => 0,
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
@@ -32,7 +34,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5384a9d2111226_91332024')) {function content_5384a9d2111226_91332024($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_53853c16f0c152_33393481')) {function content_53853c16f0c152_33393481($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.date_format.php';
 ?><header>
 	<div id='title-logo'>
@@ -58,9 +60,47 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 			</div>
 		</a>
 	</div>
-	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div>
+	</a>
 	<div id="light" class="white_content">
-		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
+		<div>
+			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn-close">
+			</a>
+		</div>
+		<div id='ask-friend'>
+			<div class='ask_friend-user'>
+				<?php if ($_smarty_tpl->tpl_vars['friends_requests']->value!=false) {?>
+				<?php  $_smarty_tpl->tpl_vars['friend_request'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend_request']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['friends_requests']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['friend_request']->key => $_smarty_tpl->tpl_vars['friend_request']->value) {
+$_smarty_tpl->tpl_vars['friend_request']->_loop = true;
+?>
+				<div class='ask_friend_user-bloc'>
+					<div class='ask_friend_user-bloc-info'>
+						<div class='ask_friend_user-photo'></div>
+						<p class='ask_friend_user-name'><?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_prenom();?>
+ <?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_nom();?>
+</p>
+						<a href='index.php?action=add_friend&id_friend=<?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_id();?>
+'>
+							<div class='ask_friend_user-buttom'>
+								<span class='ask_friend_user-buttom-text'>Ajouter</span>
+							</div>
+						</a>
+						<a href='index.php?action=refuse_friend&id_friend=<?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_id();?>
+'>
+							<div class='ask_friend_user-buttom2'>
+								<span class='ask_friend_user-buttom-text'>Décliner</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<?php } ?>
+				<?php } else { ?>
+				<p class='ask_friend_user-name'>Vous n'avez pas demande d'amis </p>
+				<?php }?>
+			</div>
+		</div>
 	</div>
 	<div id="fade" class="black_overlay" ></div>
 	<nav>
@@ -155,8 +195,9 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 ?><?php if ($_smarty_tpl->tpl_vars['friendsStatut']->value->get_id_user()==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
 <?php }?><?php } ?></h2>
-					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date(),'%Y/%m/%d');?>
+					<p class='last_status_user_info-date'><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['friendsStatut']->value->get_date());?>
 </p>
+					<div class='clear'></div>
 				</div>
 				<div class='last_status_user-content'>
 					<?php echo $_smarty_tpl->tpl_vars['friendsStatut']->value->get_content();?>

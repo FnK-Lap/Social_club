@@ -15,6 +15,8 @@ if ($action = 'message') {
 
 	$friends = getUserFriends($_SESSION['id_user']);
 
+	$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
 	$userConversations = userConversations($_SESSION['id_user']);
 
 	$allUsers = getAllUsers();
@@ -23,6 +25,7 @@ if ($action = 'message') {
 	$Smarty->assign('friends', $friends);
 	$Smarty->assign('userConversations', $userConversations);
 	$Smarty->assign('allUsers', $allUsers);
+	$Smarty->assign('friends_requests', $friends_requests);
 
 	$template = 'message';
 }

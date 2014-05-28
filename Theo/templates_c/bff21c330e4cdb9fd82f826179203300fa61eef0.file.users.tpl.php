@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 20:28:35
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:00:14
          compiled from "views\templates\users.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:304785384c931852cb7-87476021%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20948538543469b7514-67223187%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bff21c330e4cdb9fd82f826179203300fa61eef0' => 
     array (
       0 => 'views\\templates\\users.tpl',
-      1 => 1401222511,
+      1 => 1401246011,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '304785384c931852cb7-87476021',
+  'nocache_hash' => '20948538543469b7514-67223187',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5384c931902942_06694077',
+  'unifunc' => 'content_53854346abf292_89086401',
   'variables' => 
   array (
     'user' => 0,
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5384c931902942_06694077')) {function content_5384c931902942_06694077($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_53854346abf292_89086401')) {function content_53854346abf292_89086401($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\Social_club\\Theo\\libs\\smarty\\plugins\\modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -132,33 +132,53 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 <section>
 	
 	<div id='users-list'>
+		
 		<?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['allUser']->key => $_smarty_tpl->tpl_vars['allUser']->value) {
 $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 ?>
-		<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
+			<?php  $_smarty_tpl->tpl_vars['friend'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['friends']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['friend']->key => $_smarty_tpl->tpl_vars['friend']->value) {
 $_smarty_tpl->tpl_vars['friend']->_loop = true;
 ?>
-		<?php if ($_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['friend']->value&&$_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['user']->value) {?>
-		<div class='users_list-bloc'>
-			<div class='users_list_bloc-photo'></div>
-			<span class='users_list_bloc-name'><center>	
-				<?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_prenom();?>
+				<?php if ($_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['friend']->value&&$_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['user']->value) {?>
+					<div class='users_list-bloc'>
+						<div class='users_list_bloc-photo'></div>
+						<span class='users_list_bloc-name'><center>	
+							<?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_prenom();?>
  <?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_nom();?>
 	
-			</center></span>
-			<a href='index.php?action=request_friend&id=<?php echo $_smarty_tpl->tpl_vars['user']->value->get_id();?>
+						</center></span>
+						<a href='index.php?action=request_friend&id=<?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_id();?>
 '>
-				<div class='users_list_bloc-buttom'>
-					<span class='users_list_bloc-buttom-text'>Ajouter</span>
-				</div>
-			</a>
-		</div>
-		<?php }?>
-		<?php } ?>
+							<div class='users_list_bloc-buttom'>
+								<span class='users_list_bloc-buttom-text'>Ajouter</span>
+							</div>
+						</a>
+					</div>
+				<?php }?>
+			<?php }
+if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
+?>
+				<?php if ($_smarty_tpl->tpl_vars['allUser']->value!=$_smarty_tpl->tpl_vars['user']->value) {?>
+					<div class='users_list-bloc'>
+						<div class='users_list_bloc-photo'></div>
+						<span class='users_list_bloc-name'><center>	
+						<?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_prenom();?>
+ <?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_nom();?>
+	
+						</center></span>
+						<a href='index.php?action=request_friend&id=<?php echo $_smarty_tpl->tpl_vars['allUser']->value->get_id();?>
+'>
+							<div class='users_list_bloc-buttom'>
+								<span class='users_list_bloc-buttom-text'>Ajouter</span>
+							</div>
+						</a>
+					</div>
+				<?php }?>
+			<?php } ?>
 		<?php } ?>
 	</div>
 </section><?php }} ?>
