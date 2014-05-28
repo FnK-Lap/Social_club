@@ -13,6 +13,9 @@
 			</div>
 		</a>
 	</div>
+	<a href="index.php?action=send_invit">
+		<div class='send-invite-icon'></div>
+	</a>
 	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div>
 	</a>
 	<div id="light" class="white_content">
@@ -70,6 +73,9 @@
 			<div class='friend-user'>
 				<div class='friend-connected-user'></div>
 				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
+				<a href="index.php?action=new_message&amp;id={$friend->get_id()}">
+					<div class='send-new-message'></div>
+				</a>
 			</div>
 		{foreachelse}
 			<p>Vous n'avez pas d'amis</p>
@@ -89,7 +95,7 @@
 	</div>
 </aside>
 <section>
-	<form action="index.php" method="post">
+	<form action="index.php?action=send_invit" method="post">
 		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
 		<input type='submit' class='invite_bloc-buttom'>
 		</input>

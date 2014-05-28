@@ -18,6 +18,7 @@ $legalActions = array(
 		'request_friend'=>'user',
 		'add_friend'=>'user',
 		'refuse_friend'=>'user',
+		'send_invit' => 'user',
 		'message' => 'message',
 		'new_message' => 'message',
 	);

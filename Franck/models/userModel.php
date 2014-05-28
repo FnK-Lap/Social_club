@@ -98,6 +98,13 @@ function checkUserForm($form)
 			$errors['pass'] = $errors_no['PASD'];
 		}
 	}
+	elseif ($form == 'send_invit') {
+		if (empty($_POST['email_invite'])) {
+			$errors['email_invite'] = $errors_no['EMAE'];
+		}elseif (!preg_match('/^[a-z0-9._-]+@[a-z0-9]+.[a-z]+$/i', $_POST['email_invite'])) {
+			$errors['email_invite'] = $errors_no['EMAF'];
+		}
+	}
 
 	return $errors;
 }

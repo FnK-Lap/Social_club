@@ -352,6 +352,36 @@ elseif ($action == 'refuse_friend')
 	
 				$template = "home";
 }
+elseif ($action == 'send_invit') {
+	$user = getUserInfos($_SESSION['id_user']);
+	
+	$friends = getUserFriends($_SESSION['id_user']);
+
+	$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+	$allUsers = getAllUsers();
+
+	$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
+
+	$Smarty->assign('user', $user);
+	$Smarty->assign('friends',$friends);
+	$Smarty->assign('friendsStatuts', $friendsStatuts);
+	$Smarty->assign('allUsers', $allUsers);
+	$Smarty->assign('friends_requests', $friends_requests);
+
+	if (!empty($_POST)) {
+		$errors = checkUserForm('send_invit');
+
+		if (empty($errors)) {
+			sendInvitation($_POST['email_invite'], $invitationMessage, $salt);
+		}
+	}
+	
+	
+
+	$template = 'invite';
+}
 else{
 	$template = '404';
 }

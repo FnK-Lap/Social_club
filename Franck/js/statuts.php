@@ -34,6 +34,7 @@ function selectReceiver(e){
 	console.log(idReceiver);
 	document.getElementById('send-message-button').setAttribute('data-id', idReceiver);
 	var messages = receiveMessage();
+	setInterval(receiveMessage, 5000);
 	
 }
 
@@ -130,5 +131,4 @@ function initStatut(e)
 		};
 
 	};
-	setInterval(receiveMessage, 5000);
 }
