@@ -85,7 +85,6 @@
 <section>
 	<form action="index.php" method="post">
 		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
-		<input type='submit' class='invite_bloc-buttom'>
-		</input>
+		<input type='submit' class='btn-invite'>Envoyer</input>
 	</form>
 </section>

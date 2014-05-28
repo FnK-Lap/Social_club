@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 07:46:41
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 08:14:06
          compiled from "views/templates/new_message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:138372218553854981312f27-15551369%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c426a837814608ccb67dfe4c3b0c3a7f6d7c7466' => 
     array (
       0 => 'views/templates/new_message.tpl',
-      1 => 1401254984,
+      1 => 1401257643,
       2 => 'file',
     ),
   ),
@@ -53,6 +53,9 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 			</div>
 		</a>
 	</div>
+	<a href="">
+		<div class='send-invite-icon'></div>
+	</a>
 	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
 	<div id="light" class="white_content">
 		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
@@ -132,12 +135,12 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 </aside>
 <section>
 	<h3 class='title-message-bloc'>Nouveau message à Franck</h3>
-	<div id='new_message-bloc-reponse'>
-		<textarea id='message-content' class='text-area-styled' rows='10'></textarea>
-		<div id='send-message'>
-			<div class='send-message-bloc'>
-				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+		<form action="index.php" method="post">
+			<div id='new_message-bloc-reponse'>
+				<textarea id='message-content' class='text-area-styled' rows='10'></textarea>
+				<div class='send-message-bloc'>
+					<input type='submit' class='btn-invite'></input>
+				</div>
 			</div>
-		</div>
-	</div>
+		</form>
 </section><?php }} ?>

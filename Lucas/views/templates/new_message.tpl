@@ -84,12 +84,12 @@
 </aside>
 <section>
 	<h3 class='title-message-bloc'>Nouveau message à Franck</h3>
-	<div id='new_message-bloc-reponse'>
-		<textarea id='message-content' class='text-area-styled' rows='10'></textarea>
-		<div id='send-message'>
-			<div class='send-message-bloc'>
-				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+		<form action="index.php" method="post">
+			<div id='new_message-bloc-reponse'>
+				<textarea id='message-content' class='text-area-styled' rows='10'></textarea>
+				<div class='send-message-bloc'>
+					<input type='submit' class='btn-invite'></input>
+				</div>
 			</div>
-		</div>
-	</div>
+		</form>
 </section>

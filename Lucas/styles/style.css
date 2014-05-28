@@ -1018,9 +1018,6 @@ section {
 
 	float: right;
 	margin-right: 70px;
-	width: 160px;
-	height: 30px;
-	background-color: #2980b9;
 	margin-top: 20px;
 }
 
@@ -1120,25 +1117,24 @@ section {
 }
 
 
-.invite_bloc-buttom {
+.btn-invite {
 
-	width: 150px;
-	height: 30px;
-	background-color: #2980b9;
-	margin-top: 7px;
-	float: right;
-	margin-top: -40px;
-	margin-right: 180px;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-
-
+	-webkit-border-radius: 1;
+	-moz-border-radius: 1;
+	border-radius: 1px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 15px;
+	background: #2980b9;
+	padding: 7px 29px 7px 29px;
+	border: solid #858585 1px;
+	text-decoration: none;
 }
 
-.invite_bloc-buttom:hover {
+.btn-invite:hover {
 
-	background-color: #7f8c8d;
+	background: #7f8c8d;
+	text-decoration: none;
 	cursor: pointer;
 }
 
