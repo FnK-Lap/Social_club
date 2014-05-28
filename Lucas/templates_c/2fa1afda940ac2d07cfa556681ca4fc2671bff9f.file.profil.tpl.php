@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 02:13:42
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:53:54
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1705675009537b699327a298-88362251%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
-      1 => 1401236020,
+      1 => 1401242031,
       2 => 'file',
     ),
   ),
@@ -138,6 +138,59 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 			<h2 class='my_profil_info-name'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['user']->value->get_nom());?>
 </h2>
+			<div class='my_profil_info-plus'>
+				<a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block'"><div class='plus-info' style="margin-top: 0px; margin-right: 0px;"></div></a>
+				<div id="light2" class="white_content">
+					<div>
+						<a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn-close" ></a>
+					</div>
+					<form class='form_login' action="" method="post">
+			            <table>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='last_password' placeholder="Ancien password">
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                <tr/>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='new_password' placeholder="Nouveau password">
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                <tr/>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='pass' placeholder="Verification password" style="margin-bottom: 35px;" >
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                </tr>
+			            </table>
+		                <div class='bloc_bodycontent'>
+		                    <div class='bloc_bodycentercontent'>
+		                        <div class='bloc_bodygroup'>
+		                            <input type='submit' class="btn_body_bouton"></input>
+		                        </div>
+		                    </div>
+		                </div>
+			        </form>
+				</div>
+				<div id="fade2" class="black_overlay" ></div>
+			</div>
 			<span class='my_profil_info-date'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_date_naissance();?>
 </span>
 			<h3 class='title-my_profil_info_description'>Ma description</h3>

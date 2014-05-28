@@ -83,6 +83,59 @@
 		<div class='my_profil-photo'></div>
 		<div class='my_profil-info'>
 			<h2 class='my_profil_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
+			<div class='my_profil_info-plus'>
+				<a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block'"><div class='plus-info' style="margin-top: 0px; margin-right: 0px;"></div></a>
+				<div id="light2" class="white_content">
+					<div>
+						<a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn-close" ></a>
+					</div>
+					<form class='form_login' action="" method="post">
+			            <table>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='last_password' placeholder="Ancien password">
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                <tr/>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='new_password' placeholder="Nouveau password">
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                <tr/>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='pass' placeholder="Verification password" style="margin-bottom: 35px;" >
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                </tr>
+			            </table>
+		                <div class='bloc_bodycontent'>
+		                    <div class='bloc_bodycentercontent'>
+		                        <div class='bloc_bodygroup'>
+		                            <input type='submit' class="btn_body_bouton"></input>
+		                        </div>
+		                    </div>
+		                </div>
+			        </form>
+				</div>
+				<div id="fade2" class="black_overlay" ></div>
+			</div>
 			<span class='my_profil_info-date'>{$user->get_date_naissance()}</span>
 			<h3 class='title-my_profil_info_description'>Ma description</h3>
 			<span class='my_profil_info-description'>{$user->get_description()}</span>
