@@ -13,6 +13,9 @@
 			</div>
 		</a>
 	</div>
+	<a href="">
+		<div class='send-invite-icon'></div>
+	</a>
 	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
 	<div id="light" class="white_content">
 		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
