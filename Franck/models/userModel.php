@@ -75,6 +75,29 @@ function checkUserForm($form)
 			$errors['email'] = $errors_no['EMAN'];
 		}
 	}
+	elseif ($form == 'reset_pass') {
+		$User = new User();
+		$User->set_id($_SESSION['id_user']);
+		$User->hydrate();
+
+		if (empty($_POST['last_password'])) {
+			$errors['last_password'] = $errors_no['LASE'];
+		}elseif (sha1($_POST['last_password'].$salt) != $User->get_password()) {
+			$errors['last_password'] = $errors_no['LASD'];
+		}
+
+		if (empty($_POST['new_password'])) {
+			$errors['new_password'] = $errors_no['NEWE'];
+		}elseif (strlen($_POST['new_password']) < 8) {
+			$errors['new_password'] = $errors_no['NEWL'];
+		}
+
+		if (empty($_POST['pass'])) {
+			$errors['pass'] = $errors_no['RPAE'];
+		}elseif ($_POST['pass'] != $_POST['new_password']) {
+			$errors['pass'] = $errors_no['PASD'];
+		}
+	}
 
 	return $errors;
 }
@@ -167,6 +190,14 @@ function register($prenom, $nom, $email, $password, $date_naissance)
 	$User->save();
 }
 
+function resetPassword($newPass)
+{
+	$User = new User();
+	$User->set_id($_SESSION['id_user']);
+	$User->hydrate();
+	$User->set_password($newPass);
+	$User->save();
+}
 
 // Envoie une invitation avec un token unique 
 function sendInvitation($destinataire, $message, $salt)

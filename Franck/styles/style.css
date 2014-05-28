@@ -244,6 +244,17 @@ a {
 	float: right;
 
 }
+.btn-close {
+
+	margin-left: 98%;
+	display: block;
+	top : 0;
+	background: url("../images/plus.png");
+	width: 16px;
+	height: 16px;
+
+
+}
 
 .plus-info {
 

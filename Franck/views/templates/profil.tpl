@@ -64,6 +64,59 @@
 		<div class='my_profil-photo'></div>
 		<div class='my_profil-info'>
 			<h2 class='my_profil_info-name'>{$profil->get_prenom()|capitalize} {$profil->get_nom()|capitalize}</h2>
+			<div class='my_profil_info-plus'>
+				<a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='block';document.getElementById('fade2').style.display='block'"><div class='plus-info' style="margin-top: 0px; margin-right: 0px;"></div></a>
+				<div id="light2" class="white_content">
+					<div>
+						<a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none'" class="btn-close" ></a>
+					</div>
+					<form class='form_login' action="index.php?action=reset_pass" method="post">
+			            <table>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='last_password' placeholder="Ancien password">
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                <tr/>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='new_password' placeholder="Nouveau password">
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                <tr/>
+			                <tr>
+			                    <td>
+			                        <div class='bloc_bodycontent'>
+			                            <div class='bloc_bodycentercontent'>
+			                                <div class='bloc_bodygroup'>
+			                                    <input class="body_bouton" type="password" name='pass' placeholder="Verification password" style="margin-bottom: 35px;" >
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </td>
+			                </tr>
+			            </table>
+		                <div class='bloc_bodycontent'>
+		                    <div class='bloc_bodycentercontent'>
+		                        <div class='bloc_bodygroup'>
+		                            <input type='submit' class="btn_body_bouton"></input>
+		                        </div>
+		                    </div>
+		                </div>
+			        </form>
+				</div>
+				<div id="fade2" class="black_overlay" ></div>
+			</div>
 			<span class='my_profil_info-date'>{$profil->get_date_naissance()}</span>
 			<h3 class='title-my_profil_info_description'>Ma description</h3>
 			<span class='my_profil_info-description'>{$profil->get_description()}</span>
@@ -93,6 +146,19 @@
 	<div class='body-line'></div>
 	<div id='my-status'>
 		<h1 class='title-myprofil'>Mes Derniers status</h1>
+		{foreach $user->get_statuts() as $statuts}
+			<div class='last_status-user'>
+				<div class='last_status_user-info'>
+					<div class='last_status_user_info-miniavatar'></div>
+					<h2 class='last_status_user_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
+					<p class='last_status_user_info-date'>{$statuts->get_date()|date_format}</p>
+					<div class='clear'></div>
+				</div>
+				<div class='last_status_user-content'>
+					{$statuts->get_content()}
+				</div>
+			</div>
+		{/foreach}
 	</div>
 	<div class='body-line'></div>
 	<div id='my-friendslist'>

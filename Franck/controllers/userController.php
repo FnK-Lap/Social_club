@@ -190,8 +190,49 @@ elseif ($action == 'logout') {
 	}
 }
 elseif ($action == 'reset_pass') {
-	if ($is_connected != true) {
-		$template = 'reset';
+	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+
+		if (!empty($_GET['id'])) {
+			if (checkIfUserIdExist($_GET['id']) == false) {
+				$template = '404';
+			}else{
+				if (checkIfFriend($_SESSION['id_user'], $_GET['id'])) {
+					$template = 'profil';
+				}else{
+					$template = 'profil-lite';
+				}
+
+				$profil = getUserInfos($_GET['id']);
+				$profilFriends = getUserFriends($_GET['id']);
+			}
+			
+		}else{
+			$profil = getUserInfos($_SESSION['id_user']);
+			$profilFriends = getUserFriends($_SESSION['id_user']);
+			$errors = checkUserForm('reset_pass');
+
+			$newPass = sha1($_POST['new_password'].$salt);
+			if (empty($errors)) {
+				resetPassword($newPass);
+			}
+			$template = 'profil';
+		}
+		if (empty($_GET['id']) || checkIfUserIdExist($_GET['id']) != false) {
+			$Smarty->assign('user', $user);
+			$Smarty->assign('profil', $profil);
+			$Smarty->assign('friends',$friends);
+			$Smarty->assign('profilFriends',$profilFriends);
+			$Smarty->assign('friendsStatuts', $friendsStatuts);
+			$Smarty->assign('allUsers', $allUsers);
+		}
+		$template = 'profil';
 	}else{
 		$template = '404';
 	}
