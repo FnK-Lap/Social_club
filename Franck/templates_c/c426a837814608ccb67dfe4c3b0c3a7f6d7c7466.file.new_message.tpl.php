@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 08:16:08
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 08:48:23
          compiled from "views/templates/new_message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:777204412538575f617a9e0-13246349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c426a837814608ccb67dfe4c3b0c3a7f6d7c7466' => 
     array (
       0 => 'views/templates/new_message.tpl',
-      1 => 1401257727,
+      1 => 1401259664,
       2 => 'file',
     ),
   ),
@@ -179,14 +179,13 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 <section>
 	<h3 class='title-message-bloc'>Nouveau message à <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friendInfos']->value->get_prenom());?>
 </h3>
-	<div id='new_message-bloc-reponse'>
-		<form action='index.php?actio=new_message&amp;id=<?php echo $_smarty_tpl->tpl_vars['friendInfos']->value->get_id();?>
-' method='post' name='new_message_form'>
-			<textarea name='new_message-content' id='message-content' class='text-area-styled' rows='10'></textarea>
-			<div id='send-message-button-message'>
-				<input type='submit' >
+	<form action="index.php?action=new_message&amp;id=<?php echo $_smarty_tpl->tpl_vars['friendInfos']->value->get_id();?>
+" method="post">
+		<div id='new_message-bloc-reponse'>
+			<textarea id='message-content' class='text-area-styled' name='message-content' rows='10'></textarea>
+			<div class='send-message-bloc2'>
+				<input type='submit' class='btn-invite'></input>
+			</div>
 		</div>
-		</form>
-		
-	</div>
+	</form>
 </section><?php }} ?>

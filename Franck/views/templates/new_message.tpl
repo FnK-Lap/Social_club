@@ -114,13 +114,12 @@
 </aside>
 <section>
 	<h3 class='title-message-bloc'>Nouveau message à {$friendInfos->get_prenom()|capitalize}</h3>
-	<div id='new_message-bloc-reponse'>
-		<form action='index.php?actio=new_message&amp;id={$friendInfos->get_id()}' method='post' name='new_message_form'>
-			<textarea name='new_message-content' id='message-content' class='text-area-styled' rows='10'></textarea>
-			<div id='send-message-button-message'>
-				<input type='submit' >
+	<form action="index.php?action=new_message&amp;id={$friendInfos->get_id()}" method="post">
+		<div id='new_message-bloc-reponse'>
+			<textarea id='message-content' class='text-area-styled' name='message-content' rows='10'></textarea>
+			<div class='send-message-bloc2'>
+				<input type='submit' class='btn-invite'></input>
+			</div>
 		</div>
-		</form>
-		
-	</div>
+	</form>
 </section>

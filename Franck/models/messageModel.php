@@ -6,14 +6,19 @@ function checkMessageForm($form)
 
 	$errors = array();
 
-	if ($form = 'new') {
-		$content = $_POST['message'];
-		$idReceiver = $_POST['receiver'];
-
-		if (empty($content)) {
+	if ($form = 'send_message') {
+		$result = checkIfFriend($_SESSION['id_user'], $_GET['id']);
+		if (empty($_POST['message-content'])) {
+			$errors['message-content'] = $errors_no['MESE'];
+		}elseif ($result == false) {
+			$errors['message-content'] = $errors_no['MESN'];
+		}
+	}elseif ($form = 'new') {
+		echo $form;
+		if (empty($_POST['message'])) {
 			$errors['message'] = $errors_no['MESE'];
 		}
-		$result = checkIfFriend($_SESSION['id_user'], $idReceiver);
+		$result = checkIfFriend($_SESSION['id_user'], $_POST['receiver']);
 
 		if ($result == false) {
 			$errors['message'] = $errors_no['MESN'];

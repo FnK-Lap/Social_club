@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 08:16:16
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 08:57:25
          compiled from "views/templates/invite.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:80121452153857bbbb0e9a2-47467300%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ff57c4b5a5b628cbc64bfe6ffb328ed54df5a78a' => 
     array (
       0 => 'views/templates/invite.tpl',
-      1 => 1401257654,
+      1 => 1401260244,
       2 => 'file',
     ),
   ),
@@ -195,7 +195,7 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 <section>
 	<form action="index.php?action=send_invit" method="post">
 		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
-		<input type='submit' class='invite_bloc-buttom'>
+		<input type='submit' class='btn-invite'>
 		</input>
 	</form>
 </section><?php }} ?>

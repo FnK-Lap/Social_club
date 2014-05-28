@@ -13,6 +13,7 @@ if (!empty($action) && $action == 'new_message' && !empty($_GET['id'])) {
 	require_once ('models/message.class.php');
 		
 	if ($is_connected == true) {
+
 		$user = getUserInfos($_SESSION['id_user']);
 
 		$friendInfos = getUserInfos($_GET['id']);
@@ -25,7 +26,11 @@ if (!empty($action) && $action == 'new_message' && !empty($_GET['id'])) {
 
 		$Smarty->assign('friends',$friends);
 
-		
+		$errors = checkMessageForm('send_message');
+
+		if (empty($errors)) {
+			sendMessage($_GET['id'], $_POST['message-content']);
+		}
 		
 		$template = 'new_message';
 	}else{
