@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:07:44
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 06:37:33
          compiled from "views\templates\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:642953853c16e25a03-13797641%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ded8cecba4e4d8021eac176655150040da2d157' => 
     array (
       0 => 'views\\templates\\home.tpl',
-      1 => 1401246418,
+      1 => 1401254590,
       2 => 'file',
     ),
   ),
@@ -69,7 +69,7 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 		</div>
 		<div id='ask-friend'>
 			<div class='ask_friend-user'>
-				<?php if ($_smarty_tpl->tpl_vars['friends_requests']->value!=false) {?>
+				<?php if ($_smarty_tpl->tpl_vars['friends_requests']->value!=null) {?>
 				<?php  $_smarty_tpl->tpl_vars['friend_request'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['friend_request']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['friends_requests']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['friend_request']->key => $_smarty_tpl->tpl_vars['friend_request']->value) {
@@ -77,7 +77,8 @@ $_smarty_tpl->tpl_vars['friend_request']->_loop = true;
 ?>
 				<div class='ask_friend_user-bloc'>
 					<div class='ask_friend_user-bloc-info'>
-						<div class='ask_friend_user-photo'></div>
+						<div class='ask_friend_user-photo'><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['friend_request']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
 						<p class='ask_friend_user-name'><?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_prenom();?>
  <?php echo $_smarty_tpl->tpl_vars['friend_request']->value->get_nom();?>
 </p>

@@ -18,6 +18,7 @@ $legalActions = array(
 		'request_friend'=>'user',
 		'add_friend'=>'user',
 		'refuse_friend'=>'user',
+		'new_description'=>'user'
 	);
 
 
@@ -41,7 +42,9 @@ $errors_no = array(
 		'EMAD' => 'Un utilisateur utilise deja cet email',
 		'EMAN' => 'Votre email ou votre password est incorrect',
 		'STAE' => 'Le statut est vide',
-		'STAL' => 'Le statut depasse les 160 characteres'
+		'STAL' => 'Le statut depasse les 160 characteres',
+		'DESE' => 'La description est vide',
+		'DESL' => 'La description depasse les 255 characteres'
 	);
 
 $invitationMessage = "Bonjour,\nDieu vous invite à rejoindre son Social Club !\nVeuillez cliquer sur ce lien afin de vous inscrire : \nhttp://localhost:8888/PHP/Social%20club/Social_club/Franck/index.php?action=register&token=";

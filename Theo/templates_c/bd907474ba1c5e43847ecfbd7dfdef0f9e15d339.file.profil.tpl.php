@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 01:40:43
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 07:28:25
          compiled from "views\templates\profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3068653853c0dc373b6-18228770%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd907474ba1c5e43847ecfbd7dfdef0f9e15d339' => 
     array (
       0 => 'views\\templates\\profil.tpl',
-      1 => 1401241218,
+      1 => 1401262102,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
+    'description' => 0,
+    'descriptionContent' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -176,9 +178,19 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 </h2>
 			<span class='my_profil_info-date'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_date_naissance();?>
 </span>
+			<div id="description">
 			<h3 class='title-my_profil_info_description'>Ma description</h3>
-			<span class='my_profil_info-description'><?php echo $_smarty_tpl->tpl_vars['user']->value->get_description();?>
-</span>
+			<span class='my_profil_info-description'><textarea class="hidden" id="description_textarea"  style="width: 600px; height: 116px;"></textarea><div id="description_div"><?php  $_smarty_tpl->tpl_vars['description'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['description']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['user']->value->get_description(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['description']->total= $_smarty_tpl->_count($_from);
+ $_smarty_tpl->tpl_vars['description']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['description']->key => $_smarty_tpl->tpl_vars['description']->value) {
+$_smarty_tpl->tpl_vars['description']->_loop = true;
+ $_smarty_tpl->tpl_vars['description']->iteration++;
+ $_smarty_tpl->tpl_vars['description']->last = $_smarty_tpl->tpl_vars['description']->iteration === $_smarty_tpl->tpl_vars['description']->total;
+?><?php $_smarty_tpl->tpl_vars['descriptionContent'] = new Smarty_variable($_smarty_tpl->tpl_vars['description']->value, null, 0);?><?php if ($_smarty_tpl->tpl_vars['description']->last) {?><?php echo $_smarty_tpl->tpl_vars['descriptionContent']->value;?>
+<?php }?><?php } ?></div></span>
+			</div>
 		</div>
 	</div>
 	<div class='body-line'></div>

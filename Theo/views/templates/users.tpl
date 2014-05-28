@@ -82,18 +82,10 @@
 		
 		{foreach $allUsers as $allUser}
 			{foreach $friends as $friend}
-				{if $allUser != $friend && $allUser != $user }
-					<div class='users_list-bloc'>
-						<div class='users_list_bloc-photo'></div>
-						<span class='users_list_bloc-name'><center>	
-							{$allUser->get_prenom()} {$allUser->get_nom()}	
-						</center></span>
-						<a href='index.php?action=request_friend&id={$allUser->get_id()}'>
-							<div class='users_list_bloc-buttom'>
-								<span class='users_list_bloc-buttom-text'>Ajouter</span>
-							</div>
-						</a>
-					</div>
+				{if $allUser->get_id()!=$friend->get_id() && $allUser->get_id()!=$user->get_id()}
+					
+					{$allUser->get_prenom()}<br>
+					
 				{/if}
 			{foreachelse}
 				{if $allUser != $user }
