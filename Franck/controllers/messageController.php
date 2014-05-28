@@ -1,8 +1,38 @@
 <?php
 
 
+if (!empty($action) && $action == 'new_message' && !empty($_GET['id'])) {
+	require_once ('models/userModel.php');
+	require_once ('models/messageModel.php');
+	require_once ('models/statutModel.php');
 
-if ($action = 'message') {
+	require_once ('models/table.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
+	require_once ('models/message.class.php');
+		
+	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friendInfos = getUserInfos($_GET['id']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friendInfos', $friendInfos);
+
+		$Smarty->assign('friends',$friends);
+
+		
+		
+		$template = 'new_message';
+	}else{
+		$template = '404';
+	}
+}
+elseif ($action = 'message') {
 	if (!empty($_POST['action']) && $_POST['action'] == 'send_message') {
 		session_start();
 
@@ -111,21 +141,7 @@ if ($action = 'message') {
 		$template = 'message';
 	}
 }
-elseif ($action == 'new_message') {
-	if ($is_connected == true) {
-		$user = getUserInfos($_SESSION['id_user']);
 
-		$friends = getUserFriends($_SESSION['id_user']);
-
-		$Smarty->assign('user', $user);
-
-		$Smarty->assign('friends',$friends);
-
-		$template = 'new_message';
-	}else{
-		$template = '404';
-	}
-}
 
 
 ?>

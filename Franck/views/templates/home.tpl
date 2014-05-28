@@ -70,7 +70,7 @@
 			<div class='friend-user'>
 				<div class='friend-connected-user'></div>
 				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
-				<a href="index.php?action=new_message">
+				<a href="index.php?action=new_message&amp;id={$friend->get_id()}">
 					<div class='send-new-message'></div>
 				</a>
 			</div>
