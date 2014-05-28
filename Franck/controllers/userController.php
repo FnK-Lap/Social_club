@@ -139,6 +139,13 @@ elseif ($action == 'login') {
 }
 elseif ($action == 'profil') {
 	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
 
 		if (!empty($_GET['id'])) {
 			if (checkIfUserIdExist($_GET['id']) == false) {
@@ -150,14 +157,6 @@ elseif ($action == 'profil') {
 					$template = 'profil-lite';
 				}
 
-				$user = getUserInfos($_SESSION['id_user']);
-
-				$friends = getUserFriends($_SESSION['id_user']);
-
-				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
-
-				$allUsers = getAllUsers();
-
 				$profil = getUserInfos($_GET['id']);
 				$profilFriends = getUserFriends($_GET['id']);
 			}
@@ -165,6 +164,7 @@ elseif ($action == 'profil') {
 		}else{
 			$profil = getUserInfos($_SESSION['id_user']);
 			$profilFriends = getUserFriends($_SESSION['id_user']);
+			$template = 'profil';
 		}
 		if (empty($_GET['id']) || checkIfUserIdExist($_GET['id']) != false) {
 			$Smarty->assign('user', $user);
