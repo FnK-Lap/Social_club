@@ -139,33 +139,42 @@ elseif ($action == 'login') {
 }
 elseif ($action == 'profil') {
 	if ($is_connected == true) {
-		$user = getUserInfos($_SESSION['id_user']);
-
-		$friends = getUserFriends($_SESSION['id_user']);
-
-		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
-
-		$allUsers = getAllUsers();
 
 		if (!empty($_GET['id'])) {
-			if (checkIfFriend($_SESSION['id_user'], $_GET['id'])) {
-				$template = 'profil';
+			if (checkIfUserIdExist($_GET['id']) == false) {
+				$template = '404';
 			}else{
-				die('profil-lite');
-				$template = 'profil-lite';
+				if (checkIfFriend($_SESSION['id_user'], $_GET['id'])) {
+					$template = 'profil';
+				}else{
+					$template = 'profil-lite';
+				}
+
+				$user = getUserInfos($_SESSION['id_user']);
+
+				$friends = getUserFriends($_SESSION['id_user']);
+
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+				$allUsers = getAllUsers();
+
+				$profil = getUserInfos($_GET['id']);
+				$profilFriends = getUserFriends($_GET['id']);
 			}
-			$profil = getUserInfos($_GET['id']);
-			$profilFriends = getUserFriends($_GET['id']);
+			
 		}else{
 			$profil = getUserInfos($_SESSION['id_user']);
 			$profilFriends = getUserFriends($_SESSION['id_user']);
 		}
-		$Smarty->assign('user', $user);
-		$Smarty->assign('profil', $profil);
-		$Smarty->assign('friends',$friends);
-		$Smarty->assign('profilFriends',$profilFriends);
-		$Smarty->assign('friendsStatuts', $friendsStatuts);
-		$Smarty->assign('allUsers', $allUsers);
+		if (empty($_GET['id']) || checkIfUserIdExist($_GET['id']) != false) {
+			$Smarty->assign('user', $user);
+			$Smarty->assign('profil', $profil);
+			$Smarty->assign('friends',$friends);
+			$Smarty->assign('profilFriends',$profilFriends);
+			$Smarty->assign('friendsStatuts', $friendsStatuts);
+			$Smarty->assign('allUsers', $allUsers);
+		}
+		
 		
 	}else{
 		$template = '404';

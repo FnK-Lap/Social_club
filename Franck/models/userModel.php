@@ -103,6 +103,19 @@ function getUserInfos($id)
 	return $User;
 }
 
+function checkIfUserIdExist($id)
+{
+	$query = "SELECT * FROM `users` WHERE id = ".intval($id);
+
+	$result = dbFetchAllAssoc($query);
+
+	if ($result != false) {
+		return true;
+	}else{
+		return false;
+	}
+}
+
 // recupere touts les amis de l'utilisateur
 function getUserFriends($id)
 {
