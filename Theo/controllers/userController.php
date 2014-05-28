@@ -322,7 +322,7 @@ elseif ($action == 'request_friend')
 		$Smarty->assign('allUsers', $allUsers);
 		$Smarty->assign('friends_request', $friends_request);
 
-		$template = 'home';
+		$template = 'user';
 
 }
 
