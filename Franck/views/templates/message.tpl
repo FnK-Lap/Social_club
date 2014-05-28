@@ -98,7 +98,7 @@
 	<div id='list-message'>
 		{foreach $userConversations as $key => $userConversation}
 			<div class='list_message-user' id='{$key}'>
-				<div class='list_message_user-photo'><img src="{$avatar = $allUser->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+				<div class='list_message_user-photo'><img src="{$user = $userConversation[0]->get_id_sender()}{foreach $allUsers as $allUser}{if $user == $allUser->get_id()}{$avatar = $allUser->get_avatar()}{$avatar->get_photo()}{/if}{/foreach}" alt='Avatar utilisateur'></div>
 				<p class='list_message_user-name'>{foreach $allUsers as $allUser}{if $key == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</p>
 				<span class='list_message_user_info-new'>{$userConversation|@count} messages</span>
 			</div>

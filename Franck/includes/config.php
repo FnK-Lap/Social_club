@@ -21,6 +21,9 @@ $legalActions = array(
 		'send_invit' => 'user',
 		'message' => 'message',
 		'new_message' => 'message',
+		'addPicture' => 'photo',
+		'deletePicture' => 'photo',
+		'addProfilePicture' => 'photo'
 	);
 
 

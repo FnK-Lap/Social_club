@@ -134,6 +134,8 @@ elseif ($action = 'message') {
 
 		$userConversations = userConversations($_SESSION['id_user']);
 
+		
+
 		$allUsers = getAllUsers();
 
 		$Smarty->assign('user', $user);

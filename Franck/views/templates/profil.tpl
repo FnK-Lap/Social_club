@@ -158,28 +158,48 @@
 			<span class='my_profil_info-description'>{$profil->get_description()}</span>
 		</div>
 	</div>
-	<div class='body-line'></div>
 	<div id='my-galery'>
 		<h1 class='title-myprofil'>Ma Galerie photo</h1>
-		<form class='from-myprofil' method="post" enctype="multipart/form-data" action="">
-		<p>
-			<input class='btn_upload' type="file" name="files" size="30">
-			<input class='btn_upload' type="submit" name="upload" value="Ajouter une photo">
-			<input type="hidden" name="MAX_FILE_SIZE" value="10000" />
-		</p>
-	</form>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
-		<div class='my_galery-photo'></div>
+		<form class='from-myprofil' method="post" enctype="multipart/form-data" action="index.php?action=addPicture">
+			<p>
+				<input class='btn_upload' type="file" name="files" size="30" />
+				<input class="" type="text" name="photo_description" size="49" placeholder="Description de la photo" /><br />
+				<input class='btn_upload' type="submit" name="upload" value="Ajouter une photo" />
+				<input type="hidden" name="MAX_FILE_SIZE" value="10000" />
+				<span class="photo_errors">
+					{$errors}
+				</span>
+			</p>
+		</form>
+		{if $myPictures != false}
+		{foreach from=$myPictures item=picture}
+			<div class='my-galery_bloc'>
+				<div class='my_galery-photo'>
+					
+						<img src="{$picture['photo']}" alt="" />
+						<span class="photo_description">{$picture['description']}</span>
+						<!-- supprimer -->
+						<div class='my_galery_photo-delete'>
+							<form method="post" action="index.php?action=deletePicture">
+								<input type="hidden" name="photoPath" value="{$picture['photo']}" />
+								<input type="submit" name="deletePicture" value="Supprimer" />
+							</form>
+						</div>
+						<!-- photo de profil -->
+						<div class='my_galery_photo-ajout'>
+							<form method="post" action="index.php?action=addProfilePicture">
+								<input type="hidden" name="photoPath" value="{$picture['photo']}" />
+								<input type="submit" name="addProfilePicture" value="Ajouter en photo de profil" />
+							</form>
+						</div>
+					
+				</div>
+			</div>
+		{/foreach}
+		{else}
+		<div>Il n'y a pas de photos</div>
+		{/if}
 	</div>
-	<div class='body-line'></div>
 	<div id='my-status'>
 		<h1 class='title-myprofil'>Mes Derniers status</h1>
 		{$statuts = $user->get_statuts()}

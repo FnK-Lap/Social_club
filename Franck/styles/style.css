@@ -11,6 +11,8 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+img { width:100%; height: 100%; }
+
 @font-face {
     font-family: 'FontStatut';
     src: url('../fonts/Pacifico.ttf');
@@ -694,6 +696,7 @@ section {
 
 	width: 100%;
 	height: 300px;
+	border-bottom: 1px solid #E2E2E2;
 
 
 }
@@ -751,8 +754,23 @@ section {
 #my-galery {
 
 	width: 100%;
-	height: 500px;
+	float: left;
+	border-bottom: 1px solid #E2E2E2;
 
+}
+
+#my-galery input[type=submit] {
+
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 1px;
+	font-family: Arial;
+	color: #333333;
+	font-size: 12px;
+	background: #ffffff;
+	padding: 9px 13px 8px 13px;
+	border: solid #CCCCCC 1px;
+	text-decoration: none;
 }
 
 .from-myprofil {
@@ -783,18 +801,48 @@ section {
   text-decoration: none;
 
 }
+.my-galery_bloc {
 
-.my_galery-photo {
-
-	width: 150px;
-	height: 150px;
+	width: 170px;
+	height: 300px;
 	float: left;
-	background-color: #E2E2E2;
-	margin: 25px 0 50px 25px;
+	margin: 10px 15px 10px 25px;
 
 }
 
+.my_galery-photo {
 
+	width: 170px;
+	height: 170px;
+	background-color: #E2E2E2;
+	text-align: center;
+
+}
+
+.my_galery_photo-info {
+
+	float: left;
+	margin-top: 175px;
+}
+
+.photo_errors {
+
+	color: #EC4B42;
+	margin-left: 20px;
+	text-decoration: underline;
+}
+
+.photo_description {
+
+	color: #878787;
+	margin-top: 175px;
+}
+
+.my-status {
+
+	width: 100%;
+	float: left;
+}
 
 /* ----------------	
 	Page Message 

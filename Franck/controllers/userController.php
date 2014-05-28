@@ -3,6 +3,7 @@
 // Models
 require_once ('models/userModel.php');
 require_once ('models/statutModel.php');
+require_once ('models/photoModel.php');
 
 // ORM
 require_once ('models/table.class.php');
@@ -154,7 +155,12 @@ elseif ($action == 'profil') {
 
 		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
+		$myPictures = getUserPictures($_SESSION['id_user']);
+		
+
 		$allUsers = getAllUsers();
+
+		$errors = "";
 
 		$friends_requests = getFriendsRequest($_SESSION['id_user']);
 
@@ -185,6 +191,8 @@ elseif ($action == 'profil') {
 			$Smarty->assign('friendsStatuts', $friendsStatuts);
 			$Smarty->assign('allUsers', $allUsers);
 			$Smarty->assign('friends_requests', $friends_requests);
+			$Smarty->assign('myPictures', $myPictures);
+			$Smarty->assign('errors', $errors);
 		}
 		
 		
