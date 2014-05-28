@@ -130,4 +130,5 @@ function initStatut(e)
 		};
 
 	};
+	setInterval(receiveMessage, 5000);
 }

@@ -597,8 +597,16 @@ section {
 	height: 25px;
 	border: 2px solid #E8E8E8;
 	float: left;
-
+	overflow: hidden;
  }
+
+ .last_status_user_info-miniavatar img{
+	width: 25px;
+	height: 25px;
+	background-size: cover;
+
+
+}
 
 .last_status_user_info-name {
 

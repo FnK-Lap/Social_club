@@ -110,7 +110,7 @@
 <section>
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
-		<div class='my_profil-photo'></div>
+		<div class='my_profil-photo'><img src="{$avatar = $profil->get_avatar()}{$avatar->get_photo()}"></div>
 		<div class='my_profil-info'>
 			<h2 class='my_profil_info-name'>{$profil->get_prenom()|capitalize} {$profil->get_nom()|capitalize}</h2>
 			<span class='my_profil_info-date'>{$profil->get_date_naissance()}</span>
@@ -133,6 +133,8 @@
 					{$statuts->get_content()}
 				</div>
 			</div>
+		{foreachelse}
+		<p>Il n'y a aucuns statuts</p>
 		{/foreach}
 	</div>
 </section>

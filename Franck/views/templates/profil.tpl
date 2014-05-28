@@ -91,7 +91,7 @@
 <section>
 	<div id='my-profil'>
 		<h1 class='title-myprofil'>Mon Profil </h1>
-		<div class='my_profil-photo'></div>
+		<div class='my_profil-photo'><img src="{$avatar = $profil->get_avatar()}{$avatar->get_photo()}"></div>
 		<div class='my_profil-info'>
 			<h2 class='my_profil_info-name'>{$profil->get_prenom()|capitalize} {$profil->get_nom()|capitalize}</h2>
 			<div class='my_profil_info-plus'>
@@ -176,19 +176,22 @@
 	<div class='body-line'></div>
 	<div id='my-status'>
 		<h1 class='title-myprofil'>Mes Derniers status</h1>
-		{foreach $user->get_statuts() as $statuts}
+		{$statuts = $user->get_statuts()}
+		{section name=statut loop=$statuts step=-1}
+		
 			<div class='last_status-user'>
 				<div class='last_status_user-info'>
-					<div class='last_status_user_info-miniavatar'></div>
+					<div class='last_status_user_info-miniavatar'><img src="{foreach $allUsers as $allUser}{if $statuts[statut]->get_id_user() == $allUser->get_id()}{$avatar = $allUser->get_avatar()}{$avatar->get_photo()}{/if}{/foreach}"></div>
 					<h2 class='last_status_user_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
-					<p class='last_status_user_info-date'>{$statuts->get_date()|date_format}</p>
+					<p class='last_status_user_info-date'>{$statuts[statut]->get_date()|date_format}</p>
 					<div class='clear'></div>
 				</div>
 				<div class='last_status_user-content'>
-					{$statuts->get_content()}
+					{$statuts[statut]->get_content()}
 				</div>
 			</div>
-		{/foreach}
+		
+		{/section}
 	</div>
 	<div class='body-line'></div>
 	<div id='my-friendslist'>
