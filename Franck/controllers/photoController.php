@@ -110,7 +110,7 @@ require_once ('models/photo.class.php');
 					$query = '	INSERT INTO `photos` 
 									( `id`, `description`, `date_upload`, `id_user`, `photo`)
 								VALUES 
-									(NULL, "'.$description.'", "'.date('Y-m-d H:i:s').'", "'.$_SESSION["id_user"].'", "'.$path.' ")
+									(NULL, "'.$description.'", "'.date('Y-m-d H:i:s').'", "'.$_SESSION["id_user"].'", "'.$path.'")
 					 		';
 					dbQuery($query);
 				}
@@ -161,15 +161,29 @@ require_once ('models/photo.class.php');
 		$template = 'profil';
 
 	} else if ($action == 'deletePicture') {
-		echo '<script>alert(\'zulu\');</script>';
-		if (isset($_POST['deletePicture'])) {
-			echo '<script>alert(\'ZULU\');</script>';
-			$path 	= $_POST['photoPath'];
-			$query 	=	'DELETE FROM `photos` 
-						 WHERE 	photo='.$path.' 
-						 AND 	id_user='.$_SESSION['id_user'].'
-						';
+		deletePhoto($_POST['photoPath']);
+		unlink($_POST['photoPath']);
+
+		if (!empty($_GET['id'])) {
+			if (checkIfUserIdExist($_GET['id']) == false) {
+				$template = '404';
+			}else{
+				if (checkIfFriend($_SESSION['id_user'], $_GET['id'])) {
+					$template = 'profil';
+				}else{
+					$template = 'profil-lite';
+				}
+
+				$profil = getUserInfos($_GET['id']);
+				$profilFriends = getUserFriends($_GET['id']);
+			}
+			
+		}else{
+			$profil = getUserInfos($_SESSION['id_user']);
+			$profilFriends = getUserFriends($_SESSION['id_user']);
+			$template = 'profil';
 		}
+		
 		
 		$allUsers = getAllUsers();
 		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
@@ -179,8 +193,10 @@ require_once ('models/photo.class.php');
 		$errors 	= "";
 
 		$Smarty->assign('myPictures', 	$myPictures);
+		$Smarty->assign('profil', 	$profil);
 		$Smarty->assign('user', 		$user);
 		$Smarty->assign('friends',		$friends);
+		$Smarty->assign('profilFriends',$profilFriends);
 		$Smarty->assign('errors', 		$errors);
 		$Smarty->assign('friendsStatuts',$friendsStatuts);
 		$Smarty->assign('allUsers',$allUsers);

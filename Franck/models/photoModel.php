@@ -20,4 +20,20 @@
 		$User->set_id_avatar($avatar->get_id());
 		$User->save();
 	}
+
+	function deletePhoto($path)
+	{
+		$Photo = new Photo();
+		$Photo->set_photo($path);
+		$Photo->hydrate('photo');
+		$User = new User();
+		$User->set_id($_SESSION['id_user']);
+		$User->hydrate();
+		if ($User->get_id_avatar() == $Photo->get_id()) {
+			$User->set_id_avatar(1);
+			$User->save();
+		}
+		$Photo->delete();
+
+	}
 ?>
