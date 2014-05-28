@@ -13,12 +13,39 @@
 			</div>
 		</a>
 	</div>
-	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
+	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div>
+	</a>
 	<div id="light" class="white_content">
-
-	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
-
-
+		<div>
+			<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="btn-close">
+			</a>
+		</div>
+		<div id='ask-friend'>
+			<div class='ask_friend-user'>
+				{if $friends_requests != null}
+				{foreach $friends_requests as $friend_request}
+				<div class='ask_friend_user-bloc'>
+					<div class='ask_friend_user-bloc-info'>
+						<div class='ask_friend_user-photo'><img src="{$avatar = $friend_request->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+						<p class='ask_friend_user-name'>{$friend_request->get_prenom()} {$friend_request->get_nom()}</p>
+						<a href='index.php?action=add_friend&id_friend={$friend_request->get_id()}'>
+							<div class='ask_friend_user-buttom'>
+								<span class='ask_friend_user-buttom-text'>Ajouter</span>
+							</div>
+						</a>
+						<a href='index.php?action=refuse_friend&id_friend={$friend_request->get_id()}'>
+							<div class='ask_friend_user-buttom2'>
+								<span class='ask_friend_user-buttom-text'>Décliner</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				{/foreach}
+				{else}
+				<p class='ask_friend_user-name'>Vous n'avez pas demande d'amis </p>
+				{/if}
+			</div>
+		</div>
 	</div>
 	<div id="fade" class="black_overlay" ></div>
 	<nav>

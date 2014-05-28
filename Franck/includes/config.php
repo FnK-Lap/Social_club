@@ -14,6 +14,10 @@ $legalActions = array(
 		'profil' => 'user',
 		'logout' => 'user',
 		'reset_pass' => 'user',
+		'users' => 'user',
+		'request_friend'=>'user',
+		'add_friend'=>'user',
+		'refuse_friend'=>'user',
 		'message' => 'message',
 	);
 

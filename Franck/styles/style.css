@@ -266,6 +266,107 @@ a {
 	margin-right: 20px;
 
 }
+.ask_friend-user {
+
+	margin: 15px 15px 15px 15px;
+	width: 600px;
+	height: 240px;
+	float: left;
+	background-color: white;
+	border: 1px solid #E8E8E8;
+
+}
+
+.ask_friend_user-bloc {
+
+	margin-top: 15px;
+	width: 600px;
+	height: 30px;
+
+
+
+}
+
+
+
+
+.ask_friend_user-photo {
+
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #E8E8E8;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	overflow: hidden;
+
+	
+}
+
+.ask_friend_user-photo img{
+	width: 25px;
+	height: 25px;
+	background-size: cover;
+
+
+}
+
+.ask_friend_user-name {
+
+	font-size: 16px;
+	color: #7f8c8d;
+	float: left;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-top: 5px;
+
+
+}
+
+.ask_friend_user-buttom {
+
+	width: 150px;
+	height: 30px;
+	background-color: #2980b9;
+	float: left;
+	margin-right: 5px;
+
+}
+
+.ask_friend_user-buttom:hover {
+
+	background-color: #27ae60;
+	cursor: pointer;
+}
+
+.ask_friend_user-buttom2 {
+
+	width: 150px;
+	height: 30px;
+	background-color: #7f8c8d;
+	float: left;
+	margin-right: 5px;
+
+}
+
+.ask_friend_user-buttom2:hover {
+
+	background-color: #c0392b;
+	cursor: pointer;
+}
+
+.ask_friend_user-buttom-text {
+
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 35%;
+	float: left;
+	margin-top: 7px;
+
+}
 
 /* ----------------------------
 

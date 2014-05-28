@@ -263,6 +263,60 @@ function logout()
 	session_destroy();
 }
 
+function request_friend($id,$id_friend)
+{
+	$check=checkRequestExist($id,$id_friend);
+	if ($check == false) 
+	{
+		$query ='INSERT INTO `users_friends_requests` (id_user1,id_user2) VALUES ("'.intval($id).'","'.intval($id_friend).'")';
+		$result=dbQuery($query);
+		return $result;
+	}
+		
+}
+
+function checkRequestExist($id,$id_friend)
+{
+	$query = 'SELECT id_user1, id_user2 FROM `users_friends_requests` WHERE (`id_user1` = "'.intval($id).'" AND `id_user2` ="'.intval($id_friend).'") OR (`id_user1` = "'.$id_friend.'" AND `id_user2` ="'.$id.'")';
+	$result = dbFetchAllAssoc($query);
+	return $result;
+}
+
+function getFriendsRequest($id)
+{
+	$query='SELECT id_user1 FROM `users_friends_requests`WHERE id_user2="'.intval($id).'"';
+	$result =dbFetchAllAssoc($query);
+	if ($result != false) {
+		foreach ($result as $key => $value){ //premier tableau resortie de la bdd		
+			foreach ($value as $key => $id_Friends_requests) { // resortir les id en string 
+			
+					$Friends_requests = new User();
+					$Friends_requests->set_id($id_Friends_requests);
+					$Friends_requests->hydrate();
+					$friends_requests[] = $Friends_requests; // ajout de l'objet $Friends_requests dans le tableau $friends_request
+				
+			}
+		}
+		
+		return $friends_requests;
+
+	}
+	
+}
+
+function addFriend($id,$id_friend)
+{
+	$query1 = 'INSERT INTO `users_friends` (id_user1,id_user2) VALUES("'.intval($id).'","'.intval($id_friend).'")';
+	$query2 = 'DELETE FROM `users_friends_requests` WHERE `id_user1` ="'.intval($id_friend).'" AND `id_user2`="'.intval($id).'"';
+	dbQuery($query1);
+	dbQuery($query2);
+
+}
+function refuseFriend($id,$id_friend)
+{
+	$query = 'DELETE FROM `users_friends_requests` WHERE `id_user1` ="'.intval($id_friend).'" AND `id_user2`="'.intval($id).'"';
+	dbQuery($query);
+}
 
 
 

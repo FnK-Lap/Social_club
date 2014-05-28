@@ -21,12 +21,15 @@ if ($action == 'home') {
 		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
 		$allUsers = getAllUsers();
+
+		$friends_requests = getFriendsRequest($_SESSION['id_user']);
 	
 
 		$Smarty->assign('user', $user);
 		$Smarty->assign('friends',$friends);
 		$Smarty->assign('friendsStatuts', $friendsStatuts);
 		$Smarty->assign('allUsers', $allUsers);
+		$Smarty->assign('friends_requests', $friends_requests);
 
 		$template = 'home';
 	}else{
@@ -97,10 +100,13 @@ elseif ($action == 'login') {
 
 		$allUsers = getAllUsers();
 
+		$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
 		$Smarty->assign('user', $user);
 		$Smarty->assign('friends',$friends);
 		$Smarty->assign('friendsStatuts', $friendsStatuts);
 		$Smarty->assign('allUsers', $allUsers);
+		$Smarty->assign('friends_requests', $friends_requests);
 
 		$template = 'home';
 	}else{
@@ -122,10 +128,13 @@ elseif ($action == 'login') {
 
 				$allUsers = getAllUsers();
 
+				$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
 				$Smarty->assign('user', $user);
 				$Smarty->assign('friends',$friends);
 				$Smarty->assign('friendsStatuts', $friendsStatuts);
 				$Smarty->assign('allUsers', $allUsers);
+				$Smarty->assign('friends_requests', $friends_requests);
 
 				$template = 'home';
 			}
@@ -146,6 +155,8 @@ elseif ($action == 'profil') {
 		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
 
 		$allUsers = getAllUsers();
+
+		$friends_requests = getFriendsRequest($_SESSION['id_user']);
 
 		if (!empty($_GET['id'])) {
 			if (checkIfUserIdExist($_GET['id']) == false) {
@@ -173,6 +184,7 @@ elseif ($action == 'profil') {
 			$Smarty->assign('profilFriends',$profilFriends);
 			$Smarty->assign('friendsStatuts', $friendsStatuts);
 			$Smarty->assign('allUsers', $allUsers);
+			$Smarty->assign('friends_requests', $friends_requests);
 		}
 		
 		
@@ -236,6 +248,109 @@ elseif ($action == 'reset_pass') {
 	}else{
 		$template = '404';
 	}
+}
+elseif ($action == 'users') {
+	if ($is_connected == true) {
+
+				$user = getUserInfos($_SESSION['id_user']);
+
+				$friends = getUserFriends($_SESSION['id_user']);
+
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+				$allUsers = getAllUsers();
+
+				$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
+				// var_dump($friends);
+				// var_dump($friends_requests);
+
+				$Smarty->assign('user', $user);
+				$Smarty->assign('friends',$friends);
+				$Smarty->assign('friendsStatuts', $friendsStatuts);
+				$Smarty->assign('allUsers', $allUsers);
+				$Smarty->assign('friends_requests', $friends_requests);
+
+		$template = 'users';
+	}else{
+		$template = '404';
+	}
+}
+elseif ($action == 'request_friend') 
+{
+		$id_friend = $_GET['id'];
+		$id = $_SESSION['id_user'];
+		$result = request_friend($id,$id_friend);
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+		$allUsers = getAllUsers();
+
+		$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+		$Smarty->assign('friends',$friends);
+		$Smarty->assign('friendsStatuts', $friendsStatuts);
+		$Smarty->assign('allUsers', $allUsers);
+		$Smarty->assign('friends_requests', $friends_requests);
+
+		$template = 'home';
+}
+elseif ($action == 'add_friend') 
+{
+	$id_friend = $_GET['id_friend'];
+	$id = $_SESSION['id_user'];
+	$result = addFriend($id,$id_friend);
+
+
+
+				$user = getUserInfos($_SESSION['id_user']);
+
+				$friends = getUserFriends($_SESSION['id_user']);
+
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+				$allUsers = getAllUsers();
+
+				$friends_requests = getFriendsRequest($_SESSION['id_user']);
+
+				$Smarty->assign('user', $user);
+				$Smarty->assign('friends',$friends);
+				$Smarty->assign('friendsStatuts', $friendsStatuts);
+				$Smarty->assign('allUsers', $allUsers);
+				$Smarty->assign('friends_requests', $friends_requests);
+
+				$template = 'home';
+}
+elseif ($action == 'refuse_friend') 
+{
+	$id_friend = $_GET['id_friend'];
+	$id = $_SESSION['id_user'];
+	$result = refuseFriend($id,$id_friend);
+
+
+
+				$user = getUserInfos($_SESSION['id_user']);
+		
+				$friends = getUserFriends($_SESSION['id_user']);
+
+				$friendsStatuts = getFriendsStatuts($_SESSION['id_user']);
+
+				$allUsers = getAllUsers();
+
+				$friends_requests = getFriendsRequest($_SESSION['id_user']);
+	
+
+				$Smarty->assign('user', $user);
+				$Smarty->assign('friends',$friends);
+				$Smarty->assign('friendsStatuts', $friendsStatuts);
+				$Smarty->assign('allUsers', $allUsers);
+				$Smarty->assign('friends_requests', $friends_requests);
+	
+				$template = "home";
 }
 else{
 	$template = '404';
