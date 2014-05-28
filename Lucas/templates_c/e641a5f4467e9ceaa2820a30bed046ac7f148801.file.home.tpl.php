@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 07:48:26
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 09:47:52
          compiled from "views/templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:425639683537b6990d7dd97-02610794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1401256103,
+      1 => 1401263269,
       2 => 'file',
     ),
   ),
@@ -181,7 +181,30 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 <section>
 	<div id='carrousel-photo'>
 		<h1 class='title-body'>Derniere photos de vos amis</h1>
-		<div id='carou'></div>
+		<div class='autoplay-bloc'>
+			<div class="autoplay">
+		        <div><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
+		        <div><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
+		        <div><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
+		        <div><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
+		        <div><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
+		        <div><img src="<?php $_smarty_tpl->tpl_vars['avatar'] = new Smarty_variable($_smarty_tpl->tpl_vars['user']->value->get_avatar(), null, 0);?><?php echo $_smarty_tpl->tpl_vars['avatar']->value->get_photo();?>
+" alt='Avatar utilisateur'></div>
+	        </div>
+	    </div>
+	    <script type="text/javascript">
+	     	$('.autoplay').slick({
+			  slidesToShow: 4,
+			  slidesToScroll: 1,
+			  autoplay: true,
+			  autoplaySpeed: 3000,
+			});
+	    </script>
 	</div>
 	<div class='body-line'></div>
 	<div id='last_status'>

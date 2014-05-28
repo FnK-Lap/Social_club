@@ -329,7 +329,7 @@ a {
 	height: 20px;
 	float: right;
 	margin-top: -25px;
-	margin-right: 8px;
+	margin-right: px;
 }
 
 /* ----------------------------
@@ -552,11 +552,10 @@ section {
 	Page Home  
 --------------- */
 
-#carou {
+.autoplay-bloc {
 
 	width: 90%;
 	height: 150px;
-	background-color: #E2E2E2;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 50px;
@@ -1018,6 +1017,9 @@ section {
 
 	float: right;
 	margin-right: 70px;
+	width: 160px;
+	height: 30px;
+	background-color: #2980b9;
 	margin-top: 20px;
 }
 
@@ -1117,26 +1119,6 @@ section {
 }
 
 
-.btn-invite {
-
-	-webkit-border-radius: 1;
-	-moz-border-radius: 1;
-	border-radius: 1px;
-	font-family: Arial;
-	color: #ffffff;
-	font-size: 15px;
-	background: #2980b9;
-	padding: 7px 29px 7px 29px;
-	border: solid #858585 1px;
-	text-decoration: none;
-}
-
-.btn-invite:hover {
-
-	background: #7f8c8d;
-	text-decoration: none;
-	cursor: pointer;
-}
 
 
 

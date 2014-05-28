@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 23:23:11
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 09:41:10
          compiled from "views/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:880272689537b6990cf2cf3-43689739%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '060abf0b97e0af3d1307708ca95b6c89fd7a5b4a' => 
     array (
       0 => 'views/header.tpl',
-      1 => 1401223378,
+      1 => 1401262867,
       2 => 'file',
     ),
   ),
@@ -28,8 +28,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<title>Social Club</title>
 		<link rel="stylesheet" type="text/css" href="styles/login.css" >
 		<link rel="stylesheet" type="text/css" href="styles/style.css" >
+		<link rel="stylesheet" type="text/css" href="styles/slick.css"/>
 		<script src='libs/jQuery/jQuery.v1.11.1.js'></script>
 		<script src='js/statuts.php'></script>
 		<script type="text/javascript" src="js/formulaire.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.min.js"></script>
+		<script type="text/javascript" src="js/slide.js"></script>
 	</head>	
 	<body><?php }} ?>

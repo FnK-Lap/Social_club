@@ -125,7 +125,24 @@
 <section>
 	<div id='carrousel-photo'>
 		<h1 class='title-body'>Derniere photos de vos amis</h1>
-		<div id='carou'></div>
+		<div class='autoplay-bloc'>
+			<div class="autoplay">
+		        <div><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		        <div><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		        <div><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		        <div><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		        <div><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+		        <div><img src="{$avatar = $user->get_avatar()}{$avatar->get_photo()}" alt='Avatar utilisateur'></div>
+	        </div>
+	    </div>
+	    <script type="text/javascript">
+	     	$('.autoplay').slick({
+			  slidesToShow: 4,
+			  slidesToScroll: 1,
+			  autoplay: true,
+			  autoplaySpeed: 3000,
+			});
+	    </script>
 	</div>
 	<div class='body-line'></div>
 	<div id='last_status'>
