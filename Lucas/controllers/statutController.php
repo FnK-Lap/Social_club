@@ -21,7 +21,7 @@ if ($_POST['action'] == 'new_statut') {
 
 	if (empty($errors)) {
 		newStatut($_SESSION['id_user'], $_POST['statut']);
-		echo $_POST['statut'];
+		echo htmlspecialchars($_POST['statut']);
 	}else{
 		echo false;
 	}

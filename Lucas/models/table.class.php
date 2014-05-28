@@ -50,7 +50,7 @@ abstract class Table
 
 	public function save()
 	{
-
+		global $link;
 		// Construction du getter pour la primary_key
 		$pk_getter = 'get_'.$this->primary_key;
 		$nb_fields = count($this->fields);
@@ -61,20 +61,20 @@ abstract class Table
 				foreach ($this->fields as $field) {
 					$getter = 'get_'.$field['Field'];
 
-					$query .= $field['Field']."='".$this->$getter()."'";
+					$query .= $field['Field']."='".mysqli_real_escape_string($link, $this->$getter())."'";
 					if ($i < $nb_fields-1) {
 						$query .= ', ';
 					}
 					$i ++;
 				}
-			$query .= " WHERE ".$this->primary_key." = '".$this->$pk_getter()."'";
+			$query .= " WHERE ".$this->primary_key." = '".mysqli_real_escape_string($link, $this->$pk_getter())."'";
 			$query .= ";";
 			dbQuery($query);
 		}else{	// Aucune cle primaire n'est set
 			$query = "INSERT INTO `".$this->table_name."` (";
 				$i = 0;	// Sert pour mettre les virgules
 				foreach ($this->fields as $field) {
-					$query .= $field['Field'];
+					$query .= mysqli_real_escape_string($link, $field['Field']);
 
 					if ($i < $nb_fields-1) {
 						$query .= ', ';
@@ -87,7 +87,7 @@ abstract class Table
 					// On creer un getter pour recuperer chaque champs
 					$getter = 'get_'.$field['Field'];
 
-					$query .= "'".$this->$getter()."'";
+					$query .= "'".mysqli_real_escape_string($link, $this->$getter())."'";
 
 					if ($i < $nb_fields-1) {
 						$query .= ', ';

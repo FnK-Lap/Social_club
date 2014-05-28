@@ -152,36 +152,6 @@ elseif ($action == 'profil') {
 		$template = '404';
 	}
 }
-elseif ($action == 'profillite') {
-	if ($is_connected == true) {
-		$user = getUserInfos($_SESSION['id_user']);
-
-		$friends = getUserFriends($_SESSION['id_user']);
-
-		$Smarty->assign('user', $user);
-
-		$Smarty->assign('friends',$friends);
-
-		$template = 'profil-lite';
-	}else{
-		$template = '404';
-	}
-}
-elseif ($action == 'users') {
-	if ($is_connected == true) {
-		$user = getUserInfos($_SESSION['id_user']);
-
-		$friends = getUserFriends($_SESSION['id_user']);
-
-		$Smarty->assign('user', $user);
-
-		$Smarty->assign('friends',$friends);
-
-		$template = 'users';
-	}else{
-		$template = '404';
-	}
-}
 elseif ($action == 'logout') {
 	if ($is_connected == true) {
 		$template = 'login';
@@ -189,6 +159,13 @@ elseif ($action == 'logout') {
 	}
 	else{
 		$template = 'login';
+	}
+}
+elseif ($action == 'reset_pass') {
+	if ($is_connected != true) {
+		$template = 'reset';
+	}else{
+		$template = '404';
 	}
 }
 else{

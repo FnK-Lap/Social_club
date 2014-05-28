@@ -79,24 +79,38 @@
 <section>
 	<div id='list-message'>
 		{foreach $userConversations as $key => $userConversation}
-			<div class='list_message-user'>
+			<div class='list_message-user' id='{$key}'>
 				<div class='list_message_user-photo'></div>
 				<p class='list_message_user-name'>{foreach $allUsers as $allUser}{if $key == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</p>
 				<span class='list_message_user_info-new'>{$userConversation|@count} messages</span>
 			</div>
+		{foreachelse}
+			<div class='list_message-user'>
+				<p>Aucunes conversations</p>
+			</div>
 		{/foreach}
 	</div>
 	<div id='list-message-bloc'>
-
+		<div class='list-message_bloc-info'>
+			<div class='list-message_bloc-info-miniavatar'></div>
+			<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
+			<p class='list-message_bloc-info-date'>dans ton cu</p>
+			<div class='list-message_bloc-info-delete'></div>
+		</div>
+		<div class='list-message_bloc-content'>
+			<span class='list-message_bloc_content-text'>
+				cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+				fhdgjgkjhgfsafdghjg
+			</span>
+		</div>
+		<div class='clear'></div>
 	</div>
 	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'></textarea>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>
-			<a href='index.php?action=logout'>
-				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
-				</div>
-			</a>
+			<div class='send-message-bloc'>
+				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+			</div>
 		</div>
 	</div>
 </section>

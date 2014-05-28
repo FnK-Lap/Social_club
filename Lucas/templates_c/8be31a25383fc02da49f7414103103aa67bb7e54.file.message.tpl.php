@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-27 23:23:13
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 01:54:08
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401223378,
+      1 => 1401234386,
       2 => 'file',
     ),
   ),
@@ -26,8 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'friends' => 0,
     'friend' => 0,
     'userConversations' => 0,
-    'allUsers' => 0,
     'key' => 0,
+    'allUsers' => 0,
     'allUser' => 0,
     'userConversation' => 0,
   ),
@@ -141,7 +141,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['userConversation']->key => $_smarty_t
 $_smarty_tpl->tpl_vars['userConversation']->_loop = true;
  $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['userConversation']->key;
 ?>
-			<div class='list_message-user'>
+			<div class='list_message-user' id='<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+'>
 				<div class='list_message_user-photo'></div>
 				<p class='list_message_user-name'><?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -153,19 +154,35 @@ $_smarty_tpl->tpl_vars['allUser']->_loop = true;
 				<span class='list_message_user_info-new'><?php echo count($_smarty_tpl->tpl_vars['userConversation']->value);?>
  messages</span>
 			</div>
+		<?php }
+if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
+?>
+			<div class='list_message-user'>
+				<p>Aucunes conversations</p>
+			</div>
 		<?php } ?>
 	</div>
 	<div id='list-message-bloc'>
-
+		<div class='list-message_bloc-info'>
+			<div class='list-message_bloc-info-miniavatar'></div>
+			<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
+			<p class='list-message_bloc-info-date'>dans ton cu</p>
+			<div class='list-message_bloc-info-delete'></div>
+		</div>
+		<div class='list-message_bloc-content'>
+			<span class='list-message_bloc_content-text'>
+				cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
+				fhdgjgkjhgfsafdghjg
+			</span>
+		</div>
+		<div class='clear'></div>
 	</div>
 	<div id='message-bloc-reponse'>
-		<textarea class='text-area-styled' rows='3'></textarea>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>
-			<a href='index.php?action=logout'>
-				<div class='send-message-bloc'>
-					<p class='send-message-bloc-text'>Envoyer</p>
-				</div>
-			</a>
+			<div class='send-message-bloc'>
+				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+			</div>
 		</div>
 	</div>
 </section><?php }} ?>
