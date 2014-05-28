@@ -705,6 +705,79 @@ section {
 
 }
 
+.list-message_bloc-info {
+
+	margin-left: 25px;
+
+}
+
+
+.list-message_bloc-info-miniavatar {
+
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	border: 2px solid #E8E8E8;
+	float: left;
+
+ }
+
+.list-message_bloc-info-name {
+
+	font-size: 13px;
+	font-weight: bold;
+	color: #2980b9;
+	float: left;
+	margin-left: 15px;
+	margin-top: 7px;
+
+}
+
+.list-message_bloc-info-name:hover {
+
+	text-decoration: underline;
+	cursor: pointer;
+
+}
+
+
+
+.list-message_bloc-info-date {
+
+	font-size: 10px; 
+	color: #E2E2E2;
+	font-style: italic;
+	float: right;
+	margin-right: 100px;
+
+
+}
+
+.list-message_bloc-content {
+
+	width: 80%;
+	font-size: 12px;
+	color: #34495e;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	float: left;
+
+}
+
+.list-message_bloc-info-delete {
+
+	background: url('../images/delete.png');
+	background-size: cover;
+	width: 16px;
+	height: 16px;
+	float: right;
+	margin-right: 10px;
+
+
+}
+
 #message-bloc-reponse {
 
 	width: 670px;

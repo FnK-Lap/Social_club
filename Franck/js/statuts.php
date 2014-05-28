@@ -53,6 +53,8 @@ function receiveMessage(e)
 	  		if (i > 5) {
 	  			document.getElementById('list-message-bloc').removeChild(document.getElementById('list-message-bloc').firstChild);
 	  		};
+
+
 	  		var div = document.createElement('div');
 	  		if (messages[i][0] == 'send') {
 	  			div.className = 'message-send';
