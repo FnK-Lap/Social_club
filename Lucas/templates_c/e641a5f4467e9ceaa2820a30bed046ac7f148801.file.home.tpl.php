@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 00:52:13
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 04:32:47
          compiled from "views/templates/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:425639683537b6990d7dd97-02610794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e641a5f4467e9ceaa2820a30bed046ac7f148801' => 
     array (
       0 => 'views/templates/home.tpl',
-      1 => 1401231079,
+      1 => 1401244364,
       2 => 'file',
     ),
   ),
@@ -134,6 +134,9 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
 				<p class='friend-user-info'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
 </p>
+				<a href="">
+					<div class='send-new-message'></div>
+				</a>
 			</div>
 		<?php }
 if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
@@ -143,7 +146,7 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
-		<p class='title-aside'>Mes derniers messages</p>
+		<p class='title-aside'>Mes derniers status</p>
 		<div class='last_message'>
 			<div class='last_message-user'>
 				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>

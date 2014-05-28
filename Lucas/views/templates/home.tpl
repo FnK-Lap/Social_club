@@ -80,6 +80,9 @@
 			<div class='friend-user'>
 				<div class='friend-connected-user'></div>
 				<p class='friend-user-info'>{$friend->get_prenom()|capitalize} {$friend->get_nom()|capitalize}</p>
+				<a href="">
+					<div class='send-new-message'></div>
+				</a>
 			</div>
 		{foreachelse}
 			<p>Vous n'avez pas d'amis</p>
@@ -87,7 +90,7 @@
 	</div>
 	<div class='aside-line'></div>
 	<div id='last_message_bloc'>
-		<p class='title-aside'>Mes derniers messages</p>
+		<p class='title-aside'>Mes derniers status</p>
 		<div class='last_message'>
 			<div class='last_message-user'>
 				<p class='last_message-user-info'>Franck Laypere<span class='last_message-date'> il y a 10 minutes</span></p>

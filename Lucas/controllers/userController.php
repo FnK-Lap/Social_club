@@ -152,6 +152,21 @@ elseif ($action == 'profil') {
 		$template = '404';
 	}
 }
+elseif ($action == 'new_message') {
+	if ($is_connected == true) {
+		$user = getUserInfos($_SESSION['id_user']);
+
+		$friends = getUserFriends($_SESSION['id_user']);
+
+		$Smarty->assign('user', $user);
+
+		$Smarty->assign('friends',$friends);
+
+		$template = 'new_message';
+	}else{
+		$template = '404';
+	}
+}
 elseif ($action == 'logout') {
 	if ($is_connected == true) {
 		$template = 'login';

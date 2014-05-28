@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 04:32:06
-         compiled from "views/templates/message.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 04:27:46
+         compiled from "views/templates/new_message.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:138372218553854981312f27-15551369%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '8be31a25383fc02da49f7414103103aa67bb7e54' => 
+    'c426a837814608ccb67dfe4c3b0c3a7f6d7c7466' => 
     array (
-      0 => 'views/templates/message.tpl',
-      1 => 1401244247,
+      0 => 'views/templates/new_message.tpl',
+      1 => 1401244063,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1212785673537de1a30f5546-00297565',
+  'nocache_hash' => '138372218553854981312f27-15551369',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_537de1a3152893_52398603',
+  'unifunc' => 'content_5385498157acf9_24844996',
   'variables' => 
   array (
     'user' => 0,
@@ -25,15 +25,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'avatar' => 0,
     'friends' => 0,
     'friend' => 0,
-    'userConversations' => 0,
-    'key' => 0,
-    'allUsers' => 0,
-    'allUser' => 0,
-    'userConversation' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_537de1a3152893_52398603')) {function content_537de1a3152893_52398603($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5385498157acf9_24844996')) {function content_5385498157acf9_24844996($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Applications/MAMP/htdocs/Social_club/Lucas/libs/smarty/plugins/modifier.capitalize.php';
 ?><header>
 	<div id='title-logo'>
 		Social<span class='title-color'>Club</span>
@@ -94,9 +89,6 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
 				<p class='friend-user-info'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
 </p>
-				<a href="">
-					<div class='send-new-message'></div>
-				</a>
 			</div>
 		<?php }
 if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
@@ -136,83 +128,8 @@ if (!$_smarty_tpl->tpl_vars['friend']->_loop) {
 	</div>
 </aside>
 <section>
-	<div id='list-message'>
-		<?php  $_smarty_tpl->tpl_vars['userConversation'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['userConversation']->_loop = false;
- $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['userConversations']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['userConversation']->key => $_smarty_tpl->tpl_vars['userConversation']->value) {
-$_smarty_tpl->tpl_vars['userConversation']->_loop = true;
- $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['userConversation']->key;
-?>
-			<div class='list_message-user' id='<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
-'>
-				<div class='list_message_user-photo'></div>
-				<p class='list_message_user-name'><?php  $_smarty_tpl->tpl_vars['allUser'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['allUser']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['allUsers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['allUser']->key => $_smarty_tpl->tpl_vars['allUser']->value) {
-$_smarty_tpl->tpl_vars['allUser']->_loop = true;
-?><?php if ($_smarty_tpl->tpl_vars['key']->value==$_smarty_tpl->tpl_vars['allUser']->value->get_id()) {?><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_prenom());?>
- <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['allUser']->value->get_nom());?>
-<?php }?><?php } ?></p>
-				<span class='list_message_user_info-new'><?php echo count($_smarty_tpl->tpl_vars['userConversation']->value);?>
- messages</span>
-			</div>
-		<?php }
-if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
-?>
-			<div class='list_message-user'>
-				<p>Aucunes conversations</p>
-			</div>
-		<?php } ?>
-	</div>
 	<div id='list-message-bloc'>
-	<h3 class='title-message-bloc'>Mes messages</h3>
-		<div class='list-message-bloc-recu'>
-			<div class='list-message_bloc-info'>
-				<div class='list-message_bloc-info-miniavatar'></div>
-				<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
-				<p class='list-message_bloc-info-date'>dans ton cu</p>
-				<div class='list-message_bloc-info-delete'></div>
-			</div>
-			<div class='list-message_bloc-content'>
-				<span class='list-message_bloc_content-text'>
-					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
-					fhdgjgkjhgfsafdghjg
-				</span>
-			</div>
-			<div class='clear'></div>
-		</div>
-		<div class='list-message-bloc-envoyer'>
-			<div class='list-message_bloc-info'>
-				<div class='list-message_bloc-info-miniavatar2'></div>
-				<h2 class='list-message_bloc-info-name2'>Franck le pd</h2>
-				<p class='list-message_bloc-info-date2'>dans ton cu</p>
-				<div class='list-message_bloc-info-delete2'></div>
-			</div>
-			<div class='list-message_bloc-content2'>
-				<span class='list-message_bloc_content-text'>
-					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
-					fhdgjgkjhgfsafdghjg
-				</span>
-			</div>
-			<div class='clear'></div>
-		</div>
-		<div class='list-message-bloc-recu'>
-			<div class='list-message_bloc-info'>
-				<div class='list-message_bloc-info-miniavatar'></div>
-				<h2 class='list-message_bloc-info-name'>Franck le pd</h2>
-				<p class='list-message_bloc-info-date'>dans ton cu</p>
-				<div class='list-message_bloc-info-delete'></div>
-			</div>
-			<div class='list-message_bloc-content'>
-				<span class='list-message_bloc_content-text'>
-					cdsgfdfnhjhfcdasfghjkhjyhtgrfsdfhjf
-					fhdgjgkjhgfsafdghjg
-				</span>
-			</div>
-			<div class='clear'></div>
-		</div>
-	</div>
+	<h3 class='title-message-bloc'>Nouveau message à Franck</h3>
 	<div id='message-bloc-reponse'>
 		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
 		<div id='send-message'>

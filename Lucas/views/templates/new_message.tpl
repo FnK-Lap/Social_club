@@ -15,10 +15,7 @@
 	</div>
 	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div></a>
 	<div id="light" class="white_content">
-
-	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
-
-
+		<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="textright">Close</a>
 	</div>
 	<div id="fade" class="black_overlay" ></div>
 	<nav>
@@ -26,7 +23,7 @@
 			<ul>
 			    <a href="index.php"><li><p class='nav-title'>Ma page d'accueil</p></li></a>
 			    <a href="index.php?action=profil"><li><p class='nav-title'>Mon profil</p></li></a>
-			    <a href="index.php?action=message"><li><p class='nav-title'>Mes messages</p></li>
+			    <a href="index.php?action=message"><li><p class='nav-title-selected'>Mes messages</p></li></a>
 			</ul>
 		</div>
 	</nav>
@@ -83,9 +80,27 @@
 	</div>
 </aside>
 <section>
-	<form action="index.php" method="post">
-		<input class="body_bouton" type="email" name='email_invite' placeholder="Email d'invitation" > 
-		<input type='submit' class='invite_bloc-buttom'>
-		</input>
-	</form>
+	<div id='list-message'>
+		{foreach $userConversations as $key => $userConversation}
+			<div class='list_message-user' id='{$key}'>
+				<div class='list_message_user-photo'></div>
+				<p class='list_message_user-name'>{foreach $allUsers as $allUser}{if $key == $allUser->get_id()}{$allUser->get_prenom()|capitalize} {$allUser->get_nom()|capitalize}{/if}{/foreach}</p>
+				<span class='list_message_user_info-new'>{$userConversation|@count} messages</span>
+			</div>
+		{foreachelse}
+			<div class='list_message-user'>
+				<p>Aucunes conversations</p>
+			</div>
+		{/foreach}
+	</div>
+	<div id='list-message-bloc'>
+	<h3 class='title-message-bloc'>Nouveau message à Franck</h3>
+	<div id='message-bloc-reponse'>
+		<textarea id='message-content' class='text-area-styled' rows='3'></textarea>
+		<div id='send-message'>
+			<div class='send-message-bloc'>
+				<p id='send-message-button' class='send-message-bloc-text'>Envoyer</p>
+			</div>
+		</div>
+	</div>
 </section>

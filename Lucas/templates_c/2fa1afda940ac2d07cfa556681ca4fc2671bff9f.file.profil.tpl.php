@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:53:54
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 04:32:04
          compiled from "views/templates/profil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1705675009537b699327a298-88362251%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2fa1afda940ac2d07cfa556681ca4fc2671bff9f' => 
     array (
       0 => 'views/templates/profil.tpl',
-      1 => 1401242031,
+      1 => 1401244316,
       2 => 'file',
     ),
   ),
@@ -92,6 +92,9 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
 				<p class='friend-user-info'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
 </p>
+				<a href="">
+					<div class='send-new-message'></div>
+				</a>
 			</div>
 		<?php }
 if (!$_smarty_tpl->tpl_vars['friend']->_loop) {

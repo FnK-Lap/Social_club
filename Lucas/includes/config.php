@@ -14,7 +14,9 @@ $legalActions = array(
 		'profil' => 'user',
 		'logout' => 'user',
 		'reset_pass' => 'user',
-		'message' => 'message',
+		'new_message' => 'user',
+		'message' => 'message'
+
 	);
 
 
