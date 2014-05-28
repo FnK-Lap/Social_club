@@ -38,7 +38,10 @@ function deleteMessage($id)
 	$Message = new Message();
 	$Message->set_id($id);
 	$Message->hydrate();
-	$Message->delete();
+	if ($Message->get_id_sender() == $_SESSION['id_user']) {
+		$Message->delete();
+	}
+	
 }
 
 function getUserMessages($idUser)
