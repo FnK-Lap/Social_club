@@ -1,6 +1,6 @@
 <?php
 
-	class Photo
+	class Photo extends Table
 
 	{
 

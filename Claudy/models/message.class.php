@@ -2,12 +2,13 @@
 	/**
 	* 	
 	*/
-	class Message {
-		public $id;
-		public $id_user;
-		public $date;
-		public $id_groupe;
-		public $content;
+	class Message extends Table{
+		private $id;
+		private $id_sender;
+		private $id_receiver;
+		private $date;
+		private $id_groupe;
+		private $content;
 		/*
 		**	CONSTRUCTEUR
 		*/
@@ -22,8 +23,12 @@
 			return $this->id;
 		}
 
-		public function get_id_user() {
-			return $this->id_user;
+		public function get_id_sender() {
+			return $this->id_sender;
+		}
+
+		public function get_id_receiver() {
+			return $this->id_receiver;
 		}
 
 		public function get_date() {
@@ -46,8 +51,12 @@
 			$this->id = $id;
 		}
 
-		public function set_id_user($id_user) {
-			$this->id_user = $id_user;
+		public function set_id_sender($id_sender) {
+			$this->id_sender = $id_sender;
+		}
+
+		public function set_id_receiver($id_receiver) {
+			$this->id_receiver = $id_receiver;
 		}
 
 		public function set_date($date) {
