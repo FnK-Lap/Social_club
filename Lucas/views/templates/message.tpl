@@ -91,6 +91,7 @@
 		{/foreach}
 	</div>
 	<div id='list-message-bloc'>
+	<h3 class='title-message-bloc'>Mes messages</h3>
 		<div class='list-message-bloc-recu'>
 			<div class='list-message_bloc-info'>
 				<div class='list-message_bloc-info-miniavatar'></div>

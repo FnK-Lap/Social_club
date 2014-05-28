@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:00:10
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 03:17:08
          compiled from "views/templates/message.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1212785673537de1a30f5546-00297565%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8be31a25383fc02da49f7414103103aa67bb7e54' => 
     array (
       0 => 'views/templates/message.tpl',
-      1 => 1401238808,
+      1 => 1401239821,
       2 => 'file',
     ),
   ),
@@ -163,6 +163,7 @@ if (!$_smarty_tpl->tpl_vars['userConversation']->_loop) {
 		<?php } ?>
 	</div>
 	<div id='list-message-bloc'>
+	<h3 class='title-message-bloc'>Mes messages</h3>
 		<div class='list-message-bloc-recu'>
 			<div class='list-message_bloc-info'>
 				<div class='list-message_bloc-info-miniavatar'></div>
