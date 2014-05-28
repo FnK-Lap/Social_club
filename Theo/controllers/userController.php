@@ -3,6 +3,7 @@
 
 
 if (isset($action) && $action == 'home') {
+	
 	// Models
 	require_once ('models/userModel.php');
 	require_once ('models/statutModel.php');

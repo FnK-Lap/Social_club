@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 06:31:11
+<?php /* Smarty version Smarty-3.1.18, created on 2014-05-28 13:15:59
          compiled from "views/templates/users.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24747046453855deca403c6-83051964%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7705ae30c07e2b167f15f6aebfa5608ff8f2eb07' => 
     array (
       0 => 'views/templates/users.tpl',
-      1 => 1401251467,
+      1 => 1401257801,
       2 => 'file',
     ),
   ),
@@ -58,6 +58,9 @@ $_smarty_tpl->tpl_vars['statut']->_loop = true;
 			</div>
 		</a>
 	</div>
+	<a href="index.php?action=send_invit">
+		<div class='send-invite-icon'></div>
+	</a>
 	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class='plus-info'></div>
 	</a>
 	<div id="light" class="white_content">
@@ -133,6 +136,10 @@ $_smarty_tpl->tpl_vars['friend']->_loop = true;
 				<p class='friend-user-info'><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_prenom());?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['friend']->value->get_nom());?>
 </p>
+				<a href="index.php?action=new_message&amp;id=<?php echo $_smarty_tpl->tpl_vars['friend']->value->get_id();?>
+">
+					<div class='send-new-message'></div>
+				</a>
 			</div>
 		<?php }
 if (!$_smarty_tpl->tpl_vars['friend']->_loop) {

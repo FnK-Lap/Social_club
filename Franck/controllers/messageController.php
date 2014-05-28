@@ -57,6 +57,7 @@ elseif ($action = 'message') {
 
 		$errors = checkMessageForm('new');
 
+
 		var_dump($errors);
 		if (empty($errors)) {
 			$message = $_POST['message'];
@@ -134,6 +135,7 @@ elseif ($action = 'message') {
 
 		$userConversations = userConversations($_SESSION['id_user']);
 
+		$friends_requests = getFriendsRequest($_SESSION['id_user']);
 		
 
 		$allUsers = getAllUsers();
@@ -143,6 +145,7 @@ elseif ($action = 'message') {
 		$Smarty->assign('friendsStatuts', $friendsStatuts);
 		$Smarty->assign('userConversations', $userConversations);
 		$Smarty->assign('allUsers', $allUsers);
+		$Smarty->assign('friends_requests', $friends_requests);
 		
 
 		$template = 'message';

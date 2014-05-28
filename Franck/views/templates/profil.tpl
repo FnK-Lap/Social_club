@@ -154,8 +154,10 @@
 				<div id="fade2" class="black_overlay" ></div>
 			</div>
 			<span class='my_profil_info-date'>{$profil->get_date_naissance()}</span>
+			<div id="description">
 			<h3 class='title-my_profil_info_description'>Ma description</h3>
-			<span class='my_profil_info-description'>{$profil->get_description()}</span>
+			<span class='my_profil_info-description'><textarea class="hidden" id="description_textarea"  style="width: 600px; height: 116px;">{$profil->get_description()}</textarea><div id="description_div">{$profil->get_description()}</div></span>
+			</div>
 		</div>
 	</div>
 	<div id='my-galery'>

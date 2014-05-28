@@ -1,18 +1,21 @@
 <?php
 
-// Models
-require_once ('models/userModel.php');
-require_once ('models/statutModel.php');
-require_once ('models/photoModel.php');
 
-// ORM
-require_once ('models/table.class.php');
-require_once ('models/token.class.php');
-require_once ('models/user.class.php');
-require_once ('models/statut.class.php');
-require_once ('models/photo.class.php');
 
-if ($action == 'home') {
+if (isset($action) && $action == 'home') {
+
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
+	
 	if ($is_connected == true) {
 
 		$user = getUserInfos($_SESSION['id_user']);
@@ -40,7 +43,46 @@ if ($action == 'home') {
 	}
 	
 }
+elseif (!empty($_POST['action']) && $_POST['action'] == 'new_description') {
+		session_start();
+
+		require_once ('../tools/dbTools.php');
+		require_once ('../includes/config.php');
+		dbConnect($dbConfig);
+
+		// Models
+		require_once ('../models/userModel.php');
+		require_once ('../models/statutModel.php');
+
+		// ORM
+		require_once ('../models/table.class.php');
+		require_once ('../models/token.class.php');
+		require_once ('../models/user.class.php');
+		require_once ('../models/statut.class.php');
+		require_once ('../models/photo.class.php');
+
+
+	$errors = checkDescriptionForm('new');
+
+	if (empty($errors)) {
+		newDescription($_SESSION['id_user'], $_POST['description']);
+		echo $_POST['description'];
+	}else{
+		echo false;
+	}
+}
 elseif ($action == 'register' && isset($_GET['token'])) {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	if ($is_connected != true) {
 		$token = $_GET['token'];
 
@@ -92,6 +134,17 @@ elseif ($action == 'register' && isset($_GET['token'])) {
 	
 }
 elseif ($action == 'login') {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
@@ -148,6 +201,17 @@ elseif ($action == 'login') {
 		
 }
 elseif ($action == 'profil') {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
@@ -201,6 +265,17 @@ elseif ($action == 'profil') {
 	}
 }
 elseif ($action == 'logout') {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	if ($is_connected == true) {
 		$template = 'login';
 		logout();
@@ -210,6 +285,17 @@ elseif ($action == 'logout') {
 	}
 }
 elseif ($action == 'reset_pass') {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	if ($is_connected == true) {
 		$user = getUserInfos($_SESSION['id_user']);
 
@@ -258,6 +344,17 @@ elseif ($action == 'reset_pass') {
 	}
 }
 elseif ($action == 'users') {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	if ($is_connected == true) {
 
 				$user = getUserInfos($_SESSION['id_user']);
@@ -286,6 +383,17 @@ elseif ($action == 'users') {
 }
 elseif ($action == 'request_friend') 
 {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 		$id_friend = $_GET['id'];
 		$id = $_SESSION['id_user'];
 		$result = request_friend($id,$id_friend);
@@ -309,6 +417,17 @@ elseif ($action == 'request_friend')
 }
 elseif ($action == 'add_friend') 
 {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	$id_friend = $_GET['id_friend'];
 	$id = $_SESSION['id_user'];
 	$result = addFriend($id,$id_friend);
@@ -335,6 +454,17 @@ elseif ($action == 'add_friend')
 }
 elseif ($action == 'refuse_friend') 
 {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	$id_friend = $_GET['id_friend'];
 	$id = $_SESSION['id_user'];
 	$result = refuseFriend($id,$id_friend);
@@ -361,6 +491,17 @@ elseif ($action == 'refuse_friend')
 				$template = "home";
 }
 elseif ($action == 'send_invit') {
+	// Models
+	require_once ('models/userModel.php');
+	require_once ('models/statutModel.php');
+	require_once ('models/photoModel.php');
+
+	// ORM
+	require_once ('models/table.class.php');
+	require_once ('models/token.class.php');
+	require_once ('models/user.class.php');
+	require_once ('models/statut.class.php');
+	require_once ('models/photo.class.php');
 	$user = getUserInfos($_SESSION['id_user']);
 	
 	$friends = getUserFriends($_SESSION['id_user']);

@@ -38,6 +38,34 @@ function selectReceiver(e){
 	
 }
 
+function clickDescription(e)
+{
+	document.getElementById('description').removeEventListener('click', clickDescription);
+	document.getElementById('description_div').className = 'hidden';
+	document.getElementById('description_textarea').className = '';
+	document.getElementById('description_textarea').focus();
+	document.getElementById('description_textarea').addEventListener('blur', blurDescription);
+}
+
+function blurDescription(e)
+{
+	document.getElementById('description_textarea').removeEventListener('blur', blurDescription);
+	document.getElementById('description').addEventListener('click', clickDescription);
+	var descriptionContent = document.getElementById('description_textarea').value;
+	$.ajax({
+	  type: 'POST',
+	  url: 'controllers/userController.php',
+	  data: {action: 'new_description', description: descriptionContent},
+	  success: function(response){
+	  	if (response != false) {
+	  		document.getElementById('description_div').innerHTML = '"'+response+'"';
+	  	};
+	  	document.getElementById('description_textarea').className = 'hidden';
+	  	document.getElementById('description_div').className = '';
+	  }
+	});
+}
+
 function receiveMessage(e)
 {
 	var idReceiver = document.getElementById('send-message-button').getAttribute('data-id');
@@ -123,6 +151,9 @@ function initStatut(e)
 {	
 	if (document.getElementById('statut') != null) {
 		document.getElementById('statut').addEventListener('click', clickStatut);
+	};
+	if (document.getElementById('description') != null) {
+		document.getElementById('description').addEventListener('click', clickDescription);
 	};
 	if (document.querySelectorAll('.list_message-user') != null) {
 		var conversations = document.querySelectorAll('.list_message-user');

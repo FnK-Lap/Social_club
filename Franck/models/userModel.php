@@ -130,6 +130,7 @@ function getUserInfos($id)
 	$User->set_id($id);
 	$User->hydrate();
 
+
 	return $User;
 }
 
@@ -325,6 +326,31 @@ function refuseFriend($id,$id_friend)
 	dbQuery($query);
 }
 
+function checkDescriptionForm($form)
+{
+	global $errors_no;
+
+	$errors = array();
+
+	if ($form = 'new') {
+		$content = $_POST['description'];
+
+		if (strlen($content) > 255) {
+			$errors['description'] = $errors_no['DESL'];
+		}
+	}
+
+	return $errors;
+}
+
+function newDescription($idUser, $content)
+{
+	$User = new User();
+	$User->set_id($idUser);
+	$User->hydrate();
+	$User->set_description($content);
+	$User->save();
+}
 
 
 

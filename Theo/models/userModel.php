@@ -271,9 +271,6 @@ function checkDescriptionForm($form)
 	if ($form = 'new') {
 		$content = $_POST['description'];
 
-		if (empty($content)) {
-			$errors['description'] = $errors_no['DESE'];
-		}
 		if (strlen($content) > 255) {
 			$errors['description'] = $errors_no['DESL'];
 		}

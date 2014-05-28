@@ -83,7 +83,10 @@
 		<div class='my_profil-info'>
 			<h2 class='my_profil_info-name'>{$user->get_prenom()|capitalize} {$user->get_nom()|capitalize}</h2>
 			<span class='my_profil_info-date'>{$user->get_date_naissance()}</span>
+			<div id="description">
 			<h3 class='title-my_profil_info_description'>Ma description</h3>
+			<span class='my_profil_info-description'><textarea class="hidden" id="description_textarea"  style="width: 600px; height: 116px;"></textarea><div id="description_div">{foreach $user->get_description() as $description}{$descriptionContent = $description}{if $description@last}{$descriptionContent}{/if}{/foreach}</div></span>
+			</div>
 			<span class='my_profil_info-description'>{$user->get_description()}</span>
 		</div>
 	</div>

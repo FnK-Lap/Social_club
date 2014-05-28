@@ -55,7 +55,8 @@ $errors_no = array(
 		'NEWE' => 'Le nouveau password est vide',
 		'NEWL' => 'Le nouveau password doit faire minimum 8 caracteres',
 		'RPAE' => 'La verification du pass est vide',
-		'PASD' => 'Les password sont differents'
+		'PASD' => 'Les password sont differents',
+		'DESL' => 'La description fait plus de 255 caracteres',
 
 	);
 
