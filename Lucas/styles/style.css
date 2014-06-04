@@ -60,7 +60,7 @@ header {
 
 .title-color {
 
-	color: #2980b9;
+	color: #c0392b;
 	font-weight: bold;
 	font-size: 24px;
 }
@@ -82,7 +82,7 @@ header {
 	margin-right: 60px;
 	width: 160px;
 	height: 30px;
-	background-color: #2980b9;
+	background-color: #c0392b;
 }
 
 .deconnexion-bloc:hover {
@@ -140,7 +140,7 @@ nav {
 	margin-top: 0px;
 	display: block;
 	float: left;
-	border-bottom: 3px solid #2980b9;
+	border-bottom: 3px solid #c0392b;
 	cursor: pointer;
 	margin-right: 30px;
 }
@@ -157,7 +157,7 @@ nav {
 
 .nav-title:hover {
 
-	border-bottom: 3px solid #2980b9;
+	border-bottom: 3px solid #c0392b;
 }
 
 ul, li {
@@ -282,7 +282,7 @@ a {
 
 	width: 150px;
 	height: 30px;
-	background-color: #2980b9;
+	background-color: #c0392b;
 	float: left;
 	margin-right: 5px;
 
@@ -380,7 +380,7 @@ aside {
 
 .photo-nom {
 
-	color: #2980b9;
+	color: #c0392b;
 	text-align: center;
 	margin-top: 10px;
 
@@ -403,14 +403,14 @@ aside {
 
 	font-size: 14px;
 	font-weight: bold;
-	color: #2980b9;
+	color: #c0392b;
 	margin-bottom: 20px;
 }
 
 .title-aside:hover {
 
 	text-decoration: underline;
-	color: #2980b9;
+	color: #c0392b;
 	cursor: pointer;
 }
 
@@ -499,7 +499,7 @@ aside {
 .last_message-content {
 
 	font-size: 11px;
-	color: #2980b9;	
+	color: #c0392b;	
 }
 
 
@@ -529,7 +529,7 @@ section {
 
 	font-size: 15px;
 	font-weight: bold;
-	color: #2980b9;
+	color: #c0392b;
 	margin: 15px 0 15px 20px;
 
 }
@@ -584,7 +584,7 @@ section {
 
 	font-size: 13px;
 	font-weight: bold;
-	color: #2980b9;
+	color: #c0392b;
 	float: left;
 	margin-left: 15px;
 	margin-top: 7px;
@@ -659,7 +659,7 @@ section {
 
 .title-myprofil:hover {
 
-	color: #2980b9;
+	color: #c0392b;
 	cursor: pointer;
 
 }
@@ -791,14 +791,14 @@ section {
 
 .list_message_user-name:hover {
 
-	color: #2980b9;
+	color: #c0392b;
 	cursor: pointer;
 
 }
 
 .list_message_user_info-new {
 
-	color: #2980b9;
+	color: #c0392b;
 	font-size: 12px;
 	font-style: italic;
 	margin-left: 23px;
@@ -856,7 +856,7 @@ section {
 
 	font-size: 13px;
 	font-weight: bold;
-	color: #2980b9;
+	color: #c0392b;
 	float: left;
 	margin-left: 15px;
 	margin-top: 7px;
@@ -923,7 +923,7 @@ section {
 
 	font-size: 13px;
 	font-weight: bold;
-	color: #2980b9;
+	color: #c0392b;
 	float: right;
 	margin-right: 15px;
 	margin-top: 7px;
@@ -1019,7 +1019,7 @@ section {
 	margin-right: 70px;
 	width: 160px;
 	height: 30px;
-	background-color: #2980b9;
+	background-color: #c0392b;
 	margin-top: 20px;
 }
 
@@ -1086,7 +1086,7 @@ section {
 
 .users_list_bloc-name:hover {
 
-	color: #2980b9;
+	color: #c0392b;
 	cursor: pointer;
 
 }
@@ -1096,7 +1096,7 @@ section {
 
 	width: 150px;
 	height: 30px;
-	background-color: #2980b9;
+	background-color: #c0392b;
 	margin-top: 7px;
 
 }
